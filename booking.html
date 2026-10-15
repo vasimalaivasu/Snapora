@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7-Step Online Photo Booth Booking Studio | Snapora</title>
+  <meta name="description" content="Reserve your photo booth, package, artisan backdrop, and custom add-ons online in 7 guided steps with live price calculation and instant confirmation.">
+  <meta property="og:title" content="7-Step Online Photo Booth Booking Studio | Snapora">
+  <meta property="og:description" content="Customize your celebration date, photo booth hardware, print template, and upgrades with instant LocalStorage demo reservation tracking.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1200&q=80">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#FDF8F2] text-[#1F1A1C] min-h-screen flex flex-col pt-20">
+  <!-- Shared Public Navbar -->
+  <div id="navbar"></div>
+
+  <main class="flex-1" id="bookingWizardRoot">
+    <!-- Hero Header -->
+    <section id="bookingHeroSection" class="bg-gradient-to-br from-[#FAF3E8] via-[#FDF8F2] to-[#F5ECE0] text-[#1F1A1C] py-10 lg:py-12 border-b-4 border-[#D9383A] relative overflow-hidden">
+      <div class="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(#D9383A_1px,transparent_1px)] [background-size:24px_24px]"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#E6D8C7] text-[#D9383A] text-xs font-extrabold uppercase tracking-widest mb-2.5 shadow-xs">
+              <i class="bi bi-calendar2-heart-fill"></i>
+              <span>Section 12 • 7-Step Interactive Booking System</span>
+            </div>
+            <h1 class="font-serif-editorial text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#1F1A1C]">
+              Online <span class="text-[#D9383A] italic font-normal">Booking Studio</span>
+            </h1>
+            <p class="text-[#5A4B53] text-xs sm:text-sm mt-1.5 max-w-2xl">
+              Customize your celebration date, photo booth style, package tier, backdrop, and add-ons. Submissions generate a unique reference and sync immediately to the Customer &amp; Admin Dashboards.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2.5 text-xs shrink-0">
+            <span class="px-3.5 py-2 rounded-xl bg-white border border-[#E6D8C7] text-[#1F1A1C] font-semibold shadow-xs">
+              <i class="bi bi-hdd-stack-fill text-[#2A7B76] me-1.5"></i>LocalStorage Demo Mode — No Real Card Charged
+            </span>
+          </div>
+        </div>
+
+        <!-- 7-Step Progress Indicator Bar -->
+        <div class="mt-8 pt-6 border-t border-[#E6D8C7] overflow-x-auto pb-2 no-scrollbar">
+          <div class="grid grid-cols-7 min-w-[680px] gap-2 text-center">
+            <button type="button" onclick="window.PBBooking.goToStep(1)" data-step-indicator="1" class="flex flex-col items-center group focus:outline-none">
+              <span class="step-circle w-9 h-9 rounded-full bg-[#D9383A] text-white font-extrabold text-xs flex items-center justify-center shadow-md">1</span>
+              <span class="step-label text-xs font-extrabold text-[#D9383A] mt-1.5 block">1. Event Info</span>
+            </button>
+
+            <button type="button" onclick="window.PBBooking.goToStep(2)" data-step-indicator="2" class="flex flex-col items-center group focus:outline-none">
+              <span class="step-circle w-9 h-9 rounded-full bg-[#FAF3E8] border border-[#E6D8C7] text-[#84727B] font-bold text-xs flex items-center justify-center">2</span>
+              <span class="step-label text-xs font-semibold text-[#84727B] mt-1.5 block">2. Booth Style</span>
+            </button>
+
+            <button type="button" onclick="window.PBBooking.goToStep(3)" data-step-indicator="3" class="flex flex-col items-center group focus:outline-none">
+              <span class="step-circle w-9 h-9 rounded-full bg-[#FAF3E8] border border-[#E6D8C7] text-[#84727B] font-bold text-xs flex items-center justify-center">3</span>
+              <span class="step-label text-xs font-semibold text-[#84727B] mt-1.5 block">3. Package</span>
+            </button>
+
+            <button type="button" onclick="window.PBBooking.goToStep(4)" data-step-indicator="4" class="flex flex-col items-center group focus:outline-none">
+              <span class="step-circle w-9 h-9 rounded-full bg-[#FAF3E8] border border-[#E6D8C7] text-[#84727B] font-bold text-xs flex items-center justify-center">4</span>
+              <span class="step-label text-xs font-semibold text-[#84727B] mt-1.5 block">4. Customize</span>
+            </button>
+
+            <button type="button" onclick="window.PBBooking.goToStep(5)" data-step-indicator="5" class="flex flex-col items-center group focus:outline-none">
+              <span class="step-circle w-9 h-9 rounded-full bg-[#FAF3E8] border border-[#E6D8C7] text-[#84727B] font-bold text-xs flex items-center justify-center">5</span>
+              <span class="step-label text-xs font-semibold text-[#84727B] mt-1.5 block">5. Your Details</span>
+            </button>
+
+            <button type="button" onclick="window.PBBooking.goToStep(6)" data-step-indicator="6" class="flex flex-col items-center group focus:outline-none">
+              <span class="step-circle w-9 h-9 rounded-full bg-[#FAF3E8] border border-[#E6D8C7] text-[#84727B] font-bold text-xs flex items-center justify-center">6</span>
+              <span class="step-label text-xs font-semibold text-[#84727B] mt-1.5 block">6. Review</span>
+            </button>
+
+            <div data-step-indicator="7" class="flex flex-col items-center">
+              <span class="step-circle w-9 h-9 rounded-full bg-[#FAF3E8] border border-[#E6D8C7] text-[#84727B] font-bold text-xs flex items-center justify-center">7</span>
+              <span class="step-label text-xs font-semibold text-[#84727B] mt-1.5 block">7. Confirmed</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Wizard Workspace + Live Summary Sidebar -->
+    <section class="py-10 lg:py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- Left 8 Columns: 7 Step Panes -->
+        <div class="lg:col-span-8">
+
+          <!-- STEP 1: Event Information -->
+          <div class="booking-step-pane surface-card bg-white rounded-3xl border-2 border-[#E6D8C7] p-6 sm:p-8 shadow-sm space-y-6" data-step-pane="1">
+            <div class="border-b border-[#E6D8C7] pb-4 flex items-center justify-between gap-4">
+              <div>
+                <span class="text-xs font-extrabold uppercase tracking-widest text-[#D9383A]">Step 1 of 7</span>
+                <h2 class="font-serif-editorial text-2xl sm:text-3xl font-bold text-[#1F1A1C] mt-0.5">Event Information &amp; Venue</h2>
+                <p class="text-xs text-[#5A4B53] mt-1">Tell us about your celebration date, timing, venue location, and estimated guest count.</p>
+              </div>
+              <div class="w-12 h-12 rounded-2xl bg-[#FAF3E8] text-[#D9383A] flex items-center justify-center text-2xl shrink-0">
+                <i class="bi bi-calendar2-event-fill"></i>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label for="bkEventType" class="block text-xs font-extrabold uppercase tracking-wider text-[#5A4B53] mb-1.5">Event Type *</label>
+                <select id="bkEventType" required class="w-full px-4 py-3 rounded-xl border border-[#E6D8C7] bg-white text-sm font-semibold text-[#1F1A1C] focus:outline-none focus:border-[#D9383A]">
+                  <!-- Populated dynamically from window.PBStore.getEvents() -->
+                </select>
+              </div>
+
+              <div>
+                <label for="bkEventDate" class="block text-xs font-extrabold uppercase tracking-wider text-[#5A4B53] mb-1.5">Event Date (Future Dates Only) *</label>
+                <input id="bkEventDate" type="date" required class="w-full px-4 py-3 rounded-xl border border-[#E6D8C7] bg-white text-sm font-semibold text-[#1F1A1C] focus:outline-none focus:border-[#D9383A]">
+              </div>
+
+              <div>
+                <label for="bkStartTime" class="block text-xs font-extrabold uppercase tracking-wider text-[#5A4B53] mb-1.5">Booth Active Start Time *</label>
+                <input id="bkStartTime" type="time" value="18:00" required class="w-full px-4 py-3 rounded-xl border border-[#E6D8C7] bg-white text-sm font-semibold text-[#1F1A1C] focus:outline-none focus:border-[#D9383A]">
+              </div>
+
+              <div>
+                <label for="bkDuration" class="block text-xs font-extrabold uppercase tracking-wider text-[#5A4B53] mb-1.5">Preferred Rental Duration *</label>
+                <select id="bkDuration" class="w-full px-4 py-3 rounded-xl border border-[#E6D8C7] bg-white text-sm font-semibold text-[#1F1A1C] focus:outline-none focus:border-[#D9383A]">
+                  <option value="2 Hours">2 Hours (Party Express)</option>
+                  <option value="3 Hours">3 Hours (Standard Reception)</option>
+                  <option value="4 Hours" selected>4 Hours (Most Popular)</option>
+                  <option value="5 Hours">5 Hours (Full Evening)</option>
+                  <option value="6 Hours (Full Day / Gala)">6 Hours (Full Day / Gala)</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="bkVenueName" class="block text-xs font-extrabold uppercase tracking-wider text-[#5A4B53] mb-1.5">Event Venue Name *</label>
+                <input id="bkVenueName" type="text" required placeholder="e.g., The Conservatory Ballroom" class="w-full px-4 py-3 rounded-xl border border-[#E6D8C7] bg-white text-sm font-semibold text-[#1F1A1C] focus:outline-none focus:border-[#D9383A]">
+              </div>
+
+              <div>
+                <label for="bkEventCity" class="block text-xs font-extrabold uppercase tracking-wider text-[#5A4B53] mb-1.5">Event City / Location *</label>
+                <input id="bkEventCity" type="text" required placeholder="e.g., San Francisco, CA" class="w-full px-4 py-3 rounded-xl border border-[#E6D8C7] bg-white text-sm font-semibold text-[#1F1A1C] focus:outline-none focus:border-[#D9383A]">
+              </div>
+
+              <div class="sm:col-span-2">
+                <label for="bkGuestCount" class="block text-xs font-extrabold uppercase tracking-wider text-[#5A4B53] mb-1.5">Estimated Guest Count (10–5,000) *</label>
+                <input id="bkGuestCount" type="number" min="10" max="5000" value="120" required class="w-full px-4 py-3 rounded-xl border border-[#E6D8C7] bg-white text-sm font-semibold text-[#1F1A1C] focus:outline-none focus:border-[#D9383A]">
+                <p class="text-[11px] text-[#84727B] mt-1">Helps us assign the ideal print paper stock and booth concierge team.</p>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-[#E6D8C7] flex justify-end">
+              <button type="button" onclick="window.PBBooking.nextStep()" class="btn-cherry !py-3.5 !px-7 text-sm">
+                <span>Next: Select Photo Booth Style</span>
+                <i class="bi bi-arrow-right rtl-flip"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 2: Booth Selection -->
+          <div class="booking-step-pane hidden surface-card bg-white rounded-3xl border-2 border-[#E6D8C7] p-6 sm:p-8 shadow-sm space-y-6" data-step-pane="2">
+            <div class="border-b border-[#E6D8C7] pb-4 flex items-center justify-between gap-4">
+              <div>
+                <span class="text-xs font-extrabold uppercase tracking-widest text-[#D9383A]">Step 2 of 7</span>
+                <h2 class="font-serif-editorial text-2xl sm:text-3xl font-bold text-[#1F1A1C] mt-0.5">Choose Your Photo Booth Style</h2>
+                <p class="text-xs text-[#5A4B53] mt-1">Select from all 12 signature hardware styles. Your pre-selected booth is highlighted below.</p>
+              </div>
+              <div class="w-12 h-12 rounded-2xl bg-[#FAF3E8] text-[#D9383A] flex items-center justify-center text-2xl shrink-0">
+                <i class="bi bi-camera-reels-fill"></i>
+              </div>
+            </div>
+
+            <!-- Currently Selected Booth Banner -->
+            <div id="bkSelectedBoothBanner" class="p-4 sm:p-5 rounded-2xl bg-[#FAF3E8] border-2 border-[#D9383A]/40">
+              <!-- Populated by booking.js -->
+            </div>
+
+            <!-- All 12 Booths Grid -->
+            <div id="bkBoothsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              <!-- Populated by booking.js -->
+            </div>
+
+            <div class="pt-4 border-t border-[#E6D8C7] flex items-center justify-between gap-4">
+              <button type="button" onclick="window.PBBooking.prevStep()" class="btn-outline-vintage !py-3 text-xs">
+                <i class="bi bi-arrow-left rtl-flip"></i>
+                <span>Back to Event Info</span>
+              </button>
+              <button type="button" onclick="window.PBBooking.nextStep()" class="btn-cherry !py-3.5 !px-7 text-sm">
+                <span>Next: Choose Package Tier</span>
+                <i class="bi bi-arrow-right rtl-flip"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 3: Package Selection -->
+          <div class="booking-step-pane hidden surface-card bg-white rounded-3xl border-2 border-[#E6D8C7] p-6 sm:p-8 shadow-sm space-y-6" data-step-pane="3">
+            <div class="border-b border-[#E6D8C7] pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <span class="text-xs font-extrabold uppercase tracking-widest text-[#D9383A]">Step 3 of 7</span>
+                <h2 class="font-serif-editorial text-2xl sm:text-3xl font-bold text-[#1F1A1C] mt-0.5">Select Your Event Package</h2>
+                <p class="text-xs text-[#5A4B53] mt-1">We automatically filtered packages for your event category—or browse all 12 bundles.</p>
+              </div>
+
+              <!-- Package Category Filter Buttons -->
+              <div class="flex flex-wrap items-center gap-1.5">
+                <button type="button" data-bk-pkg-tab="Wedding" onclick="window.PBBooking.filterPackages('Wedding')" class="px-4 py-2 rounded-xl text-xs font-extrabold bg-[#D9383A] text-white shadow-sm">Wedding</button>
+                <button type="button" data-bk-pkg-tab="Birthday" onclick="window.PBBooking.filterPackages('Birthday')" class="px-4 py-2 rounded-xl text-xs font-bold bg-[#FAF3E8] text-[#5A4B53] hover:text-[#1F1A1C]">Birthday</button>
+                <button type="button" data-bk-pkg-tab="Corporate" onclick="window.PBBooking.filterPackages('Corporate')" class="px-4 py-2 rounded-xl text-xs font-bold bg-[#FAF3E8] text-[#5A4B53] hover:text-[#1F1A1C]">Corporate</button>
+                <button type="button" data-bk-pkg-tab="Private Party" onclick="window.PBBooking.filterPackages('Private Party')" class="px-4 py-2 rounded-xl text-xs font-bold bg-[#FAF3E8] text-[#5A4B53] hover:text-[#1F1A1C]">Private Party</button>
+                <button type="button" data-bk-pkg-tab="All" onclick="window.PBBooking.filterPackages('All')" class="px-4 py-2 rounded-xl text-xs font-bold bg-[#FAF3E8] text-[#5A4B53] hover:text-[#1F1A1C]">All (12)</button>
+              </div>
+            </div>
+
+            <!-- Packages Grid -->
+            <div id="bkPackagesGrid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <!-- Populated by booking.js -->
+            </div>
+
+            <div class="pt-4 border-t border-[#E6D8C7] flex items-center justify-between gap-4">
+              <button type="button" onclick="window.PBBooking.prevStep()" class="btn-outline-vintage !py-3 text-xs">
+                <i class="bi bi-arrow-left rtl-flip"></i>
+                <span>Back to Booth Style</span>
+              </button>
+              <button type="button" onclick="window.PBBooking.nextStep()" class="btn-cherry !py-3.5 !px-7 text-sm">
+                <span>Next: Backdrops &amp; Add-Ons</span>
+                <i class="bi bi-arrow-right rtl-flip"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 4: Customization Options (Backdrop, Strip Design, Extra Hours, Add-Ons) -->
+          <div class="booking-step-pane hidden surface-card bg-white rounded-3xl border-2 border-[#E6D8C7] p-6 sm:p-8 shadow-sm space-y-8" data-step-pane="4">
+            <div class="border-b border-[#E6D8C7] pb-4 flex items-center justify-between gap-4">
+              <div>
+                <span class="text-xs font-extrabold uppercase tracking-widest text-[#D9383A]">Step 4 of 7</span>
+                <h2 class="font-serif-editorial text-2xl sm:text-3xl font-bold text-[#1F1A1C] mt-0.5">Customize Backdrop, Strip &amp; Add-Ons</h2>
+                <p class="text-xs text-[#5A4B53] mt-1">Select your 8×8 ft artisan backdrop, photo strip artwork layout, and optional upgrades.</p>
+              </div>
+              <div class="w-12 h-12 rounded-2xl bg-[#FAF3E8] text-[#D9383A] flex items-center justify-center text-2xl shrink-0">
+                <i class="bi bi-palette2"></i>
+              </div>
+            </div>
+
+            <!-- 1. Backdrop Choice -->
+            <div>
+              <h3 class="font-serif-editorial text-lg font-bold text-[#1F1A1C] mb-1">1. Choose Your Statement Backdrop (10 Styles)</h3>
+              <p class="text-xs text-[#5A4B53] mb-3">Classic White is included ($0). Upgrade to 3D silk florals, kinetic sequins, or pleated velvet.</p>
+              <div id="bkBackdropsGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <!-- Populated by booking.js -->
+              </div>
+            </div>
+
+            <!-- 2. Photo Strip Design & Extra Rental Hours -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-4 border-t border-[#E6D8C7]">
+              <div>
+                <label for="bkStripDesign" class="block text-xs font-extrabold uppercase tracking-wider text-[#5A4B53] mb-1.5">2. Photo Strip / Print Layout Template</label>
+                <select id="bkStripDesign" class="w-full px-4 py-3 rounded-xl border border-[#E6D8C7] bg-white text-xs sm:text-sm font-semibold text-[#1F1A1C] focus:outline-none focus:border-[#D9383A]">
+                  <!-- Populated by booking.js -->
+                </select>
+              </div>
+
+              <div>
+                <label for="bkExtraHours" class="block text-xs font-extrabold uppercase tracking-wider text-[#5A4B53] mb-1.5">3. Additional Active Rental Hours (+$175/hr)</label>
+                <select id="bkExtraHours" class="w-full px-4 py-3 rounded-xl border border-[#E6D8C7] bg-white text-xs sm:text-sm font-semibold text-[#1F1A1C] focus:outline-none focus:border-[#D9383A]">
+                  <option value="0">0 Extra Hours (Keep Standard Package Duration)</option>
+                  <option value="1">+1 Extra Hour (+$175)</option>
+                  <option value="2">+2 Extra Hours (+$350)</option>
+                  <option value="3">+3 Extra Hours (+$525)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- 4. Custom Add-Ons Grid -->
+            <div class="pt-4 border-t border-[#E6D8C7]">
+              <h3 class="font-serif-editorial text-lg font-bold text-[#1F1A1C] mb-1">4. Select Optional Add-Ons &amp; Upgrades</h3>
+              <p class="text-xs text-[#5A4B53] mb-3">Click any card to add or remove it from your live reservation estimate.</p>
+              <div id="bkAddonsGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                <!-- Populated by booking.js -->
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-[#E6D8C7] flex items-center justify-between gap-4">
+              <button type="button" onclick="window.PBBooking.prevStep()" class="btn-outline-vintage !py-3 text-xs">
+                <i class="bi bi-arrow-left rtl-flip"></i>
+                <span>Back to Packages</span>
+              </button>
+              <button type="button" onclick="window.PBBooking.nextStep()" class="btn-cherry !py-3.5 !px-7 text-sm">
+                <span>Next: Customer Details</span>
+                <i class="bi bi-arrow-right rtl-flip"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 5: Customer Details -->
+          <div class="booking-step-pane hidden surface-card bg-white rounded-3xl border-2 border-[#E6D8C7] p-6 sm:p-8 shadow-sm space-y-6" data-step-pane="5">
+            <div class="border-b border-[#E6D8C7] pb-4 flex items-center justify-between gap-4">
+              <div>
+                <span class="text-xs font-extrabold uppercase tracking-widest text-[#D9383A]">Step 5 of 7</span>
+                <h2 class="font-serif-editorial text-2xl sm:text-3xl font-bold text-[#1F1A1C] mt-0.5">Client Contact &amp; Setup Notes</h2>
+                <p class="text-xs text-[#5A4B53] mt-1">Enter your contact details so your booking links directly to your Customer Dashboard.</p>
+              </div>
+              <div class="w-12 h-12 rounded-2xl bg-[#FAF3E8] text-[#D9383A] flex items-center justify-center text-2xl shrink-0">
+                <i class="bi bi-person-vcard-fill"></i>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label for="bkCustomerName" class="block text-xs font-extrabold uppercase tracking-wider text-[#5A4B53] mb-1.5">Full Name *</label>
+                <input id="bkCustomerName" type="text" required placeholder="e.g., Claire Bennett" class="w-full px-4 py-3 rounded-xl border border-[#E6D8C7] bg-white text-sm font-semibold text-[#1F1A1C] focus:outline-none focus:border-[#D9383A]">
+              </div>
+
+              <div>
+                <label for="bkCustomerEmail" class="block text-xs font-extrabold uppercase tracking-wider text-[#5A4B53] mb-1.5">Email Address *</label>
+                <input id="bkCustomerEmail" type="email" required placeholder="e.g., name@example.com" class="w-full px-4 py-3 rounded-xl border border-[#E6D8C7] bg-white text-sm font-semibold text-[#1F1A1C] focus:outline-none focus:border-[#D9383A]">
+              </div>
+
+              <div>
+                <label for="bkCustomerPhone" class="block text-xs font-extrabold uppercase tracking-wider text-[#5A4B53] mb-1.5">Mobile Phone Number *</label>
+                <input id="bkCustomerPhone" type="tel" required placeholder="(555) 384-9201" class="w-full px-4 py-3 rounded-xl border border-[#E6D8C7] bg-white text-sm font-semibold text-[#1F1A1C] focus:outline-none focus:border-[#D9383A]">
+              </div>
+
+              <div>
+                <label for="bkEventContact" class="block text-xs font-extrabold uppercase tracking-wider text-[#5A4B53] mb-1.5">Day-Of Event Contact / Planner</label>
+                <input id="bkEventContact" type="text" placeholder="e.g., Venue Coordinator or Best Man" class="w-full px-4 py-3 rounded-xl border border-[#E6D8C7] bg-white text-sm font-semibold text-[#1F1A1C] focus:outline-none focus:border-[#D9383A]">
+              </div>
+
+              <div class="sm:col-span-2">
+                <label for="bkInstructions" class="block text-xs font-extrabold uppercase tracking-wider text-[#5A4B53] mb-1.5">Special Setup Instructions, Monogram Text, or Load-In Notes</label>
+                <textarea id="bkInstructions" rows="3" placeholder="Tell us about stairs/elevators, outdoor tenting, or text you would like printed on your photo strip crest..." class="w-full px-4 py-3 rounded-xl border border-[#E6D8C7] bg-white text-sm font-semibold text-[#1F1A1C] focus:outline-none focus:border-[#D9383A]"></textarea>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-[#E6D8C7] flex items-center justify-between gap-4">
+              <button type="button" onclick="window.PBBooking.prevStep()" class="btn-outline-vintage !py-3 text-xs">
+                <i class="bi bi-arrow-left rtl-flip"></i>
+                <span>Back to Customize</span>
+              </button>
+              <button type="button" onclick="window.PBBooking.nextStep()" class="btn-cherry !py-3.5 !px-7 text-sm">
+                <span>Next: Review Full Quote</span>
+                <i class="bi bi-arrow-right rtl-flip"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 6: Booking Summary & Review -->
+          <div class="booking-step-pane hidden surface-card bg-white rounded-3xl border-2 border-[#E6D8C7] p-6 sm:p-8 shadow-sm space-y-6" data-step-pane="6">
+            <div class="border-b border-[#E6D8C7] pb-4 flex items-center justify-between gap-4">
+              <div>
+                <span class="text-xs font-extrabold uppercase tracking-widest text-[#D9383A]">Step 6 of 7</span>
+                <h2 class="font-serif-editorial text-2xl sm:text-3xl font-bold text-[#1F1A1C] mt-0.5">Review Your Reservation &amp; Estimate</h2>
+                <p class="text-xs text-[#5A4B53] mt-1">Verify your event details, booth hardware, backdrop, and itemized pricing before submitting.</p>
+              </div>
+              <div class="w-12 h-12 rounded-2xl bg-[#FAF3E8] text-[#2A7B76] flex items-center justify-center text-2xl shrink-0">
+                <i class="bi bi-clipboard2-check-fill"></i>
+              </div>
+            </div>
+
+            <div id="bkFullReviewContainer">
+              <!-- Populated by booking.js -->
+            </div>
+
+            <div class="pt-4 border-t border-[#E6D8C7] flex flex-col sm:flex-row items-center justify-between gap-4">
+              <button type="button" onclick="window.PBBooking.prevStep()" class="btn-outline-vintage w-full sm:w-auto !py-3 text-xs">
+                <i class="bi bi-arrow-left rtl-flip"></i>
+                <span>Back to Edit Details</span>
+              </button>
+              <button type="button" onclick="window.PBBooking.confirmBookingSubmission()" class="btn-cherry w-full sm:w-auto !py-4 !px-8 text-sm animate-pulse-glow">
+                <i class="bi bi-check2-circle text-lg"></i>
+                <span>Confirm &amp; Submit Demo Booking</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 7: Confirmation -->
+          <div class="booking-step-pane hidden surface-card bg-white rounded-3xl border-2 border-[#2A7B76] p-6 sm:p-10 shadow-xl" data-step-pane="7">
+            <div id="bkConfirmationContent">
+              <!-- Populated by booking.js upon submission -->
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right 4 Columns: Sticky Live Booking Summary Sidebar -->
+        <aside class="lg:col-span-4 lg:sticky lg:top-28 space-y-5" aria-label="Live Booking Estimate Summary">
+          <div class="surface-card bg-white rounded-3xl border-2 border-[#E6D8C7] overflow-hidden shadow-md">
+            <div id="bookingSummaryCardHeader" class="bg-[#FAF3E8] text-[#1F1A1C] p-5 border-b-2 border-[#D9383A] flex items-center justify-between">
+              <div>
+                <span class="text-[10px] font-extrabold uppercase tracking-widest text-[#D9383A] block">Real-Time Quote Calculator</span>
+                <h3 class="font-serif-editorial text-xl font-bold text-[#1F1A1C]">Live Booking Summary</h3>
+              </div>
+              <i class="bi bi-receipt-cutoff text-2xl text-[#D9383A]"></i>
+            </div>
+
+            <div class="p-5 space-y-3.5 text-xs">
+              <div class="flex items-start justify-between gap-2 pb-2.5 border-b border-[#E6D8C7]">
+                <span class="text-[#84727B] font-bold uppercase tracking-wider text-[10px]">Celebration</span>
+                <strong id="summarySideEvent" class="text-[#1F1A1C] text-end">Weddings (120 Guests)</strong>
+              </div>
+
+              <div class="flex items-start justify-between gap-2 pb-2.5 border-b border-[#E6D8C7]">
+                <span class="text-[#84727B] font-bold uppercase tracking-wider text-[10px]">Event Date</span>
+                <strong id="summarySideDate" class="text-[#1F1A1C] text-end">Select Date in Step 1</strong>
+              </div>
+
+              <div class="flex items-start justify-between gap-2 pb-2.5 border-b border-[#E6D8C7]">
+                <span class="text-[#84727B] font-bold uppercase tracking-wider text-[10px]">Photo Booth</span>
+                <strong id="summarySideBooth" class="text-[#D9383A] text-end">Vintage Enclosed Photo Booth</strong>
+              </div>
+
+              <div class="flex items-start justify-between gap-2 pb-2.5 border-b border-[#E6D8C7]">
+                <span class="text-[#84727B] font-bold uppercase tracking-wider text-[10px]">Package Tier</span>
+                <strong id="summarySidePkg" class="text-[#1F1A1C] text-end">Wedding Memories (4 Hours)</strong>
+              </div>
+
+              <div class="flex items-start justify-between gap-2 pb-2.5 border-b border-[#E6D8C7]">
+                <span class="text-[#84727B] font-bold uppercase tracking-wider text-[10px]">Backdrop</span>
+                <strong id="summarySideBackdrop" class="text-[#1F1A1C] text-end">Champagne Shimmer (+$95)</strong>
+              </div>
+
+              <div class=" pb-2.5 border-b border-[#E6D8C7]">
+                <span class="text-[#84727B] font-bold uppercase tracking-wider text-[10px] block mb-1">Selected Add-Ons</span>
+                <p id="summarySideAddons" class="text-[#5A4B53] font-semibold leading-snug">Guestbook Station</p>
+              </div>
+
+              <!-- Price Breakdown -->
+              <div class="pt-1 space-y-2">
+                <div class="flex items-center justify-between text-[#5A4B53]">
+                  <span>Base Package &amp; Booth Tier</span>
+                  <strong id="summarySideBasePrice" class="text-[#1F1A1C]">$995</strong>
+                </div>
+                <div class="flex items-center justify-between text-[#5A4B53]">
+                  <span>Backdrop &amp; Custom Add-Ons</span>
+                  <strong id="summarySideExtrasPrice" class="text-[#2A7B76]">+$205</strong>
+                </div>
+                <div class="pt-3 border-t-2 border-dashed border-[#E6D8C7] flex items-baseline justify-between">
+                  <div>
+                    <span class="font-serif-editorial text-base font-bold text-[#1F1A1C] block">Estimated Total</span>
+                    <span class="text-[10px] text-[#84727B] font-semibold">Demo Pricing • Tax Incl.</span>
+                  </div>
+                  <span id="summarySideTotal" class="font-serif-editorial text-3xl font-extrabold text-[#D9383A]">$1,200</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-[#FAF3E8] px-5 py-3.5 border-t border-[#E6D8C7] text-[11px] text-[#5A4B53] flex items-center gap-2">
+              <i class="bi bi-shield-check text-[#2A7B76] text-base"></i>
+              <span>Includes 60-min setup, unlimited digital gallery &amp; $2M venue insurance.</span>
+            </div>
+          </div>
+
+          <!-- Need Assistance Card -->
+          <div class="surface-card bg-white rounded-2xl border border-[#E6D8C7] p-5 text-xs space-y-2">
+            <div class="flex items-center gap-2 font-bold text-[#1F1A1C]">
+              <i class="bi bi-headset text-[#D9383A] text-base"></i>
+              <span>Need Help Customizing?</span>
+            </div>
+            <p class="text-[#5A4B53] leading-relaxed">Call our event producers at <strong>(800) 555-SNAP</strong> or <a href="contact.html" class="text-[#D9383A] font-bold underline">message our studio</a> for multi-booth or destination inquiries.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared Public Footer -->
+  <div id="footer"></div>
+
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/booking.js"></script>
+</body>
+</html>

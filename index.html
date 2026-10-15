@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snapora — Vintage Photo Booth & Modern Event Rental Company</title>
+  <meta name="description" content="Bring your celebration to life with unforgettable vintage & modern photo booth experiences, artisan backdrops, personalized photo strips, and instant cloud sharing.">
+  <meta property="og:title" content="Snapora — Photo Booth & Event Rentals">
+  <meta property="og:description" content="Good Times. Great Photos. Memories That Last. Explore 12 photo booth styles, custom packages, and instant online booking.">
+  <meta property="og:type" content="website">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#FDF8F2] text-[#1F1A1C] antialiased">
+
+  <!-- Shared Responsive Navbar -->
+  <div id="navbar"></div>
+
+  <main class="pt-20">
+    <!-- 1. PREMIUM NOSTALGIC HERO SECTION -->
+    <section class="relative overflow-hidden pt-6 sm:pt-8 lg:pt-10 pb-12 sm:pb-16 lg:pb-20 bg-gradient-to-b from-[#FDF8F2] via-[#FAF3E8] to-[#FDF8F2] border-b border-[#E6D8C7]">
+      <!-- Subtle Warm Decorative Glows -->
+      <div class="absolute -top-24 -start-24 w-96 h-96 rounded-full bg-[#F4C95D]/20 blur-3xl pointer-events-none"></div>
+      <div class="absolute bottom-0 -end-24 w-96 h-96 rounded-full bg-[#D9383A]/10 blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+          <!-- Hero Copy (7 cols) -->
+          <div class="lg:col-span-7 space-y-6">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#E6D8C7] text-[#D9383A] text-xs font-extrabold uppercase tracking-widest shadow-xs">
+              <i class="bi bi-camera-reels-fill text-[#D9383A]"></i>
+              <span>Nostalgic Photography • Modern Event Booking</span>
+            </div>
+
+            <h1 class="font-serif-editorial text-4xl sm:text-5xl xl:text-6xl font-extrabold text-[#1F1A1C] leading-[1.08]">
+              Good Times. Great Photos. <span class="text-[#D9383A] italic font-semibold">Memories That Last.</span>
+            </h1>
+
+            <p class="text-base sm:text-lg text-[#5A4B53] max-w-2xl leading-relaxed">
+              Bring your celebration to life with unforgettable photo booth experiences, beautiful backdrops, personalized photo strips, and entertainment your guests will love.
+            </p>
+
+            <!-- Primary & Secondary CTAs -->
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+              <a href="booking.html" class="btn-cherry text-sm !py-4 !px-8 shadow-xl">
+                <i class="bi bi-calendar2-heart-fill text-lg"></i>
+                <span>Book Your Booth</span>
+              </a>
+              <a href="booths.html" class="btn-outline-vintage text-sm !py-4 !px-8">
+                <i class="bi bi-grid-fill text-lg"></i>
+                <span>Explore Our Booths</span>
+              </a>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="pt-4 grid grid-cols-3 gap-4 max-w-2xl border-t border-[#E6D8C7]">
+              <div>
+                <p class="font-serif-editorial text-xl font-extrabold text-[#1F1A1C]">8-Sec Prints</p>
+                <p class="text-xs text-[#84727B]">Archival Matte & Glossy</p>
+              </div>
+              <div>
+                <p class="font-serif-editorial text-xl font-extrabold text-[#1F1A1C]">Studio DSLR</p>
+                <p class="text-xs text-[#84727B]">Optical Glass & Strobes</p>
+              </div>
+              <div>
+                <p class="font-serif-editorial text-xl font-extrabold text-[#1F1A1C]">Instant QR</p>
+                <p class="text-xs text-[#84727B]">SMS, AirDrop & Cloud ZIP</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Collage: Main Event Frame + Retro Photo Strip + Polaroid (5 cols) -->
+          <div class="lg:col-span-5 relative flex justify-center lg:justify-end">
+            <div class="relative w-full max-w-sm sm:max-w-md lg:max-w-[420px] xl:max-w-[450px]">
+              <!-- Main Polaroid Frame -->
+              <div class="polaroid-frame shadow-polaroid">
+                <div class="overflow-hidden rounded-lg aspect-[4/5] bg-[#2B192E]">
+                  <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1000&q=80" alt="Guests laughing inside a vintage photo booth at a celebration" class="w-full h-full object-cover">
+                </div>
+                <span class="polaroid-caption">Saturday Night Velvet Booth • Oct '26</span>
+              </div>
+
+              <!-- Decorative Vertical 3-Frame Retro Photo Strip (Placed near bottom of image, shifted left to never cover the caption text) -->
+              <div class="photo-strip-vertical !absolute w-32 sm:w-36 bottom-11 sm:bottom-14 -start-8 sm:-start-12 -rotate-2 animate-float-slow z-20 hidden sm:flex">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=300&q=80" alt="Wedding couple pose 1" class="w-full h-20 object-cover rounded-xs">
+                <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=300&q=80" alt="Party friends pose 2" class="w-full h-20 object-cover rounded-xs">
+                <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=300&q=80" alt="Celebration toast pose 3" class="w-full h-20 object-cover rounded-xs">
+              </div>
+
+              <!-- Playful Sticker Callout -->
+              <div class="surface-card bg-white rounded-2xl p-4 shadow-2xl border-2 border-[#F4C95D] !absolute -top-5 -end-3 sm:-end-6 animate-float-delayed z-20 max-w-[215px]">
+                <div class="flex items-center gap-2.5">
+                  <div class="w-10 h-10 rounded-xl bg-[#F4C95D] text-[#1F1A1C] flex items-center justify-center font-extrabold text-lg shrink-0">
+                    <i class="bi bi-stars"></i>
+                  </div>
+                  <div>
+                    <p class="text-[10px] font-extrabold uppercase tracking-wider text-[#D9383A]">12 Distinct Booths</p>
+                    <p class="text-xs font-bold text-[#1F1A1C]">Vintage, Glam, 360° & 1972 Caravan</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. ANIMATED STATISTICS BAR -->
+    <section id="homeStatsSection" class="py-12 bg-[#FAF3E8] text-[#1F1A1C] border-y border-[#E6D8C7]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+          <div>
+            <p class="font-serif-editorial text-3xl sm:text-4xl font-extrabold text-[#D9383A]" data-counter="3450" data-suffix="+">3,450+</p>
+            <p class="text-xs uppercase tracking-widest text-[#5A4B53] font-bold mt-1">Celebrations Captured</p>
+          </div>
+          <div>
+            <p class="font-serif-editorial text-3xl sm:text-4xl font-extrabold text-[#1F1A1C]" data-counter="480" data-suffix="K+">480K+</p>
+            <p class="text-xs uppercase tracking-widest text-[#5A4B53] font-bold mt-1">Archival Strips Printed</p>
+          </div>
+          <div>
+            <p class="font-serif-editorial text-3xl sm:text-4xl font-extrabold text-[#E86A58]" data-counter="12">12</p>
+            <p class="text-xs uppercase tracking-widest text-[#5A4B53] font-bold mt-1">Signature Booth Styles</p>
+          </div>
+          <div>
+            <p class="font-serif-editorial text-3xl sm:text-4xl font-extrabold text-[#2A7B76]" data-counter="99" data-suffix="%">99%</p>
+            <p class="text-xs uppercase tracking-widest text-[#5A4B53] font-bold mt-1">5-Star Host Satisfaction</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. FEATURED PHOTO BOOTH STYLES -->
+    <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal-on-scroll">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-widest text-[#D9383A] block mb-2">The Hardware Collection</span>
+          <h2 class="font-serif-editorial text-3xl sm:text-4xl font-bold text-[#1F1A1C]">Featured Photo Booth Styles</h2>
+          <p class="text-sm text-[#5A4B53] mt-2 max-w-2xl">From handcrafted mahogany enclosed booths and 1972 vintage caravans to Hollywood B&W Glam sets and 120fps 360° video platforms.</p>
+        </div>
+        <a href="booths.html" class="btn-outline-vintage text-xs shrink-0">
+          <span>View All 12 Booth Styles</span>
+          <i class="bi bi-arrow-right rtl-flip"></i>
+        </a>
+      </div>
+
+      <div id="homeFeaturedBoothsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+    </section>
+
+    <!-- 4. POPULAR RENTAL PACKAGES -->
+    <section class="py-20 bg-[#F5ECE0] border-y border-[#E6D8C7] reveal-on-scroll">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-[#D9383A]">Transparent Demo Pricing</span>
+          <h2 class="font-serif-editorial text-3xl sm:text-4xl font-bold text-[#1F1A1C] mt-2">Popular Rental Packages</h2>
+          <p class="text-sm text-[#5A4B53] mt-2">Every package includes unlimited digital sharing, studio lighting, complimentary setup/breakdown, and custom artwork.</p>
+        </div>
+
+        <div id="homePopularPackagesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+
+        <div class="text-center mt-10">
+          <a href="packages.html" class="btn-plum text-xs">
+            <i class="bi bi-table"></i>
+            <span>Compare All 12 Wedding, Birthday, Corporate & Party Packages</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. EVENTS WE SERVE -->
+    <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal-on-scroll">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-widest text-[#2A7B76]">14 Curated Celebration Types</span>
+          <h2 class="font-serif-editorial text-3xl sm:text-4xl font-bold text-[#1F1A1C] mt-1">Events We Serve</h2>
+          <p class="text-sm text-[#5A4B53] mt-2">Click any occasion to launch our booking studio with your event category pre-selected.</p>
+        </div>
+        <a href="events.html" class="text-xs font-extrabold text-[#D9383A] hover:underline">Explore All 14 Event Guides →</a>
+      </div>
+
+      <div id="homeEventsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </section>
+
+    <!-- 6. FEATURED BACKDROPS & CUSTOM PHOTO STRIP DESIGN STUDIO -->
+    <section id="homeStripSection" class="py-20 bg-[#F5ECE0] text-[#1F1A1C] border-y-4 border-[#D9383A] reveal-on-scroll">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <!-- Custom Photo Strip Interactive Switcher (5 cols) -->
+          <div class="lg:col-span-5 space-y-6">
+            <span class="inline-block px-3 py-1 rounded-full bg-[#D9383A]/10 text-[#D9383A] text-xs font-extrabold uppercase tracking-widest">Bespoke Print Studio</span>
+            <h2 class="font-serif-editorial text-3xl sm:text-4xl font-bold text-[#1F1A1C] leading-tight">Custom Photo Strip &amp; Editorial Print Layouts</h2>
+            <p class="text-sm text-[#5A4B53] leading-relaxed">
+              Our in-house graphic designers match your wedding stationery, milestone birthday palette, or corporate brand guidelines on every single print.
+            </p>
+
+            <!-- Interactive Strip Style Selector -->
+            <div class="space-y-2.5" id="stripPreviewTabs">
+              <button type="button" onclick="window.switchStripPreview(0)" class="strip-tab-btn w-full text-start p-4 rounded-2xl bg-[#D9383A] text-white transition flex items-center justify-between shadow-xs">
+                <div>
+                  <p class="font-bold text-sm">1. Classic 2×6 Ivory Wedding Monogram</p>
+                  <p class="text-xs text-white/80">4 candid poses + gold-foil style date stamp</p>
+                </div>
+                <i class="bi bi-check-circle-fill text-lg"></i>
+              </button>
+              <button type="button" onclick="window.switchStripPreview(1)" class="strip-tab-btn w-full text-start p-4 rounded-2xl bg-white surface-card border border-[#E6D8C7] hover:border-[#D9383A] text-[#1F1A1C] transition flex items-center justify-between">
+                <div>
+                  <p class="font-bold text-sm">2. 4×6 Monochrome Glam Editorial</p>
+                  <p class="text-xs text-[#5A4B53]">Fine-art thick matte border + skin smoothing</p>
+                </div>
+                <i class="bi bi-circle text-lg text-[#84727B]"></i>
+              </button>
+              <button type="button" onclick="window.switchStripPreview(2)" class="strip-tab-btn w-full text-start p-4 rounded-2xl bg-white surface-card border border-[#E6D8C7] hover:border-[#D9383A] text-[#1F1A1C] transition flex items-center justify-between">
+                <div>
+                  <p class="font-bold text-sm">3. 1970s Disco &amp; Birthday Foil Strip</p>
+                  <p class="text-xs text-[#5A4B53]">Playful retro typography &amp; vibrant color frame</p>
+                </div>
+                <i class="bi bi-circle text-lg text-[#84727B]"></i>
+              </button>
+            </div>
+
+            <div class="pt-2 flex flex-wrap gap-3">
+              <a href="backdrops.html" class="btn-cherry text-xs">Explore 10 Backdrops &amp; 12 Add-Ons</a>
+            </div>
+          </div>
+
+          <!-- Featured Backdrops + Live Strip Preview (7 cols) -->
+          <div class="lg:col-span-7">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
+              <!-- Live Interactive Strip Mockup Card -->
+              <div id="liveStripMockupCard" class="bg-[#FDF8F2] text-[#1F1A1C] p-6 rounded-3xl shadow-2xl border-4 border-[#F4C95D] mx-auto max-w-xs w-full text-center">
+                <span id="stripMockupBadge" class="px-3 py-0.5 rounded-full bg-[#D9383A]/10 text-[#D9383A] text-[10px] font-extrabold uppercase">2×6 Vertical Archival Strip</span>
+                <div class="mt-4 space-y-2.5 bg-white p-3 rounded-xl shadow-inner border border-[#E6D8C7]">
+                  <img id="stripImg1" src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=500&q=80" alt="Strip frame 1" class="w-full h-28 object-cover rounded">
+                  <img id="stripImg2" src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=500&q=80" alt="Strip frame 2" class="w-full h-28 object-cover rounded">
+                  <img id="stripImg3" src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=500&q=80" alt="Strip frame 3" class="w-full h-28 object-cover rounded">
+                  <div class="pt-2 pb-1">
+                    <p id="stripMockupCaption" class="font-serif-editorial font-bold text-sm text-[#1F1A1C]">CLAIRE & JULIAN • 11.14.2026</p>
+                    <p id="stripMockupSub" class="text-[10px] uppercase tracking-widest text-[#84727B]">The Conservatory • San Francisco</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 4 Featured Backdrops Mini Cards -->
+              <div class="space-y-4">
+                <h3 class="font-serif-editorial text-xl font-bold text-[#1F1A1C] dark:text-[#F4C95D]">Featured Artisan Backdrops</h3>
+                <div id="homeBackdropsPreview" class="space-y-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. HOW BOOKING WORKS & WHY CHOOSE US -->
+    <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal-on-scroll">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#D9383A]">Effortless From Click to Flash</span>
+        <h2 class="font-serif-editorial text-3xl sm:text-4xl font-bold text-[#1F1A1C] mt-2">How Our Booking Process Works</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="surface-card bg-white p-6 rounded-3xl border border-[#E6D8C7] relative">
+          <span class="w-11 h-11 rounded-2xl bg-[#D9383A] text-white font-serif-editorial font-bold text-lg flex items-center justify-center mb-4">01</span>
+          <h3 class="font-serif-editorial text-lg font-bold text-[#1F1A1C]">Select Date & Booth</h3>
+          <p class="text-xs text-[#5A4B53] mt-2 leading-relaxed">Enter your event date, venue, and guest count, then pick from our 12 vintage, glam, or 360° booths.</p>
+        </div>
+        <div class="surface-card bg-white p-6 rounded-3xl border border-[#E6D8C7] relative">
+          <span class="w-11 h-11 rounded-2xl bg-[#E86A58] text-white font-serif-editorial font-bold text-lg flex items-center justify-center mb-4">02</span>
+          <h3 class="font-serif-editorial text-lg font-bold text-[#1F1A1C]">Customize Your Look</h3>
+          <p class="text-xs text-[#5A4B53] mt-2 leading-relaxed">Choose an artisan backdrop, custom monogram photo strip layout, linen guestbook, or neon props.</p>
+        </div>
+        <div class="surface-card bg-white p-6 rounded-3xl border border-[#E6D8C7] relative">
+          <span class="w-11 h-11 rounded-2xl bg-[#2A7B76] text-white font-serif-editorial font-bold text-lg flex items-center justify-center mb-4">03</span>
+          <h3 class="font-serif-editorial text-lg font-bold text-[#1F1A1C]">Track Live in Portal</h3>
+          <p class="text-xs text-[#5A4B53] mt-2 leading-relaxed">Follow your reservation through our 5-stage tracker from Booking Requested to Event Preparation.</p>
+        </div>
+        <div class="surface-card bg-white p-6 rounded-3xl border border-[#E6D8C7] relative">
+          <span class="w-11 h-11 rounded-2xl bg-[#F4C95D] text-[#1F1A1C] font-serif-editorial font-bold text-lg flex items-center justify-center mb-4 shadow-xs">04</span>
+          <h3 class="font-serif-editorial text-lg font-bold text-[#1F1A1C]">Flash, Print & Share</h3>
+          <p class="text-xs text-[#5A4B53] mt-2 leading-relaxed">Our concierge arrives 60 minutes early. Guests enjoy instant 8-second prints, QR downloads, and cloud albums.</p>
+        </div>
+      </div>
+
+      <!-- Why Choose Us Feature Strip -->
+      <div class="mt-14 surface-card bg-white rounded-3xl border-2 border-[#E6D8C7] p-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-[#FAF3E8] text-[#D9383A] flex items-center justify-center text-2xl shrink-0">
+            <i class="bi bi-camera2"></i>
+          </div>
+          <div>
+            <h4 class="font-serif-editorial font-bold text-base text-[#1F1A1C]">Full-Frame DSLR & Studio Strobe</h4>
+            <p class="text-xs text-[#5A4B53] mt-1 leading-relaxed">Never grainy iPad front-cameras on print booths—we use Canon R-series sensors and parabolic beauty dishes.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-[#FAF3E8] text-[#2A7B76] flex items-center justify-center text-2xl shrink-0">
+            <i class="bi bi-journal-Check bi-journal-album"></i>
+          </div>
+          <div>
+            <h4 class="font-serif-editorial font-bold text-base text-[#1F1A1C]">Heirloom Guestbook Curation</h4>
+            <p class="text-xs text-[#5A4B53] mt-1 leading-relaxed">Our on-site host prints a second strip every session and helps guests mount it with metallic ink notes.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-[#FAF3E8] text-[#E86A58] flex items-center justify-center text-2xl shrink-0">
+            <i class="bi bi-shield-check"></i>
+          </div>
+          <div>
+            <h4 class="font-serif-editorial font-bold text-base text-[#1F1A1C]">$2M Insured & Backup Hardware</h4>
+            <p class="text-xs text-[#5A4B53] mt-1 leading-relaxed">We provide venue Certificates of Insurance (COI) at no charge and bring backup printers to every event.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. GALLERY PREVIEW -->
+    <section class="py-20 bg-[#F5ECE0] border-t border-[#E6D8C7] reveal-on-scroll">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-widest text-[#D9383A]">Captured Moments</span>
+            <h2 class="font-serif-editorial text-3xl sm:text-4xl font-bold text-[#1F1A1C] mt-1">Inside the Snapora Gallery</h2>
+          </div>
+          <a href="gallery.html" class="btn-outline-vintage text-xs">Open Full Lightbox Gallery →</a>
+        </div>
+        <div id="homeGalleryPreviewGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+      </div>
+    </section>
+
+    <!-- 9. CUSTOMER TESTIMONIALS -->
+    <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal-on-scroll">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-widest text-[#2A7B76]">Verified Love Notes</span>
+          <h2 class="font-serif-editorial text-3xl sm:text-4xl font-bold text-[#1F1A1C] mt-1">What Couples & Event Planners Say</h2>
+        </div>
+        <a href="reviews.html" class="text-xs font-extrabold text-[#D9383A] hover:underline">Read All Reviews or Leave Yours →</a>
+      </div>
+      <div id="homeReviewsGrid" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+    </section>
+
+    <!-- 10. FREQUENTLY ASKED QUESTIONS -->
+    <section class="py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 reveal-on-scroll">
+      <div class="text-center mb-10">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#D9383A]">Got Questions?</span>
+        <h2 class="font-serif-editorial text-3xl font-bold text-[#1F1A1C] mt-1">Frequently Asked Questions</h2>
+      </div>
+      <div class="space-y-3" id="homeFaqAccordion">
+        <div class="surface-card bg-white rounded-2xl border border-[#E6D8C7] overflow-hidden">
+          <button type="button" onclick="window.toggleHomeFaq(0)" class="w-full p-5 text-start font-bold text-sm text-[#1F1A1C] flex items-center justify-between">
+            <span>How much space and power do your photo booths require?</span>
+            <i class="bi bi-chevron-down transition-transform" id="faqIcon0"></i>
+          </button>
+          <div id="faqBody0" class="px-5 pb-5 text-xs text-[#5A4B53] leading-relaxed">
+            Most open-air, glam, and mirror booths require an 8 ft × 8 ft level area and one standard 110V/120V power outlet within 25 feet. Our Vintage Enclosed Booth requires 6 ft × 4 ft, and our Roaming Booth is 100% wireless!
+          </div>
+        </div>
+        <div class="surface-card bg-white rounded-2xl border border-[#E6D8C7] overflow-hidden">
+          <button type="button" onclick="window.toggleHomeFaq(1)" class="w-full p-5 text-start font-bold text-sm text-[#1F1A1C] flex items-center justify-between">
+            <span>Does setup and breakdown time count toward our booked rental hours?</span>
+            <i class="bi bi-chevron-down transition-transform" id="faqIcon1"></i>
+          </button>
+          <div id="faqBody1" class="hidden px-5 pb-5 text-xs text-[#5A4B53] leading-relaxed">
+            Never! Our concierge arrives 60 minutes prior to your scheduled start time for complimentary setup and sound/lighting calibration. You only pay for active booth run time.
+          </div>
+        </div>
+        <div class="surface-card bg-white rounded-2xl border border-[#E6D8C7] overflow-hidden">
+          <button type="button" onclick="window.toggleHomeFaq(2)" class="w-full p-5 text-start font-bold text-sm text-[#1F1A1C] flex items-center justify-between">
+            <span>How does this demo booking and dashboard workflow operate?</span>
+            <i class="bi bi-chevron-down transition-transform" id="faqIcon2"></i>
+          </button>
+          <div id="faqBody2" class="hidden px-5 pb-5 text-xs text-[#5A4B53] leading-relaxed">
+            This template uses browser LocalStorage to simulate a full-featured booking engine. Any reservation you submit in the 7-step Booking Studio is saved immediately and can be tracked in your live Customer Dashboard!
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. FINAL CTA BANNER -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="rounded-[2.5rem] bg-gradient-to-r from-[#D9383A] via-[#B8282A] to-[#2B192E] text-white p-8 sm:p-14 text-center relative overflow-hidden shadow-2xl">
+        <div class="relative z-10 max-w-2xl mx-auto space-y-5">
+          <span class="px-3.5 py-1 rounded-full bg-white/15 text-[#F4C95D] text-xs font-extrabold uppercase tracking-widest">Dates Fill Quickly for 2026–2027</span>
+          <h2 class="font-serif-editorial text-3xl sm:text-5xl font-bold leading-tight">Ready to Give Your Guests the Best Souvenir of the Night?</h2>
+          <p class="text-sm sm:text-base text-white/90">
+            Build your custom package in under 2 minutes, preview your live total, and track your reservation in your personal client portal.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+            <a href="booking.html" class="px-8 py-4 rounded-2xl bg-[#F4C95D] text-[#1F1A1C] font-extrabold text-sm shadow-xl hover:bg-white transition">
+              <i class="bi bi-calendar2-check-fill me-1.5"></i> Book Your Booth Now
+            </a>
+            <a href="index-dashboard.html" class="px-8 py-4 rounded-2xl border-2 border-white/40 text-white font-bold text-sm hover:bg-white/15 transition">
+              <i class="bi bi-grid-1x2 me-1.5"></i>
+              <span>Explore Interactive Booking Hub</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared Footer -->
+  <div id="footer"></div>
+
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Render 6 Featured Booths
+      const boothsGrid = document.getElementById('homeFeaturedBoothsGrid');
+      if (boothsGrid && window.PBStore) {
+        const booths = window.PBStore.getBooths().slice(0, 6);
+        boothsGrid.innerHTML = booths.map(b => {
+          const isLimited = b.availability === 'Limited';
+          const availBadgeClass = isLimited
+            ? 'bg-[#F4C95D] text-[#1F1A1C] border border-amber-300/40'
+            : 'bg-[#2A7B76] text-white border border-teal-300/30';
+          const availIcon = isLimited ? 'bi-lightning-charge-fill' : 'bi-check-circle-fill';
+
+          return `
+          <article class="surface-card bg-white rounded-3xl border border-[#E6D8C7] overflow-hidden flex flex-col justify-between shadow-xs hover:shadow-xl transition-all duration-300 group">
+            <div>
+              <div class="relative h-60 overflow-hidden">
+                <img src="${b.image}" alt="${b.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <span class="absolute top-4 start-4 px-3 py-1 rounded-full bg-[#2B192E]/90 text-[#F4C95D] text-xs font-extrabold shadow-sm">From $${b.price}</span>
+                <span class="booth-avail-badge absolute top-4 end-4 px-2.5 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider shadow-md flex items-center gap-1 ${availBadgeClass}">
+                  <i class="bi ${availIcon} text-[9px]"></i><span>${b.availability || 'Available'}</span>
+                </span>
+              </div>
+              <div class="p-6">
+                <span class="text-[10px] font-extrabold uppercase tracking-widest text-[#D9383A]">${b.duration}</span>
+                <h3 class="font-serif-editorial text-xl font-bold text-[#1F1A1C] mt-1">${b.name}</h3>
+                <p class="text-xs text-[#5A4B53] mt-2 leading-relaxed">${b.shortDesc}</p>
+                <div class="mt-4 pt-3 border-t border-[#E6D8C7] flex flex-wrap gap-1.5">
+                  ${b.suitableEvents.slice(0, 3).map(ev => `<span class="px-2 py-0.5 rounded-md bg-[#FAF3E8] text-[10px] font-bold text-[#5A4B53]">${ev}</span>`).join('')}
+                </div>
+              </div>
+            </div>
+            <div class="p-6 pt-0 flex items-center gap-2.5">
+              <a href="booth-details.html?id=${b.id}" class="btn-outline-vintage flex-1 !py-2.5 text-xs">View Details</a>
+              <button type="button" onclick="window.PBUI.openAvailabilityModal('${b.id}')" class="btn-cherry flex-1 !py-2.5 text-xs">Check Date</button>
+            </div>
+          </article>
+        `;
+        }).join('');
+      }
+
+      // 2. Render 4 Popular Packages (1 from each category)
+      const pkgGrid = document.getElementById('homePopularPackagesGrid');
+      if (pkgGrid && window.PBStore) {
+        const pkgs = window.PBStore.getPackages().filter(p => p.recommended);
+        pkgGrid.innerHTML = pkgs.map(p => `
+          <div class="surface-card bg-white rounded-3xl border-2 border-[#D9383A]/40 p-6 flex flex-col justify-between relative shadow-sm hover:shadow-xl transition">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="px-2.5 py-0.5 rounded-full bg-[#D9383A]/10 text-[#D9383A] text-[10px] font-extrabold uppercase">${p.category}</span>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#F4C95D] text-[#1F1A1C] text-[10px] font-extrabold">Most Popular</span>
+              </div>
+              <h3 class="font-serif-editorial text-xl font-bold text-[#1F1A1C] mt-3">${p.name}</h3>
+              <div class="mt-2 flex items-baseline gap-1">
+                <span class="font-serif-editorial text-3xl font-extrabold text-[#1F1A1C]">$${p.price}</span>
+                <span class="text-xs text-[#84727B]">• ${p.duration}</span>
+              </div>
+              <p class="text-xs text-[#2A7B76] font-bold mt-2">${p.printsDesc}</p>
+              <ul class="mt-4 pt-4 border-t border-[#E6D8C7] space-y-2 text-xs text-[#5A4B53]">
+                ${p.features.slice(0, 4).map(f => `<li class="flex items-start gap-2"><i class="bi bi-check2-circle text-[#2A7B76] font-bold mt-0.5"></i><span>${f}</span></li>`).join('')}
+              </ul>
+            </div>
+            <a href="booking.html?package=${p.id}&event=${encodeURIComponent(p.category)}" class="btn-cherry w-full mt-6 !py-3 text-xs">Book ${p.name}</a>
+          </div>
+        `).join('');
+      }
+
+      // 3. Render 6 Events We Serve
+      const evGrid = document.getElementById('homeEventsGrid');
+      if (evGrid && window.PBStore) {
+        const events = window.PBStore.getEvents().slice(0, 6);
+        evGrid.innerHTML = events.map(ev => `
+          <div class="surface-card bg-white rounded-3xl border border-[#E6D8C7] overflow-hidden group flex flex-col justify-between">
+            <div>
+              <div class="relative h-44 overflow-hidden">
+                <img src="${ev.image}" alt="${ev.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-4">
+                  <h3 class="font-serif-editorial text-xl font-bold text-white"><i class="bi ${ev.icon} text-[#F4C95D] me-2"></i>${ev.name}</h3>
+                </div>
+              </div>
+              <div class="p-5">
+                <p class="text-xs text-[#5A4B53] leading-relaxed">${ev.shortDesc}</p>
+                <p class="text-[11px] font-bold text-[#1F1A1C] mt-3">Top Booth: <span class="text-[#D9383A]">${ev.recommendedBooths[0]}</span></p>
+              </div>
+            </div>
+            <div class="p-5 pt-0">
+              <a href="booking.html?event=${encodeURIComponent(ev.name)}" class="btn-outline-vintage w-full !py-2.5 text-xs">Book for ${ev.name}</a>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // 4. Render 4 Backdrops Preview
+      const bdPreview = document.getElementById('homeBackdropsPreview');
+      if (bdPreview && window.PBStore) {
+        const bds = window.PBStore.getBackdrops().slice(0, 4);
+        bdPreview.innerHTML = bds.map(b => `
+          <a href="backdrops.html" class="flex items-center gap-3.5 p-3 rounded-2xl bg-white surface-card hover:border-[#D9383A] border border-[#E6D8C7] transition shadow-xs">
+            <img src="${b.image}" alt="${b.name}" class="w-14 h-14 rounded-xl object-cover shrink-0">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center justify-between">
+                <h4 class="font-bold text-sm text-[#1F1A1C] truncate">${b.name}</h4>
+                <span class="text-xs font-extrabold text-[#D9383A]">${b.price === 0 ? 'Included' : '+$' + b.price}</span>
+              </div>
+              <p class="text-xs text-[#5A4B53] truncate mt-0.5">${b.dimensions}</p>
+            </div>
+          </a>
+        `).join('');
+      }
+
+      // 5. Render 4 Gallery Previews
+      const galGrid = document.getElementById('homeGalleryPreviewGrid');
+      if (galGrid && window.PBStore) {
+        const items = window.PBStore.getGallery().slice(0, 4);
+        galGrid.innerHTML = items.map(g => `
+          <a href="gallery.html" class="polaroid-frame block">
+            <div class="overflow-hidden rounded-lg aspect-[4/5]">
+              <img src="${g.image}" alt="${g.title}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+            </div>
+            <span class="polaroid-caption">${g.title}</span>
+          </a>
+        `).join('');
+      }
+
+      // 6. Render 3 Featured Testimonials
+      const revGrid = document.getElementById('homeReviewsGrid');
+      if (revGrid && window.PBStore) {
+        const revs = window.PBStore.getReviews().slice(0, 3);
+        revGrid.innerHTML = revs.map(r => `
+          <div class="surface-card bg-white rounded-3xl border border-[#E6D8C7] p-6 flex flex-col justify-between shadow-xs">
+            <div>
+              <div class="flex items-center justify-between text-amber-400 text-sm mb-3">
+                <span>★★★★★</span>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#2A7B76]/10 text-[#2A7B76] text-[10px] font-extrabold">${r.boothUsed}</span>
+              </div>
+              <p class="text-xs text-[#5A4B53] italic leading-relaxed">"${r.comment}"</p>
+            </div>
+            <div class="flex items-center gap-3 mt-5 pt-4 border-t border-[#E6D8C7]">
+              <img src="${r.avatar}" alt="${r.name}" class="w-10 h-10 rounded-full object-cover">
+              <div>
+                <p class="font-bold text-xs text-[#1F1A1C]">${r.name}</p>
+                <p class="text-[11px] text-[#84727B]">${r.role} • ${r.eventType}</p>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+    });
+
+    // Interactive Photo Strip Switcher
+    const STRIP_PRESETS = [
+      {
+        badge: '2×6 Vertical Archival Strip',
+        caption: 'CLAIRE & JULIAN • 11.14.2026',
+        sub: 'The Conservatory • San Francisco',
+        imgs: [
+          'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=500&q=80',
+          'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=500&q=80',
+          'https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=500&q=80'
+        ]
+      },
+      {
+        badge: '4×6 Monochrome Glam Portrait',
+        caption: 'THE VANCE GALA • HOLLYWOOD GLAM',
+        sub: 'Editorial B&W Skin-Smoothing LUT',
+        imgs: [
+          'https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=500&q=80',
+          'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=500&q=80',
+          'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80'
+        ]
+      },
+      {
+        badge: '1970s Disco Birthday Foil Strip',
+        caption: 'SIENNA’S 30TH DISCO NIGHT ✨',
+        sub: 'Founders Loft • Neon Boomerang Strip',
+        imgs: [
+          'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=500&q=80',
+          'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=500&q=80',
+          'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=500&q=80'
+        ]
+      }
+    ];
+
+    window.switchStripPreview = function(idx) {
+      const p = STRIP_PRESETS[idx];
+      if (!p) return;
+      document.getElementById('stripMockupBadge').textContent = p.badge;
+      document.getElementById('stripMockupCaption').textContent = p.caption;
+      document.getElementById('stripMockupSub').textContent = p.sub;
+      document.getElementById('stripImg1').src = p.imgs[0];
+      document.getElementById('stripImg2').src = p.imgs[1];
+      document.getElementById('stripImg3').src = p.imgs[2];
+
+      document.querySelectorAll('.strip-tab-btn').forEach((btn, i) => {
+        const icon = btn.querySelector('i');
+        if (i === idx) {
+          btn.className = 'strip-tab-btn w-full text-start p-4 rounded-2xl bg-[#D9383A] text-white transition flex items-center justify-between shadow-md';
+          icon.className = 'bi bi-check-circle-fill text-lg';
+        } else {
+          btn.className = 'strip-tab-btn w-full text-start p-4 rounded-2xl bg-white surface-card border border-[#E6D8C7] hover:border-[#D9383A] text-[#1F1A1C] transition flex items-center justify-between';
+          icon.className = 'bi bi-circle text-lg text-[#84727B]';
+        }
+      });
+    };
+
+    window.toggleHomeFaq = function(idx) {
+      const body = document.getElementById('faqBody' + idx);
+      const icon = document.getElementById('faqIcon' + idx);
+      if (!body) return;
+      body.classList.toggle('hidden');
+      icon?.classList.toggle('rotate-180');
+    };
+  </script>
+</body>
+</html>

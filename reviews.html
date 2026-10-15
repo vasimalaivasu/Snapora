@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reviews & Testimonials | Snapora</title>
+  <meta name="description" content="Read verified sample client reviews and submit your own event feedback for Snapora photo booth rentals.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#FDF8F2] text-[#1F1A1C] antialiased selection:bg-[#D9383A] selection:text-white">
+
+  <!-- Shared Navbar -->
+  <div id="navbar"></div>
+
+  <main class="pt-20">
+    <!-- Hero & Rating Summary Stats -->
+    <section class="py-16 lg:py-20 bg-[#F5ECE0] border-b border-[#E6D8C7]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div class="lg:col-span-7 space-y-4">
+            <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#D9383A]/10 text-[#D9383A] text-xs font-extrabold uppercase tracking-widest">
+              <i class="bi bi-star-fill text-amber-500"></i> 4.98 / 5.0 Average Host Rating
+            </span>
+            <h1 class="font-serif-editorial text-4xl sm:text-5xl font-extrabold text-[#1F1A1C] leading-tight">
+              Loved by Newlyweds, Party Hosts & <span class="text-[#D9383A] italic font-normal">Brand</span> Planners.
+            </h1>
+            <p class="text-sm sm:text-base text-[#5A4B53] leading-relaxed max-w-2xl">
+              Explore feedback from couples, milestone birthday celebrants, and experiential marketing teams. You can also test our interactive review wall below by submitting a live demo review saved directly to your browser.
+            </p>
+            <div class="flex flex-wrap gap-3 pt-2">
+              <a href="#leaveReviewSection" class="btn-cherry text-xs">
+                <i class="bi bi-pencil-square"></i>
+                <span>Leave a Demo Review</span>
+              </a>
+              <a href="booking.html" class="btn-outline-vintage text-xs">
+                <i class="bi bi-calendar2-heart"></i>
+                <span>Book Your Booth</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Rating Breakdown Card -->
+          <div class="lg:col-span-5 surface-card bg-white p-6 sm:p-8 rounded-3xl border border-[#E6D8C7] shadow-lg">
+            <div class="flex items-center justify-between pb-5 border-b border-[#E6D8C7]">
+              <div>
+                <p class="font-serif-editorial text-4xl font-extrabold text-[#1F1A1C]" id="avgRatingStat">5.0</p>
+                <div class="text-amber-400 text-sm mt-1">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <p class="text-xs text-[#84727B] mt-1">Based on <span id="totalReviewsStat" class="font-bold text-[#1F1A1C]">6</span> curated & demo reviews</p>
+              </div>
+              <div class="text-end">
+                <span class="inline-block px-3 py-1 rounded-full bg-[#2A7B76]/15 text-[#2A7B76] text-xs font-extrabold">99.4% Recommend</span>
+                <p class="text-[11px] text-[#5A4B53] mt-2">Verified Sample & Demo Feed</p>
+              </div>
+            </div>
+
+            <div class="space-y-2.5 mt-5 text-xs">
+              <div class="flex items-center gap-3">
+                <span class="w-16 font-bold text-[#5A4B53]">Print Quality</span>
+                <div class="flex-1 h-2.5 bg-[#FAF3E8] rounded-full overflow-hidden">
+                  <div class="h-full bg-[#D9383A] rounded-full" style="width: 99%"></div>
+                </div>
+                <span class="font-extrabold text-[#1F1A1C]">5.0</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="w-16 font-bold text-[#5A4B53]">Attendants</span>
+                <div class="flex-1 h-2.5 bg-[#FAF3E8] rounded-full overflow-hidden">
+                  <div class="h-full bg-[#2A7B76] rounded-full" style="width: 98%"></div>
+                </div>
+                <span class="font-extrabold text-[#1F1A1C]">4.9</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="w-16 font-bold text-[#5A4B53]">Booth Design</span>
+                <div class="flex-1 h-2.5 bg-[#FAF3E8] rounded-full overflow-hidden">
+                  <div class="h-full bg-[#E86A58] rounded-full" style="width: 100%"></div>
+                </div>
+                <span class="font-extrabold text-[#1F1A1C]">5.0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Spotlight Testimonial -->
+    <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div id="reviewsSpotlightCard" class="bg-gradient-to-br from-[#FAF3E8] to-[#F5ECE0] text-[#1F1A1C] rounded-3xl p-8 sm:p-10 border-2 border-[#D9383A] shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-4">
+          <div class="polaroid-frame -rotate-1">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=80" alt="Clara & Julian Vance Wedding Booth" class="w-full h-56 object-cover rounded-lg">
+            <p class="polaroid-caption">Clara & Julian • Sept 2026</p>
+          </div>
+        </div>
+        <div class="lg:col-span-8 space-y-4">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="px-3 py-1 rounded-full bg-[#D9383A] text-white text-[10px] font-extrabold uppercase tracking-wider">Featured Wedding Story</span>
+            <span class="px-3 py-1 rounded-full bg-white border border-[#E6D8C7] text-[#5A4B53] text-[10px] font-bold uppercase tracking-wider">Sample Verified Review</span>
+          </div>
+          <p class="font-serif-editorial text-xl sm:text-2xl italic leading-relaxed text-[#1F1A1C]">
+            "The mahogany Vintage Enclosed Booth was the undisputed star of our wedding reception! Even our 82-year-old grandmother squeezed behind the velvet curtain three times. The linen guestbook they assembled for us that night is our favorite wedding keepsake."
+          </p>
+          <div class="flex items-center justify-between pt-2 border-t border-[#E6D8C7]">
+            <div>
+              <p class="font-bold text-sm text-[#D9383A]">Clara & Julian Vance</p>
+              <p class="text-xs text-[#5A4B53]">Vintage Enclosed Photo Booth • The Conservatory Reception</p>
+            </div>
+            <a href="booth-details.html?id=vintage-enclosed" class="text-xs font-extrabold text-[#D9383A] hover:underline">View Booth →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Search & Category Filter Controls + Dynamic Review Grid -->
+    <section class="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="surface-card bg-white p-5 sm:p-6 rounded-3xl border border-[#E6D8C7] shadow-sm mb-8">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <!-- Category Pills -->
+          <div class="flex flex-wrap items-center gap-2" id="reviewCategoryPills">
+            <button type="button" data-rev-cat="All" class="px-4 py-2 rounded-full text-xs font-extrabold bg-[#D9383A] text-white shadow-sm transition">All</button>
+            <button type="button" data-rev-cat="Weddings" class="px-4 py-2 rounded-full text-xs font-bold bg-[#FAF3E8] text-[#5A4B53] hover:border-[#D9383A] border border-[#E6D8C7] transition">Weddings</button>
+            <button type="button" data-rev-cat="Birthday Parties" class="px-4 py-2 rounded-full text-xs font-bold bg-[#FAF3E8] text-[#5A4B53] hover:border-[#D9383A] border border-[#E6D8C7] transition">Birthday Parties</button>
+            <button type="button" data-rev-cat="Corporate Events" class="px-4 py-2 rounded-full text-xs font-bold bg-[#FAF3E8] text-[#5A4B53] hover:border-[#D9383A] border border-[#E6D8C7] transition">Corporate Events</button>
+            <button type="button" data-rev-cat="Private Parties" class="px-4 py-2 rounded-full text-xs font-bold bg-[#FAF3E8] text-[#5A4B53] hover:border-[#D9383A] border border-[#E6D8C7] transition">Private Parties</button>
+          </div>
+
+          <!-- Search Input -->
+          <div class="relative w-full md:w-72">
+            <i class="bi bi-search absolute start-3.5 top-1/2 -translate-y-1/2 text-[#84727B] text-xs"></i>
+            <label for="reviewSearchInput" class="sr-only">Search reviews</label>
+            <input id="reviewSearchInput" type="search" placeholder="Search by booth or keyword..." class="w-full ps-9 pe-4 py-2.5 rounded-xl border border-[#E6D8C7] bg-[#FDF8F2] text-xs font-semibold focus:outline-none focus:border-[#D9383A]">
+          </div>
+        </div>
+      </div>
+
+      <!-- Dynamic Review Cards Grid -->
+      <div id="reviewsGridContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </section>
+
+    <!-- Interactive "Leave a Review" Form -->
+    <section id="leaveReviewSection" class="py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="surface-card bg-white p-8 sm:p-10 rounded-3xl border-2 border-[#E6D8C7] shadow-xl">
+        <div class="mb-6">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#2A7B76]/10 text-[#2A7B76] text-xs font-extrabold uppercase tracking-wider">
+            <i class="bi bi-chat-heart-fill"></i> Interactive Demo Feature
+          </span>
+          <h2 class="font-serif-editorial text-2xl sm:text-3xl font-bold text-[#1F1A1C] mt-2">Share Your Snapora Experience</h2>
+          <p class="text-xs sm:text-sm text-[#5A4B53] mt-1">
+            Submit a review below to see it appear immediately in our live testimonial wall above (saved in your browser's LocalStorage).
+          </p>
+        </div>
+
+        <form id="leaveReviewForm" class="space-y-5" novalidate>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label for="revName" class="block text-xs font-bold uppercase tracking-wider text-[#5A4B53] mb-1.5">Your Name *</label>
+              <input id="revName" type="text" required placeholder="e.g., Sophia & Liam Carter" class="w-full px-4 py-3 rounded-xl border border-[#E6D8C7] bg-[#FDF8F2] text-sm font-medium">
+            </div>
+            <div>
+              <label for="revRole" class="block text-xs font-bold uppercase tracking-wider text-[#5A4B53] mb-1.5">Role / Title *</label>
+              <input id="revRole" type="text" required placeholder="e.g., Bride & Groom or Event Planner" class="w-full px-4 py-3 rounded-xl border border-[#E6D8C7] bg-[#FDF8F2] text-sm font-medium">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            <div>
+              <label for="revEventType" class="block text-xs font-bold uppercase tracking-wider text-[#5A4B53] mb-1.5">Event Type *</label>
+              <select id="revEventType" required class="w-full px-4 py-3 rounded-xl border border-[#E6D8C7] bg-[#FDF8F2] text-sm font-semibold">
+                <option value="Weddings">Weddings</option>
+                <option value="Birthday Parties">Birthday Parties</option>
+                <option value="Corporate Events">Corporate Events</option>
+                <option value="Private Parties">Private Parties</option>
+              </select>
+            </div>
+            <div>
+              <label for="revBoothUsed" class="block text-xs font-bold uppercase tracking-wider text-[#5A4B53] mb-1.5">Booth Used *</label>
+              <select id="revBoothUsed" required class="w-full px-4 py-3 rounded-xl border border-[#E6D8C7] bg-[#FDF8F2] text-sm font-semibold"></select>
+            </div>
+            <div>
+              <label for="revRating" class="block text-xs font-bold uppercase tracking-wider text-[#5A4B53] mb-1.5">Star Rating *</label>
+              <select id="revRating" required class="w-full px-4 py-3 rounded-xl border border-[#E6D8C7] bg-[#FDF8F2] text-sm font-semibold">
+                <option value="5">★★★★★ (5/5 — Incredible)</option>
+                <option value="4">★★★★☆ (4/5 — Great)</option>
+                <option value="3">★★★☆☆ (3/5 — Good)</option>
+                <option value="2">★★☆☆☆ (2/5 — Fair)</option>
+                <option value="1">★☆☆☆☆ (1/5 — Needs Work)</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="revComment" class="block text-xs font-bold uppercase tracking-wider text-[#5A4B53] mb-1.5">Your Review Comment *</label>
+            <textarea id="revComment" rows="4" required placeholder="Tell us about your photo strips, backdrop, attendant, and guest reactions..." class="w-full px-4 py-3 rounded-xl border border-[#E6D8C7] bg-[#FDF8F2] text-sm font-medium"></textarea>
+          </div>
+
+          <div id="revFormError" class="hidden p-3.5 rounded-xl bg-red-500/10 border border-red-500/30 text-xs font-bold text-[#D9383A]"></div>
+
+          <div class="flex flex-wrap items-center justify-between gap-4 pt-2">
+            <p class="text-[11px] text-[#84727B]">
+              <i class="bi bi-info-circle me-1"></i> Demo submissions are tagged as <strong>Demo User Submission</strong> and stored locally.
+            </p>
+            <button type="submit" class="btn-cherry text-sm">
+              <i class="bi bi-send-check-fill"></i>
+              <span>Publish Review</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared Footer -->
+  <div id="footer"></div>
+
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    (function () {
+      let currentCat = 'All';
+      let searchStr = '';
+
+      function populateBoothDropdown() {
+        const select = document.getElementById('revBoothUsed');
+        if (!select || !window.PBStore) return;
+        const booths = window.PBStore.getBooths();
+        select.innerHTML = booths.map(b => `<option value="${b.name}">${b.name}</option>`).join('');
+      }
+
+      function renderReviews() {
+        const grid = document.getElementById('reviewsGridContainer');
+        const totalStat = document.getElementById('totalReviewsStat');
+        const avgStat = document.getElementById('avgRatingStat');
+        if (!grid || !window.PBStore) return;
+
+        const allReviews = window.PBStore.getReviews();
+        if (totalStat) totalStat.textContent = allReviews.length;
+        if (avgStat && allReviews.length) {
+          const avg = allReviews.reduce((acc, r) => acc + Number(r.rating || 5), 0) / allReviews.length;
+          avgStat.textContent = avg.toFixed(2);
+        }
+
+        const filtered = allReviews.filter(r => {
+          const matchCat = currentCat === 'All' || r.eventType === currentCat;
+          const q = searchStr.toLowerCase();
+          const matchQ = !q ||
+            r.name.toLowerCase().includes(q) ||
+            r.comment.toLowerCase().includes(q) ||
+            r.boothUsed.toLowerCase().includes(q) ||
+            r.eventType.toLowerCase().includes(q);
+          return matchCat && matchQ;
+        });
+
+        if (filtered.length === 0) {
+          grid.innerHTML = `
+            <div class="col-span-full text-center py-14 surface-card bg-white rounded-3xl border border-[#E6D8C7] p-6">
+              <i class="bi bi-chat-square-quote text-3xl text-[#D9383A]"></i>
+              <h3 class="font-serif-editorial text-xl font-bold mt-2">No reviews match your filter</h3>
+              <p class="text-xs text-[#5A4B53] mt-1">Try switching back to "All" events or clearing your search box.</p>
+            </div>
+          `;
+          return;
+        }
+
+        grid.innerHTML = filtered.map(r => {
+          const stars = '<i class="bi bi-star-fill text-amber-400 me-0.5"></i>'.repeat(Math.max(1, Math.min(5, Number(r.rating || 5))));
+          const badgeLabel = r.verifiedSample ? 'Sample Verified Review' : 'Demo User Submission';
+          const badgeClass = r.verifiedSample
+            ? 'bg-[#2A7B76]/15 text-[#2A7B76] border-[#2A7B76]/30'
+            : 'bg-[#D9383A]/15 text-[#D9383A] border-[#D9383A]/30';
+
+          return `
+            <article class="surface-card bg-white rounded-3xl border border-[#E6D8C7] overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col justify-between">
+              <div>
+                <div class="h-44 relative overflow-hidden">
+                  <img src="${r.eventImage}" alt="${r.boothUsed}" class="w-full h-full object-cover">
+                  <span class="absolute top-3 start-3 px-3 py-1 rounded-full bg-[#1F1A1C]/85 text-[#F4C95D] text-[10px] font-extrabold uppercase tracking-wider">${r.eventType}</span>
+                  <span class="absolute bottom-3 end-3 px-2.5 py-1 rounded-full text-[10px] font-extrabold border backdrop-blur-md bg-white/90 ${badgeClass}">
+                    <i class="bi ${r.verifiedSample ? 'bi-patch-check-fill' : 'bi-person-check-fill'} me-1"></i>${badgeLabel}
+                  </span>
+                </div>
+                <div class="p-6">
+                  <div class="flex items-center justify-between mb-3">
+                    <div class="text-xs">${stars}</div>
+                    <span class="text-[11px] text-[#84727B] font-semibold">${r.date}</span>
+                  </div>
+                  <p class="text-xs sm:text-sm text-[#1F1A1C] leading-relaxed italic">"${r.comment}"</p>
+                </div>
+              </div>
+              <div class="px-6 pb-6 pt-3 border-t border-[#E6D8C7] flex items-center justify-between gap-3">
+                <div class="flex items-center gap-3">
+                  <img src="${r.avatar}" alt="${r.name}" class="w-10 h-10 rounded-full object-cover border border-[#E6D8C7]">
+                  <div>
+                    <h3 class="font-bold text-xs text-[#1F1A1C]">${r.name}</h3>
+                    <p class="text-[11px] text-[#84727B]">${r.role}</p>
+                  </div>
+                </div>
+                <span class="text-[10px] font-extrabold text-[#D9383A] bg-[#FAF3E8] px-2.5 py-1 rounded-lg text-end">${r.boothUsed}</span>
+              </div>
+            </article>
+          `;
+        }).join('');
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        populateBoothDropdown();
+        renderReviews();
+
+        // Category filter buttons
+        document.querySelectorAll('[data-rev-cat]').forEach(btn => {
+          btn.addEventListener('click', () => {
+            currentCat = btn.getAttribute('data-rev-cat');
+            document.querySelectorAll('[data-rev-cat]').forEach(b => {
+              if (b.getAttribute('data-rev-cat') === currentCat) {
+                b.className = 'px-4 py-2 rounded-full text-xs font-extrabold bg-[#D9383A] text-white shadow-sm transition';
+              } else {
+                b.className = 'px-4 py-2 rounded-full text-xs font-bold bg-[#FAF3E8] text-[#5A4B53] hover:border-[#D9383A] border border-[#E6D8C7] transition';
+              }
+            });
+            renderReviews();
+          });
+        });
+
+        // Search input
+        const searchInput = document.getElementById('reviewSearchInput');
+        if (searchInput) {
+          searchInput.addEventListener('input', (e) => {
+            searchStr = e.target.value.trim();
+            renderReviews();
+          });
+        }
+
+        // Leave Review Form Submission
+        const form = document.getElementById('leaveReviewForm');
+        const errBox = document.getElementById('revFormError');
+        if (form) {
+          form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            errBox.classList.add('hidden');
+
+            const name = document.getElementById('revName').value.trim();
+            const role = document.getElementById('revRole').value.trim();
+            const eventType = document.getElementById('revEventType').value;
+            const boothUsed = document.getElementById('revBoothUsed').value;
+            const rating = document.getElementById('revRating').value;
+            const comment = document.getElementById('revComment').value.trim();
+
+            if (!name || name.length < 2) {
+              errBox.textContent = 'Please enter your name (at least 2 characters).';
+              errBox.classList.remove('hidden');
+              return;
+            }
+            if (!role) {
+              errBox.textContent = 'Please enter your role or event host title.';
+              errBox.classList.remove('hidden');
+              return;
+            }
+            if (!comment || comment.length < 12) {
+              errBox.textContent = 'Please write a short review comment (at least 12 characters).';
+              errBox.classList.remove('hidden');
+              return;
+            }
+
+            window.PBStore.addReview({
+              name,
+              role,
+              eventType,
+              boothUsed,
+              rating: Number(rating),
+              comment
+            });
+
+            form.reset();
+            currentCat = 'All';
+            document.querySelectorAll('[data-rev-cat]').forEach(b => {
+              b.className = b.getAttribute('data-rev-cat') === 'All'
+                ? 'px-4 py-2 rounded-full text-xs font-extrabold bg-[#D9383A] text-white shadow-sm transition'
+                : 'px-4 py-2 rounded-full text-xs font-bold bg-[#FAF3E8] text-[#5A4B53] hover:border-[#D9383A] border border-[#E6D8C7] transition';
+            });
+            renderReviews();
+            window.PBUI.toast('Thank you! Your demo review is now live on the testimonial wall.', 'success', 'Review Published');
+            document.getElementById('reviewsGridContainer').scrollIntoView({ behavior: 'smooth', block: 'start' });
+          });
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

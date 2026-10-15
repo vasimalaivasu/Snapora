@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Customer Account | Snapora</title>
+  <meta name="description" content="Register a free Snapora customer account to save favorite photo booths, build custom event packages, and track your bookings.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#FDF8F2] text-[#1F1A1C] antialiased selection:bg-[#D9383A] selection:text-white">
+
+  <!-- Shared Navbar -->
+  <div id="navbar"></div>
+
+  <main class="pt-20 min-h-screen flex items-center py-14">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <!-- Left Benefits Column -->
+        <div class="lg:col-span-5 space-y-6">
+          <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#2A7B76]/15 text-[#2A7B76] text-xs font-extrabold uppercase tracking-widest">
+            <i class="bi bi-stars"></i> Client Planning Suite
+          </span>
+          <h1 class="font-serif-editorial text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#1F1A1C] leading-tight">
+            Create Your Event <span class="text-[#D9383A] italic font-normal">Planning</span> Account.
+          </h1>
+          <p class="text-sm sm:text-base text-[#5A4B53] leading-relaxed">
+            Unlock your personal Snapora dashboard to bookmark favorite booths, compare wedding & party packages, and track your booking status in real time.
+          </p>
+
+          <ul class="space-y-3 text-xs sm:text-sm font-semibold text-[#1F1A1C]">
+            <li class="flex items-center gap-3">
+              <span class="w-7 h-7 rounded-full bg-[#D9383A]/15 text-[#D9383A] flex items-center justify-center"><i class="bi bi-check-lg"></i></span>
+              <span>Save favorite photo booths, backdrops & packages</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-7 h-7 rounded-full bg-[#2A7B76]/15 text-[#2A7B76] flex items-center justify-center"><i class="bi bi-check-lg"></i></span>
+              <span>Track bookings from Pending to Event Preparation</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-7 h-7 rounded-full bg-[#E86A58]/15 text-[#E86A58] flex items-center justify-center"><i class="bi bi-check-lg"></i></span>
+              <span>Manage custom photo strip monograms & venue notes</span>
+            </li>
+          </ul>
+
+          <div class="p-5 rounded-2xl bg-[#FAF3E8] border border-[#E6D8C7] text-xs text-[#5A4B53]">
+            Already have an account?
+            <a href="login.html" class="font-extrabold text-[#D9383A] hover:underline ms-1">Sign in here →</a>
+          </div>
+        </div>
+
+        <!-- Right Registration Form Card -->
+        <div class="lg:col-span-7 surface-card bg-white p-7 sm:p-10 rounded-3xl border-2 border-[#E6D8C7] shadow-2xl space-y-6">
+          <!-- Top Auth Mode Toggle (Sign In / Sign Up) -->
+          <div class="flex items-center p-1.5 rounded-2xl bg-[#F5ECE0] dark:bg-[#1D1522] border border-[#E6D8C7] dark:border-[#523A61] shadow-inner">
+            <a href="login.html" id="authToggleSignIn" class="flex-1 py-2.5 px-4 text-center rounded-xl text-xs sm:text-sm font-bold text-[#5A4B53] dark:text-[#E8DEE7] hover:text-[#D9383A] hover:bg-white/70 dark:hover:bg-[#281D30] transition-all duration-200 flex items-center justify-center gap-2">
+              <i class="bi bi-box-arrow-in-right"></i>
+              <span>Sign In</span>
+            </a>
+            <a href="signup.html" id="authToggleSignUp" class="flex-1 py-2.5 px-4 text-center rounded-xl text-xs sm:text-sm font-extrabold bg-[#D9383A] text-white shadow-md transition-all duration-200 flex items-center justify-center gap-2">
+              <i class="bi bi-person-plus"></i>
+              <span>Sign Up</span>
+            </a>
+          </div>
+
+          <div>
+            <h2 class="font-serif-editorial text-2xl sm:text-3xl font-bold text-[#1F1A1C]">Customer Registration</h2>
+            <p class="text-xs text-[#84727B] mt-1">All fields marked with * are required. Duplicate email addresses are automatically prevented.</p>
+          </div>
+
+          <form id="registerForm" class="space-y-4" novalidate>
+            <div>
+              <label for="regName" class="block text-xs font-bold uppercase tracking-wider text-[#5A4B53] mb-1.5">Full Name *</label>
+              <input id="regName" type="text" required placeholder="e.g., Jordan & Taylor Reed" class="w-full px-4 py-3 rounded-xl border border-[#E6D8C7] bg-[#FDF8F2] text-sm font-medium focus:outline-none focus:border-[#D9383A]">
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="regEmail" class="block text-xs font-bold uppercase tracking-wider text-[#5A4B53] mb-1.5">Email Address *</label>
+                <input id="regEmail" type="email" required placeholder="name@example.com" class="w-full px-4 py-3 rounded-xl border border-[#E6D8C7] bg-[#FDF8F2] text-sm font-medium focus:outline-none focus:border-[#D9383A]">
+              </div>
+              <div>
+                <label for="regPhone" class="block text-xs font-bold uppercase tracking-wider text-[#5A4B53] mb-1.5">Phone Number *</label>
+                <input id="regPhone" type="tel" required placeholder="(555) 234-5678" class="w-full px-4 py-3 rounded-xl border border-[#E6D8C7] bg-[#FDF8F2] text-sm font-medium focus:outline-none focus:border-[#D9383A]">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="regPassword" class="block text-xs font-bold uppercase tracking-wider text-[#5A4B53] mb-1.5">Password (Min 6 chars) *</label>
+                <div class="relative">
+                  <input id="regPassword" type="password" required placeholder="Create password" class="w-full ps-4 pe-11 py-3 rounded-xl border border-[#E6D8C7] bg-[#FDF8F2] text-sm font-medium focus:outline-none focus:border-[#D9383A]">
+                  <button type="button" id="toggleRegPassBtn" aria-label="Show or hide password" class="absolute end-3 top-1/2 -translate-y-1/2 text-[#5A4B53] hover:text-[#D9383A]">
+                    <i class="bi bi-eye" id="toggleRegPassIcon"></i>
+                  </button>
+                </div>
+              </div>
+              <div>
+                <label for="regConfirmPassword" class="block text-xs font-bold uppercase tracking-wider text-[#5A4B53] mb-1.5">Confirm Password *</label>
+                <input id="regConfirmPassword" type="password" required placeholder="Confirm password" class="w-full px-4 py-3 rounded-xl border border-[#E6D8C7] bg-[#FDF8F2] text-sm font-medium focus:outline-none focus:border-[#D9383A]">
+              </div>
+            </div>
+
+            <div class="pt-2">
+              <label class="inline-flex items-start gap-2.5 cursor-pointer text-xs text-[#5A4B53]">
+                <input id="regTerms" type="checkbox" required class="w-4 h-4 mt-0.5 rounded border-[#E6D8C7] text-[#D9383A] focus:ring-[#D9383A]">
+                <span>I agree to the Snapora Rental Terms, Event Space Requirements & Privacy Policy. *</span>
+              </label>
+            </div>
+
+            <div id="regErrorBox" class="hidden p-3.5 rounded-xl bg-red-500/10 border border-red-500/30 text-xs font-bold text-[#D9383A]"></div>
+
+            <button type="submit" class="btn-cherry w-full !py-3.5 text-sm mt-2">
+              <i class="bi bi-person-plus-fill"></i>
+              <span>Create My Customer Account</span>
+            </button>
+          </form>
+
+          <!-- Social Signup Divider -->
+          <div class="relative flex items-center justify-center pt-1">
+            <div class="border-t border-[#E6D8C7] dark:border-[#523A61] w-full"></div>
+            <span class="bg-white dark:bg-[#281D30] px-3 text-[11px] font-extrabold uppercase tracking-wider text-[#84727B] dark:text-[#B8A8B6] absolute">
+              Or continue with
+            </span>
+          </div>
+
+          <!-- Social OAuth Buttons: Google & Apple -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+            <!-- Google Signup Button -->
+            <a href="https://accounts.google.com/signup" id="googleSignUpBtn" class="google-auth-btn flex items-center justify-center gap-2.5 px-4 py-3.5 rounded-xl border-2 border-[#E6D8C7] dark:border-[#523A61] bg-[#FDF8F2] dark:bg-[#1D1522] hover:bg-white dark:hover:bg-[#281D30] hover:border-[#D9383A] text-xs font-bold text-[#1F1A1C] dark:text-[#FFFDFB] shadow-xs hover:shadow-md transition-all duration-200 group">
+              <svg class="w-4 h-4 shrink-0 transition-transform group-hover:scale-110" viewBox="0 0 24 24">
+                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+              </svg>
+              <span>Google Sign Up</span>
+            </a>
+
+            <!-- Apple Signup Button -->
+            <a href="https://appleid.apple.com/account" id="appleSignUpBtn" class="apple-auth-btn flex items-center justify-center gap-2.5 px-4 py-3.5 rounded-xl border-2 border-[#E6D8C7] dark:border-[#523A61] bg-[#FDF8F2] dark:bg-[#1D1522] hover:bg-white dark:hover:bg-[#281D30] hover:border-[#1F1A1C] dark:hover:border-white text-xs font-bold text-[#1F1A1C] dark:text-[#FFFDFB] shadow-xs hover:shadow-md transition-all duration-200 group">
+              <i class="bi bi-apple text-base shrink-0 transition-transform group-hover:scale-110"></i>
+              <span>Apple Sign Up</span>
+            </a>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-[#E6D8C7] flex items-center justify-between text-xs">
+            <span class="text-[#84727B]">Already have an account?</span>
+            <a href="login.html" class="font-extrabold text-[#D9383A] hover:underline">Sign In to Your Account →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const passInput = document.getElementById('regPassword');
+      const confirmInput = document.getElementById('regConfirmPassword');
+      const toggleBtn = document.getElementById('toggleRegPassBtn');
+      const toggleIcon = document.getElementById('toggleRegPassIcon');
+      const errBox = document.getElementById('regErrorBox');
+
+      // Top Auth Mode Toggle - Redirect to Sign In
+      document.getElementById('authToggleSignIn')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.location.href = 'login.html';
+      });
+
+      // Google Sign Up Button - Redirect to Google Account Creation
+      document.getElementById('googleSignUpBtn')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.location.href = 'https://accounts.google.com/signup';
+      });
+
+      // Apple Sign Up Button - Redirect to Apple ID Creation
+      document.getElementById('appleSignUpBtn')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.location.href = 'https://appleid.apple.com/account';
+      });
+
+      toggleBtn?.addEventListener('click', () => {
+        const isPass = passInput.type === 'password';
+        passInput.type = isPass ? 'text' : 'password';
+        confirmInput.type = isPass ? 'text' : 'password';
+        toggleIcon.className = isPass ? 'bi bi-eye-slash' : 'bi bi-eye';
+      });
+
+      document.getElementById('registerForm')?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        errBox.classList.add('hidden');
+
+        const res = window.PBAuth.register({
+          name: document.getElementById('regName').value,
+          email: document.getElementById('regEmail').value,
+          phone: document.getElementById('regPhone').value,
+          password: passInput.value,
+          confirmPassword: confirmInput.value,
+          termsAccepted: document.getElementById('regTerms').checked
+        });
+
+        if (!res.ok) {
+          errBox.textContent = res.message;
+          errBox.classList.remove('hidden');
+          window.PBUI.toast(res.message, 'error');
+          return;
+        }
+
+        window.PBUI.toast(res.message, 'success');
+        setTimeout(() => {
+          window.location.href = 'index.html';
+        }, 500);
+      });
+    });
+  </script>
+</body>
+</html>

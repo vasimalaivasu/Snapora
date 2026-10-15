@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Packages &amp; Pricing | Snapora Admin</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="bg-[#FDF8F2] text-[#1F1A1C] antialiased">
+  <div class="flex h-screen overflow-hidden">
+    <div id="adminSidebarMount"></div>
+    <div class="flex-1 flex flex-col overflow-hidden w-full">
+      <div id="adminHeaderMount"></div>
+      <main class="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8">
+        <div class="max-w-7xl mx-auto">
+          <!-- Top Bar -->
+          <div class="surface-card bg-white rounded-3xl border border-[#E6D8C7] p-5 sm:p-6 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <span class="text-[11px] font-extrabold uppercase tracking-widest text-[#D9383A]">Tiered Rental Pricing</span>
+              <h2 class="font-serif-editorial text-xl sm:text-2xl font-bold text-[#1F1A1C] mt-0.5">Manage Photo Booth Rental Packages</h2>
+              <p class="text-xs text-[#84727B] mt-1">Create, edit, or toggle active packages synced live with the public Packages &amp; Booking pages.</p>
+            </div>
+            <button type="button" onclick="window.PBAdmin.openPackageModal()" class="btn-cherry !py-2.5 !px-5 text-xs shrink-0">
+              <i class="bi bi-plus-circle-fill"></i>
+              <span>+ Add New Package</span>
+            </button>
+          </div>
+
+          <!-- Packages Grid -->
+          <div id="adminPackagesGrid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mt-6"></div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="../assets/js/storage.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/admin-dashboard.js"></script>
+</body>
+</html>

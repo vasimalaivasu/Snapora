@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Gallery & Lookbook | Snapora</title>
+  <meta name="description" content="Explore real-style wedding receptions, 360 video reels, glam portraits, vintage photo strips, and custom backdrop installations by Snapora.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#FDF8F2] text-[#1F1A1C] antialiased selection:bg-[#D9383A] selection:text-white">
+
+  <!-- Shared Navbar -->
+  <div id="navbar"></div>
+
+  <main class="pt-20">
+    <!-- Gallery Hero Header with Authentic Vintage Booth & Photo Strip Background -->
+    <section id="galleryHeroSection" class="py-16 lg:py-24 border-b-2 border-[#E6D8C7] relative overflow-hidden bg-cover bg-center sm:bg-[position:82%_center] bg-no-repeat" style="background-image: url('assets/images/vintage-booth-strips-hero.jpg');">
+      <!-- Atmospheric Warm Vignette / Gradient Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-r from-[#FDF8F2] via-[#FDF8F2]/95 md:via-[#FAF3E8]/85 to-[#F5ECE0]/35 dark:from-[#1A121D] dark:via-[#211324]/95 dark:to-[#2B192E]/45"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="max-w-3xl">
+          <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white surface-card border border-[#E6D8C7] text-[#D9383A] text-xs font-extrabold uppercase tracking-widest shadow-xs">
+            <i class="bi bi-images"></i> Visual Lookbook &amp; Archive
+          </span>
+          <h1 class="font-serif-editorial text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#1F1A1C] mt-3 leading-[1.08]">
+            Candid Frames, Velvet Curtains &amp; <span class="text-[#D9383A] italic font-normal">Iconic</span> Setups.
+          </h1>
+          <p class="text-sm sm:text-base text-[#5A4B53] mt-3 leading-relaxed">
+            Browse our curated gallery of weddings, milestone birthdays, corporate brand activations, Glam Booth portraits, and custom 2×6 photo strips. Click any Polaroid frame to open the full-screen keyboard-accessible lightbox.
+          </p>
+          <div class="mt-5 flex flex-wrap items-center gap-3">
+            <a href="events.html" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-white surface-card border border-[#E6D8C7] hover:border-[#D9383A] text-[#1F1A1C] text-xs font-bold transition shadow-xs">
+              <i class="bi bi-calendar2-heart-fill text-[#D9383A]"></i>
+              <span>Explore All 14 Celebration Setups &amp; Pairings →</span>
+            </a>
+            <a href="booking.html" class="btn-cherry text-xs !py-2.5 !px-5 shadow-md">
+              <i class="bi bi-calendar2-check-fill"></i>
+              <span>Book Your Date</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Search & Filter Bar -->
+        <div class="mt-10 surface-card bg-white/95 backdrop-blur-md p-5 sm:p-6 rounded-3xl border border-[#E6D8C7] shadow-lg space-y-5">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div class="relative flex-1 max-w-md">
+              <i class="bi bi-search absolute start-4 top-1/2 -translate-y-1/2 text-[#84727B]"></i>
+              <label for="gallerySearchInput" class="sr-only">Search gallery captures</label>
+              <input id="gallerySearchInput" type="search" placeholder="Search by event, booth style, backdrop, or keyword..." class="w-full ps-11 pe-4 py-3 rounded-2xl border border-[#E6D8C7] bg-[#FDF8F2] text-sm font-medium focus:outline-none focus:border-[#D9383A]">
+            </div>
+            <div class="flex items-center gap-3">
+              <p id="galleryCountLabel" class="text-xs font-bold text-[#5A4B53]">Showing 12 of 12 curated event captures</p>
+              <button type="button" onclick="window.PBUI.openAvailabilityModal()" class="btn-cherry text-xs !py-2.5 !px-4">
+                <i class="bi bi-calendar2-heart-fill"></i>
+                <span>Check Date</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 11 Category Filter Buttons -->
+          <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-[#E6D8C7]" role="region" aria-label="Gallery Category Filters">
+            <button type="button" data-gallery-cat="All" onclick="window.PBGallery.filterByCategory('All')" class="px-4 py-2 rounded-full text-xs font-extrabold bg-[#D9383A] text-white shadow-md transition">All</button>
+            <button type="button" data-gallery-cat="Weddings" onclick="window.PBGallery.filterByCategory('Weddings')" class="px-4 py-2 rounded-full text-xs font-bold bg-white surface-card border border-[#E6D8C7] text-[#5A4B53] hover:border-[#D9383A] transition">Weddings</button>
+            <button type="button" data-gallery-cat="Birthdays" onclick="window.PBGallery.filterByCategory('Birthdays')" class="px-4 py-2 rounded-full text-xs font-bold bg-white surface-card border border-[#E6D8C7] text-[#5A4B53] hover:border-[#D9383A] transition">Birthdays</button>
+            <button type="button" data-gallery-cat="Corporate Events" onclick="window.PBGallery.filterByCategory('Corporate Events')" class="px-4 py-2 rounded-full text-xs font-bold bg-white surface-card border border-[#E6D8C7] text-[#5A4B53] hover:border-[#D9383A] transition">Corporate Events</button>
+            <button type="button" data-gallery-cat="Private Parties" onclick="window.PBGallery.filterByCategory('Private Parties')" class="px-4 py-2 rounded-full text-xs font-bold bg-white surface-card border border-[#E6D8C7] text-[#5A4B53] hover:border-[#D9383A] transition">Private Parties</button>
+            <button type="button" data-gallery-cat="Retro Themes" onclick="window.PBGallery.filterByCategory('Retro Themes')" class="px-4 py-2 rounded-full text-xs font-bold bg-white surface-card border border-[#E6D8C7] text-[#5A4B53] hover:border-[#D9383A] transition">Retro Themes</button>
+            <button type="button" data-gallery-cat="Glam Booths" onclick="window.PBGallery.filterByCategory('Glam Booths')" class="px-4 py-2 rounded-full text-xs font-bold bg-white surface-card border border-[#E6D8C7] text-[#5A4B53] hover:border-[#D9383A] transition">Glam Booths</button>
+            <button type="button" data-gallery-cat="360 Video Booths" onclick="window.PBGallery.filterByCategory('360 Video Booths')" class="px-4 py-2 rounded-full text-xs font-bold bg-white surface-card border border-[#E6D8C7] text-[#5A4B53] hover:border-[#D9383A] transition">360 Video Booths</button>
+            <button type="button" data-gallery-cat="Backdrops" onclick="window.PBGallery.filterByCategory('Backdrops')" class="px-4 py-2 rounded-full text-xs font-bold bg-white surface-card border border-[#E6D8C7] text-[#5A4B53] hover:border-[#D9383A] transition">Backdrops</button>
+            <button type="button" data-gallery-cat="Photo Strips" onclick="window.PBGallery.filterByCategory('Photo Strips')" class="px-4 py-2 rounded-full text-xs font-bold bg-white surface-card border border-[#E6D8C7] text-[#5A4B53] hover:border-[#D9383A] transition">Photo Strips</button>
+            <button type="button" data-gallery-cat="Props and Setups" onclick="window.PBGallery.filterByCategory('Props and Setups')" class="px-4 py-2 rounded-full text-xs font-bold bg-white surface-card border border-[#E6D8C7] text-[#5A4B53] hover:border-[#D9383A] transition">Props and Setups</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Masonry Gallery Section -->
+    <section class="py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div id="galleryMasonryGrid" class="masonry-grid mt-8"></div>
+    </section>
+
+    <!-- Bottom CTA Banner -->
+    <section class="pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div id="galleryBottomCta" class="bg-gradient-to-br from-[#FAF3E8] to-[#F5ECE0] text-[#1F1A1C] rounded-3xl p-8 sm:p-12 border-2 border-[#D9383A] shadow-xl flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div class="max-w-xl">
+          <span class="inline-block px-3 py-1 rounded-full bg-[#D9383A]/10 text-[#D9383A] text-xs font-extrabold uppercase tracking-widest mb-3">Inspired by Our Lookbook?</span>
+          <h2 class="font-serif-editorial text-3xl sm:text-4xl font-bold text-[#1F1A1C]">Book a Similar Photo Booth Experience for Your Celebration</h2>
+          <p class="text-sm text-[#5A4B53] mt-2 leading-relaxed">
+            Choose from all 12 photo booth styles, 10 statement backdrops, and custom monogrammed photo strips in our interactive booking studio.
+          </p>
+        </div>
+        <div class="flex flex-wrap items-center gap-4 shrink-0">
+          <a href="booking.html" class="btn-cherry">
+            <i class="bi bi-calendar2-heart-fill"></i>
+            <span>Book This Experience</span>
+          </a>
+          <a href="backdrops.html" class="btn-outline-vintage text-xs">
+            Explore Backdrops & Props
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared Footer -->
+  <div id="footer"></div>
+
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/gallery.js"></script>
+</body>
+</html>

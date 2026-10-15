@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Planning & Photo Booth Blog | Snapora</title>
+  <meta name="description" content="Expert wedding photo booth advice, milestone birthday party themes, backdrop inspiration, and corporate activation guides by Snapora.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#FDF8F2] text-[#1F1A1C] antialiased selection:bg-[#D9383A] selection:text-white">
+
+  <!-- Shared Navbar -->
+  <div id="navbar"></div>
+
+  <main class="pt-20">
+    <!-- Blog Hero Header -->
+    <section class="py-14 lg:py-20 bg-[#F5ECE0] border-b border-[#E6D8C7]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
+          <div class="max-w-2xl">
+            <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#D9383A]/10 text-[#D9383A] text-xs font-extrabold uppercase tracking-widest">
+              <i class="bi bi-journal-richtext"></i> Snapora Editorial Journal
+            </span>
+            <h1 class="font-serif-editorial text-4xl sm:text-5xl font-extrabold text-[#1F1A1C] mt-3 leading-tight">
+              Celebration Guides, Backdrop Trends & <span class="text-[#D9383A] italic font-normal">Studio</span> Notes.
+            </h1>
+            <p class="text-sm sm:text-base text-[#5A4B53] mt-3 leading-relaxed">
+              Practical tips from our creative directors, lighting engineers, and set stylists to help you plan an unforgettable wedding reception, birthday bash, or corporate activation.
+            </p>
+          </div>
+
+          <!-- Search Input -->
+          <div class="w-full lg:w-80">
+            <div class="relative">
+              <i class="bi bi-search absolute start-4 top-1/2 -translate-y-1/2 text-[#84727B]"></i>
+              <label for="blogSearchInput" class="sr-only">Search articles</label>
+              <input id="blogSearchInput" type="search" placeholder="Search articles, topics, or tags..." class="w-full ps-11 pe-4 py-3.5 rounded-2xl border border-[#E6D8C7] bg-white text-sm font-medium shadow-sm focus:outline-none focus:border-[#D9383A]">
+            </div>
+          </div>
+        </div>
+
+        <!-- Category Filter Pills (All + 8 Categories) -->
+        <div class="flex flex-wrap items-center gap-2 mt-8 pt-6 border-t border-[#E6D8C7]" id="blogCategoryPills" role="region" aria-label="Blog Categories">
+          <button type="button" data-blog-cat="All" class="px-4 py-2 rounded-full text-xs font-extrabold bg-[#D9383A] text-white shadow-sm transition">All</button>
+          <button type="button" data-blog-cat="Wedding Planning" class="px-4 py-2 rounded-full text-xs font-bold bg-white surface-card border border-[#E6D8C7] text-[#5A4B53] hover:border-[#D9383A] transition">Wedding Planning</button>
+          <button type="button" data-blog-cat="Birthday Party Ideas" class="px-4 py-2 rounded-full text-xs font-bold bg-white surface-card border border-[#E6D8C7] text-[#5A4B53] hover:border-[#D9383A] transition">Birthday Party Ideas</button>
+          <button type="button" data-blog-cat="Corporate Events" class="px-4 py-2 rounded-full text-xs font-bold bg-white surface-card border border-[#E6D8C7] text-[#5A4B53] hover:border-[#D9383A] transition">Corporate Events</button>
+          <button type="button" data-blog-cat="Photo Booth Tips" class="px-4 py-2 rounded-full text-xs font-bold bg-white surface-card border border-[#E6D8C7] text-[#5A4B53] hover:border-[#D9383A] transition">Photo Booth Tips</button>
+          <button type="button" data-blog-cat="Backdrop Inspiration" class="px-4 py-2 rounded-full text-xs font-bold bg-white surface-card border border-[#E6D8C7] text-[#5A4B53] hover:border-[#D9383A] transition">Backdrop Inspiration</button>
+          <button type="button" data-blog-cat="Party Themes" class="px-4 py-2 rounded-full text-xs font-bold bg-white surface-card border border-[#E6D8C7] text-[#5A4B53] hover:border-[#D9383A] transition">Party Themes</button>
+          <button type="button" data-blog-cat="Event Entertainment" class="px-4 py-2 rounded-full text-xs font-bold bg-white surface-card border border-[#E6D8C7] text-[#5A4B53] hover:border-[#D9383A] transition">Event Entertainment</button>
+          <button type="button" data-blog-cat="Photography Trends" class="px-4 py-2 rounded-full text-xs font-bold bg-white surface-card border border-[#E6D8C7] text-[#5A4B53] hover:border-[#D9383A] transition">Photography Trends</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Article Hero Card -->
+    <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="featuredBlogContainer"></section>
+
+    <!-- Latest Posts Grid & Tags Cloud -->
+    <section class="pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between mb-8">
+        <div>
+          <h2 class="font-serif-editorial text-2xl sm:text-3xl font-bold text-[#1F1A1C]">Latest Editorial Articles</h2>
+          <p id="blogResultsCounter" class="text-xs text-[#84727B] mt-1">Showing all 8 articles</p>
+        </div>
+        <button type="button" id="resetBlogFilterBtn" class="hidden text-xs font-extrabold text-[#D9383A] hover:underline">
+          <i class="bi bi-arrow-counterclockwise me-1"></i> Reset Filter
+        </button>
+      </div>
+
+      <div id="blogPostsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+
+      <!-- Pagination UI -->
+      <div class="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-[#E6D8C7]">
+        <p class="text-xs font-semibold text-[#5A4B53]" id="paginationSummaryText">Page 1 of 1 • All curated guides loaded</p>
+        <div class="flex items-center gap-2">
+          <button type="button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="px-4 py-2 rounded-xl border border-[#E6D8C7] bg-white surface-card text-xs font-bold hover:border-[#D9383A] transition">
+            <i class="bi bi-arrow-up me-1"></i> Back to Top
+          </button>
+          <span class="w-9 h-9 rounded-xl bg-[#D9383A] text-white flex items-center justify-center text-xs font-extrabold shadow-sm">1</span>
+        </div>
+      </div>
+
+      <!-- Popular Tags Cloud & Quick CTA -->
+      <div class="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center surface-card bg-white p-8 rounded-3xl border border-[#E6D8C7]">
+        <div class="lg:col-span-7 space-y-3">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-[#2A7B76]">Explore By Topic Tag</span>
+          <h3 class="font-serif-editorial text-2xl font-bold text-[#1F1A1C]">Popular Event Planning Tags</h3>
+          <div id="blogTagsCloud" class="flex flex-wrap gap-2 pt-2"></div>
+        </div>
+        <div id="blogBookingCard" class="lg:col-span-5 bg-[#FAF3E8] text-[#1F1A1C] p-6 rounded-2xl border border-[#E6D8C7] space-y-3">
+          <span class="text-[10px] font-extrabold uppercase tracking-widest text-[#D9383A]">Ready to Bring Ideas to Life?</span>
+          <h4 class="font-serif-editorial text-xl font-bold text-[#1F1A1C]">Customize Your Photo Booth Package Online</h4>
+          <p class="text-xs text-[#5A4B53]">Select your booth, backdrop, and custom strip layout with instant transparent pricing.</p>
+          <a href="booking.html" class="btn-cherry w-full text-xs !py-3 mt-2">
+            <i class="bi bi-calendar2-heart-fill"></i>
+            <span>Launch Booking Studio</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared Footer -->
+  <div id="footer"></div>
+
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    (function () {
+      let activeCat = 'All';
+      let activeQuery = '';
+
+      function renderFeatured(blogs) {
+        const container = document.getElementById('featuredBlogContainer');
+        if (!container || !blogs.length) return;
+        const feat = blogs.find(b => b.featured) || blogs[0];
+
+        if (activeCat !== 'All' || activeQuery) {
+          container.classList.add('hidden');
+          return;
+        }
+        container.classList.remove('hidden');
+
+        container.innerHTML = `
+          <article class="surface-card bg-white rounded-3xl border-2 border-[#E6D8C7] overflow-hidden shadow-lg grid grid-cols-1 lg:grid-cols-12">
+            <div class="lg:col-span-7 relative min-h-[300px] sm:min-h-[380px] overflow-hidden">
+              <img src="${feat.image}" alt="${feat.title}" class="w-full h-full object-cover hover:scale-105 transition duration-700">
+              <span class="absolute top-4 start-4 px-3.5 py-1.5 rounded-full bg-[#D9383A] text-white text-xs font-extrabold uppercase tracking-wider shadow-md">
+                <i class="bi bi-stars me-1"></i> Featured Editorial
+              </span>
+            </div>
+            <div class="lg:col-span-5 p-7 sm:p-10 flex flex-col justify-between bg-[#FAF3E8]">
+              <div class="space-y-4">
+                <div class="flex items-center gap-3 text-xs font-bold text-[#D9383A]">
+                  <span>${feat.category}</span>
+                  <span>•</span>
+                  <span class="text-[#84727B]">${feat.readTime}</span>
+                </div>
+                <h2 class="font-serif-editorial text-2xl sm:text-3xl font-bold text-[#1F1A1C] leading-snug">
+                  <a href="blog-details.html?id=${feat.id}" class="hover:text-[#D9383A] transition">${feat.title}</a>
+                </h2>
+                <p class="text-sm text-[#5A4B53] leading-relaxed">${feat.excerpt}</p>
+              </div>
+              <div class="pt-6 mt-6 border-t border-[#E6D8C7] flex items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                  <img src="${feat.authorAvatar}" alt="${feat.author}" class="w-10 h-10 rounded-full object-cover">
+                  <div>
+                    <p class="text-xs font-bold text-[#1F1A1C]">${feat.author}</p>
+                    <p class="text-[11px] text-[#84727B]">${feat.date}</p>
+                  </div>
+                </div>
+                <a href="blog-details.html?id=${feat.id}" class="btn-cherry text-xs !py-2.5 !px-4 shrink-0">
+                  <span>Read Article</span>
+                  <i class="bi bi-arrow-right rtl-flip"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+        `;
+      }
+
+      function renderBlogs() {
+        if (!window.PBStore) return;
+        const allBlogs = window.PBStore.getBlogs();
+        renderFeatured(allBlogs);
+
+        const grid = document.getElementById('blogPostsGrid');
+        const counter = document.getElementById('blogResultsCounter');
+        const resetBtn = document.getElementById('resetBlogFilterBtn');
+
+        const filtered = allBlogs.filter(b => {
+          const matchCat = activeCat === 'All' || b.category === activeCat;
+          const q = activeQuery.toLowerCase();
+          const matchQ = !q ||
+            b.title.toLowerCase().includes(q) ||
+            b.excerpt.toLowerCase().includes(q) ||
+            b.category.toLowerCase().includes(q) ||
+            (b.tags || []).some(t => t.toLowerCase().includes(q));
+          return matchCat && matchQ;
+        });
+
+        if (counter) {
+          counter.textContent = `Showing ${filtered.length} of ${allBlogs.length} editorial articles`;
+        }
+        if (resetBtn) {
+          if (activeCat !== 'All' || activeQuery) {
+            resetBtn.classList.remove('hidden');
+          } else {
+            resetBtn.classList.add('hidden');
+          }
+        }
+
+        if (filtered.length === 0) {
+          grid.innerHTML = `
+            <div class="col-span-full text-center py-16 surface-card bg-white rounded-3xl border border-[#E6D8C7] p-6">
+              <i class="bi bi-journal-x text-4xl text-[#D9383A]"></i>
+              <h3 class="font-serif-editorial text-xl font-bold mt-3">No articles found matching your filter</h3>
+              <p class="text-xs text-[#5A4B53] mt-1">Try clearing your search or selecting "All" categories.</p>
+            </div>
+          `;
+          return;
+        }
+
+        grid.innerHTML = filtered.map(blog => `
+          <article class="surface-card bg-white rounded-3xl border border-[#E6D8C7] overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col justify-between group">
+            <div>
+              <a href="blog-details.html?id=${blog.id}" class="block relative h-56 overflow-hidden">
+                <img src="${blog.image}" alt="${blog.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                <span class="absolute top-3 start-3 px-3 py-1 rounded-full bg-[#2B192E]/90 text-[#F4C95D] text-[10px] font-extrabold uppercase tracking-wider">${blog.category}</span>
+              </a>
+              <div class="p-6">
+                <div class="flex items-center gap-2 text-[11px] font-semibold text-[#84727B] mb-2">
+                  <span><i class="bi bi-calendar3 me-1"></i>${blog.date}</span>
+                  <span>•</span>
+                  <span><i class="bi bi-clock me-1"></i>${blog.readTime}</span>
+                </div>
+                <h3 class="font-serif-editorial text-xl font-bold text-[#1F1A1C] leading-snug group-hover:text-[#D9383A] transition">
+                  <a href="blog-details.html?id=${blog.id}">${blog.title}</a>
+                </h3>
+                <p class="text-xs sm:text-sm text-[#5A4B53] mt-2.5 line-clamp-3 leading-relaxed">${blog.excerpt}</p>
+                <div class="flex flex-wrap gap-1.5 mt-4">
+                  ${(blog.tags || []).map(t => `<span class="px-2.5 py-0.5 rounded-md bg-[#FAF3E8] text-[10px] font-bold text-[#5A4B53]">#${t}</span>`).join('')}
+                </div>
+              </div>
+            </div>
+
+            <div class="px-6 pb-6 pt-4 border-t border-[#E6D8C7] flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <img src="${blog.authorAvatar}" alt="${blog.author}" class="w-8 h-8 rounded-full object-cover">
+                <span class="text-xs font-bold text-[#1F1A1C] truncate max-w-[140px]">${blog.author.split(',')[0]}</span>
+              </div>
+              <a href="blog-details.html?id=${blog.id}" class="text-xs font-extrabold text-[#D9383A] hover:underline flex items-center gap-1">
+                <span>Read More</span>
+                <i class="bi bi-arrow-right rtl-flip"></i>
+              </a>
+            </div>
+          </article>
+        `).join('');
+      }
+
+      function renderTagsCloud() {
+        const cloud = document.getElementById('blogTagsCloud');
+        if (!cloud || !window.PBStore) return;
+        const blogs = window.PBStore.getBlogs();
+        const tagSet = new Set();
+        blogs.forEach(b => (b.tags || []).forEach(t => tagSet.add(t)));
+
+        cloud.innerHTML = Array.from(tagSet).map(tag => `
+          <button type="button" data-tag-pill="${tag}" class="px-3.5 py-1.5 rounded-xl bg-[#FAF3E8] hover:bg-[#D9383A] hover:text-white border border-[#E6D8C7] text-xs font-bold text-[#5A4B53] transition">
+            #${tag}
+          </button>
+        `).join('');
+
+        cloud.querySelectorAll('[data-tag-pill]').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const tag = btn.getAttribute('data-tag-pill');
+            const input = document.getElementById('blogSearchInput');
+            if (input) input.value = tag;
+            activeQuery = tag;
+            renderBlogs();
+            document.getElementById('blogPostsGrid').scrollIntoView({ behavior: 'smooth' });
+          });
+        });
+      }
+
+      function updateCategoryButtonStyles() {
+        document.querySelectorAll('[data-blog-cat]').forEach(btn => {
+          if (btn.getAttribute('data-blog-cat') === activeCat) {
+            btn.className = 'px-4 py-2 rounded-full text-xs font-extrabold bg-[#D9383A] text-white shadow-sm transition';
+          } else {
+            btn.className = 'px-4 py-2 rounded-full text-xs font-bold bg-white surface-card border border-[#E6D8C7] text-[#5A4B53] hover:border-[#D9383A] transition';
+          }
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('category')) {
+          activeCat = params.get('category');
+          updateCategoryButtonStyles();
+        }
+        if (params.get('tag')) {
+          activeQuery = params.get('tag');
+          const sInput = document.getElementById('blogSearchInput');
+          if (sInput) sInput.value = activeQuery;
+        }
+
+        renderBlogs();
+        renderTagsCloud();
+
+        document.querySelectorAll('[data-blog-cat]').forEach(btn => {
+          btn.addEventListener('click', () => {
+            activeCat = btn.getAttribute('data-blog-cat');
+            updateCategoryButtonStyles();
+            renderBlogs();
+          });
+        });
+
+        const searchInput = document.getElementById('blogSearchInput');
+        if (searchInput) {
+          searchInput.addEventListener('input', (e) => {
+            activeQuery = e.target.value.trim();
+            renderBlogs();
+          });
+        }
+
+        const resetBtn = document.getElementById('resetBlogFilterBtn');
+        if (resetBtn) {
+          resetBtn.addEventListener('click', () => {
+            activeCat = 'All';
+            activeQuery = '';
+            if (searchInput) searchInput.value = '';
+            updateCategoryButtonStyles();
+            renderBlogs();
+          });
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

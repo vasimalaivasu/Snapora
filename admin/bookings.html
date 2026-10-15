@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking &amp; Event Management | Snapora Admin</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="bg-[#FDF8F2] text-[#1F1A1C] antialiased">
+  <div class="flex h-screen overflow-hidden">
+    <div id="adminSidebarMount"></div>
+    <div class="flex-1 flex flex-col overflow-hidden w-full">
+      <div id="adminHeaderMount"></div>
+      <main class="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8">
+        <div class="max-w-7xl mx-auto space-y-6">
+          <!-- Top Action Bar -->
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <span class="text-[11px] font-extrabold uppercase tracking-widest text-[#D9383A]">Operations &amp; Dispatch</span>
+              <h2 class="font-serif-editorial text-2xl font-bold text-[#1F1A1C]">All Photo Booth Reservations</h2>
+            </div>
+            <div class="flex flex-wrap items-center gap-2.5">
+              <button type="button" onclick="window.PBAdmin.exportBookingsToCSV()" class="btn-outline-vintage !py-2.5 !px-4 text-xs">
+                <i class="bi bi-file-earmark-spreadsheet-fill text-[#2A7B76]"></i>
+                <span>Export CSV</span>
+              </button>
+              <a href="../booking.html" class="btn-cherry !py-2.5 !px-4 text-xs">
+                <i class="bi bi-plus-lg"></i>
+                <span>+ Create Booking</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Filter & Search Bar -->
+          <div class="surface-card bg-white rounded-3xl border border-[#E6D8C7] p-5 shadow-xs">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5">
+              <div class="relative lg:col-span-1">
+                <i class="bi bi-search absolute start-3.5 top-1/2 -translate-y-1/2 text-[#84727B] text-xs"></i>
+                <input
+                  type="text"
+                  id="admBookingSearch"
+                  placeholder="Search ref, client, email, booth..."
+                  class="w-full ps-9 pe-3 py-2.5 rounded-xl border border-[#E6D8C7] bg-[#FAF3E8] text-xs font-semibold focus:outline-none focus:border-[#D9383A]"
+                >
+              </div>
+              <div>
+                <select id="admBookingEventFilter" aria-label="Filter by event category" class="w-full px-3.5 py-2.5 rounded-xl border border-[#E6D8C7] bg-[#FAF3E8] text-xs font-bold">
+                  <option value="All">All Event Types</option>
+                </select>
+              </div>
+              <div>
+                <select id="admBookingStatusFilter" aria-label="Filter by status" class="w-full px-3.5 py-2.5 rounded-xl border border-[#E6D8C7] bg-[#FAF3E8] text-xs font-bold">
+                  <option value="All">All Statuses</option>
+                  <option value="Pending">Pending</option>
+                  <option value="Under Review">Under Review</option>
+                  <option value="Confirmed">Confirmed</option>
+                  <option value="Event Preparation">Event Preparation</option>
+                  <option value="Event Completed">Event Completed</option>
+                  <option value="Cancelled">Cancelled</option>
+                </select>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <input
+                  type="date"
+                  id="admBookingDateFilter"
+                  aria-label="Filter by specific event date"
+                  class="flex-1 px-3 py-2.5 rounded-xl border border-[#E6D8C7] bg-[#FAF3E8] text-xs font-bold"
+                >
+                <button
+                  type="button"
+                  onclick="document.getElementById('admBookingDateFilter').value='';document.getElementById('admBookingDateFilter').dispatchEvent(new Event('change'));"
+                  title="Clear Date Filter"
+                  class="px-2.5 py-2.5 rounded-xl border border-[#E6D8C7] bg-[#FAF3E8] hover:border-[#D9383A] text-xs font-bold text-[#84727B] hover:text-[#D9383A] transition"
+                >
+                  Clear
+                </button>
+              </div>
+              <div>
+                <select id="admBookingSort" aria-label="Sort bookings" class="w-full px-3.5 py-2.5 rounded-xl border border-[#E6D8C7] bg-[#FAF3E8] text-xs font-bold">
+                  <option value="newest">Sort: Newest Event Date</option>
+                  <option value="date-asc">Sort: Earliest Event Date</option>
+                  <option value="total-desc">Sort: Highest Est. Total</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Responsive Bookings Table -->
+          <div class="surface-card bg-white rounded-3xl border border-[#E6D8C7] p-6 shadow-xs">
+            <div class="table-responsive">
+              <table class="w-full text-start text-xs">
+                <thead>
+                  <tr class="border-b border-[#E6D8C7] text-[10px] font-extrabold uppercase tracking-wider text-[#84727B]">
+                    <th class="py-3.5 px-3 text-start">Ref</th>
+                    <th class="py-3.5 px-3 text-start">Customer</th>
+                    <th class="py-3.5 px-3 text-start">Event &amp; Date</th>
+                    <th class="py-3.5 px-3 text-start">Booth &amp; Package</th>
+                    <th class="py-3.5 px-3 text-start">Coordinator</th>
+                    <th class="py-3.5 px-3 text-start">Est. Total</th>
+                    <th class="py-3.5 px-3 text-start">Status Selector</th>
+                    <th class="py-3.5 px-3 text-end">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="adminBookingsTableBody" class="divide-y divide-[#E6D8C7]"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="../assets/js/storage.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/admin-dashboard.js"></script>
+</body>
+</html>

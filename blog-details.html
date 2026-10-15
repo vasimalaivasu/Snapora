@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article Details | Snapora Blog</title>
+  <meta name="description" content="In-depth event planning insights, photo booth lighting guides, and celebration inspiration by Snapora.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#FDF8F2] text-[#1F1A1C] antialiased selection:bg-[#D9383A] selection:text-white">
+
+  <!-- Shared Navbar -->
+  <div id="navbar"></div>
+
+  <main class="pt-20">
+    <!-- Breadcrumb & Article Hero -->
+    <section class="py-12 lg:py-16 bg-[#F5ECE0] border-b border-[#E6D8C7]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs font-bold text-[#84727B] mb-6">
+          <a href="index.html" class="hover:text-[#D9383A]">Home</a>
+          <i class="bi bi-chevron-right rtl-flip text-[10px]"></i>
+          <a href="blog.html" class="hover:text-[#D9383A]">Event Blog</a>
+          <i class="bi bi-chevron-right rtl-flip text-[10px]"></i>
+          <span id="crumbCategory" class="text-[#D9383A]">Wedding Planning</span>
+        </nav>
+
+        <div class="max-w-4xl">
+          <div class="flex flex-wrap items-center gap-3 mb-4">
+            <span id="articleCategoryBadge" class="px-3.5 py-1 rounded-full bg-[#D9383A] text-white text-xs font-extrabold uppercase tracking-wider">Wedding Planning</span>
+            <span id="articleReadTime" class="text-xs font-bold text-[#5A4B53]"><i class="bi bi-clock me-1"></i>6 min read</span>
+            <span id="articleDate" class="text-xs font-semibold text-[#84727B]"><i class="bi bi-calendar3 me-1"></i>October 4, 2026</span>
+          </div>
+
+          <h1 id="articleTitle" class="font-serif-editorial text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#1F1A1C] leading-tight">
+            Vintage Enclosed vs. Open-Air Photo Booths: Which Fits Your Wedding Vibe?
+          </h1>
+
+          <div class="flex flex-wrap items-center justify-between gap-4 mt-6 pt-6 border-t border-[#E6D8C7]">
+            <div class="flex items-center gap-3">
+              <img id="articleAuthorAvatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=160&q=80" alt="Author" class="w-12 h-12 rounded-full object-cover border-2 border-[#D9383A]">
+              <div>
+                <p id="articleAuthorName" class="text-sm font-bold text-[#1F1A1C]">Eleanor Vance, Creative Director</p>
+                <p class="text-xs text-[#84727B]">Snapora Editorial Team</p>
+              </div>
+            </div>
+
+            <!-- Social Share & Copy Link -->
+            <div class="flex items-center gap-2">
+              <button type="button" id="copyArticleLinkBtn" class="px-3.5 py-2 rounded-xl bg-white surface-card border border-[#E6D8C7] text-xs font-bold hover:border-[#D9383A] hover:text-[#D9383A] transition flex items-center gap-1.5">
+                <i class="bi bi-link-45deg text-base"></i>
+                <span>Copy Article Link</span>
+              </button>
+              <button type="button" onclick="window.PBUI.toast('Shared to X / Twitter demo feed!', 'info')" aria-label="Share on X" class="w-9 h-9 rounded-xl bg-white surface-card border border-[#E6D8C7] flex items-center justify-center hover:border-[#D9383A] transition">
+                <i class="bi bi-twitter-x text-xs"></i>
+              </button>
+              <button type="button" onclick="window.PBUI.toast('Shared to Pinterest Inspiration Board!', 'info')" aria-label="Share on Pinterest" class="w-9 h-9 rounded-xl bg-white surface-card border border-[#E6D8C7] flex items-center justify-center hover:border-[#D9383A] transition">
+                <i class="bi bi-pinterest text-xs text-[#D9383A]"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Article Layout + Sidebar -->
+    <section class="py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <!-- Article Body Column -->
+        <div class="lg:col-span-8 space-y-8">
+          <!-- Featured Image -->
+          <div class="polaroid-frame !pb-10">
+            <img id="articleFeaturedImg" src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=80" alt="Article featured capture" class="w-full max-h-[460px] object-cover rounded-xl">
+            <p id="articlePolaroidCaption" class="polaroid-caption">Captured by Snapora</p>
+          </div>
+
+          <!-- Table of Contents -->
+          <div class="surface-card bg-[#FAF3E8] p-6 rounded-3xl border border-[#E6D8C7]">
+            <h2 class="font-serif-editorial text-lg font-bold text-[#1F1A1C] flex items-center gap-2">
+              <i class="bi bi-list-columns-reverse text-[#D9383A]"></i>
+              <span>In This Planning Guide (Table of Contents)</span>
+            </h2>
+            <ol class="mt-3 space-y-2 text-xs sm:text-sm font-semibold text-[#5A4B53] list-decimal list-inside">
+              <li><a href="#sec-overview" class="hover:text-[#D9383A] transition">Setting the Atmosphere for Your Celebration</a></li>
+              <li><a href="#sec-lighting" class="hover:text-[#D9383A] transition">Optical Lighting, Backdrop Pairing & Print Formats</a></li>
+              <li><a href="#sec-placement" class="hover:text-[#D9383A] transition">Venue Placement & Timeline Best Practices</a></li>
+              <li><a href="#sec-checklist" class="hover:text-[#D9383A] transition">Host Checklist & Custom Monogram Tips</a></li>
+            </ol>
+          </div>
+
+          <!-- Dynamic Article Paragraphs -->
+          <article id="articleBodyContent" class="space-y-6 text-sm sm:text-base text-[#1F1A1C] leading-relaxed"></article>
+
+          <!-- Key Takeaway Callout -->
+          <div id="sec-checklist" class="surface-card bg-white p-7 rounded-3xl border-2 border-[#2A7B76]/40 shadow-sm space-y-3">
+            <span class="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-[#2A7B76]">
+              <i class="bi bi-lightbulb-fill"></i> Studio Producer Pro-Tip
+            </span>
+            <h3 class="font-serif-editorial text-xl font-bold text-[#1F1A1C]">Always Schedule 1 Idle Hour During Dinner Toasts</h3>
+            <p class="text-sm text-[#5A4B53] leading-relaxed">
+              Want your photo booth operational during cocktail hour and ready again the second the dance floor opens—without paying for active hours while guests are eating? Add an Idle Hour in our online booking studio so our concierge sets up before guests arrive and pauses smoothly during speeches.
+            </p>
+          </div>
+
+          <!-- Article Tags & Share Footer -->
+          <div class="surface-card bg-white p-6 rounded-3xl border border-[#E6D8C7] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div class="flex flex-wrap items-center gap-2" id="articleTagsList"></div>
+            <button type="button" onclick="document.getElementById('copyArticleLinkBtn').click()" class="btn-outline-vintage text-xs !py-2 !px-4">
+              <i class="bi bi-share-fill"></i>
+              <span>Share Guide</span>
+            </button>
+          </div>
+
+          <!-- Interactive Comments Section (LocalStorage: fb_studio_blog_comments) -->
+          <div class="surface-card bg-white p-7 sm:p-9 rounded-3xl border border-[#E6D8C7] space-y-6" id="commentsSection">
+            <div class="flex items-center justify-between border-b border-[#E6D8C7] pb-4">
+              <h3 class="font-serif-editorial text-2xl font-bold text-[#1F1A1C]">
+                Reader Comments (<span id="commentCountBadge">2</span>)
+              </h3>
+              <span class="text-[11px] font-bold text-[#84727B]">Saved to LocalStorage</span>
+            </div>
+
+            <div id="commentsListContainer" class="space-y-4"></div>
+
+            <!-- Add Comment Form -->
+            <form id="blogCommentForm" class="pt-4 border-t border-[#E6D8C7] space-y-4" novalidate>
+              <h4 class="font-serif-editorial text-lg font-bold text-[#1F1A1C]">Leave a Comment or Question</h4>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="commentAuthor" class="block text-xs font-bold uppercase tracking-wider text-[#5A4B53] mb-1">Your Name *</label>
+                  <input id="commentAuthor" type="text" required placeholder="e.g., Rachel Green" class="w-full px-4 py-2.5 rounded-xl border border-[#E6D8C7] bg-[#FDF8F2] text-sm">
+                </div>
+                <div>
+                  <label for="commentRole" class="block text-xs font-bold uppercase tracking-wider text-[#5A4B53] mb-1">Event Type (Optional)</label>
+                  <input id="commentRole" type="text" placeholder="e.g., October Bride / Event Host" class="w-full px-4 py-2.5 rounded-xl border border-[#E6D8C7] bg-[#FDF8F2] text-sm">
+                </div>
+              </div>
+              <div>
+                <label for="commentText" class="block text-xs font-bold uppercase tracking-wider text-[#5A4B53] mb-1">Comment *</label>
+                <textarea id="commentText" rows="3" required placeholder="Share your thoughts or ask our studio team a question..." class="w-full px-4 py-2.5 rounded-xl border border-[#E6D8C7] bg-[#FDF8F2] text-sm"></textarea>
+              </div>
+              <button type="submit" class="btn-cherry text-xs !py-3">
+                <i class="bi bi-chat-dots-fill"></i>
+                <span>Post Comment</span>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Sidebar Column -->
+        <aside class="lg:col-span-4 space-y-8">
+          <!-- Booking CTA Card -->
+          <div id="blogDetailsBookingCard" class="bg-gradient-to-br from-[#FAF3E8] to-[#F5ECE0] text-[#1F1A1C] p-7 rounded-3xl border-2 border-[#D9383A] shadow-xl space-y-4">
+            <span class="inline-block px-3 py-1 rounded-full bg-[#D9383A]/10 text-[#D9383A] text-[10px] font-extrabold uppercase tracking-widest">Instant Online Quote</span>
+            <h3 class="font-serif-editorial text-2xl font-bold text-[#1F1A1C]">Reserve Your Photo Booth in 4 Simple Steps</h3>
+            <p class="text-xs text-[#5A4B53] leading-relaxed">
+              Compare all 12 photo booth styles, preview 10 artisan backdrops, and lock in your celebration date online.
+            </p>
+            <div class="pt-2 space-y-2.5">
+              <a href="booking.html" class="btn-cherry w-full text-xs !py-3">
+                <i class="bi bi-calendar2-heart-fill"></i>
+                <span>Start Booking Now</span>
+              </a>
+              <button type="button" onclick="window.PBUI.openAvailabilityModal()" class="w-full py-2.5 rounded-xl border border-[#E6D8C7] bg-white hover:border-[#D9383A] text-xs font-bold text-[#1F1A1C] transition">
+                Check Date Availability
+              </button>
+            </div>
+          </div>
+
+          <!-- Categories Sidebar -->
+          <div class="surface-card bg-white p-6 rounded-3xl border border-[#E6D8C7] space-y-4">
+            <h3 class="font-serif-editorial text-lg font-bold text-[#1F1A1C]">Editorial Categories</h3>
+            <ul class="space-y-2 text-xs font-bold text-[#5A4B53]" id="sidebarCategoryList"></ul>
+          </div>
+
+          <!-- Related Articles -->
+          <div class="surface-card bg-white p-6 rounded-3xl border border-[#E6D8C7] space-y-4">
+            <h3 class="font-serif-editorial text-lg font-bold text-[#1F1A1C]">Related Planning Guides</h3>
+            <div id="relatedPostsList" class="space-y-4"></div>
+          </div>
+
+          <!-- Tags Cloud Sidebar -->
+          <div class="surface-card bg-white p-6 rounded-3xl border border-[#E6D8C7] space-y-3">
+            <h3 class="font-serif-editorial text-lg font-bold text-[#1F1A1C]">Article Tags</h3>
+            <div id="sidebarTagsCloud" class="flex flex-wrap gap-1.5"></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared Footer -->
+  <div id="footer"></div>
+
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    (function () {
+      const COMMENTS_KEY = 'fb_studio_blog_comments';
+
+      function getDefaultComments(blogId) {
+        return [
+          {
+            id: 'c-1',
+            blogId,
+            author: 'Natalie & Brooks',
+            role: 'November Vineyard Wedding',
+            date: 'October 6, 2026',
+            text: 'This breakdown helped us decide on the Vintage Enclosed Booth for our reception! Having the booth near the cocktail bar instead of the hallway makes so much sense.'
+          },
+          {
+            id: 'c-2',
+            blogId,
+            author: 'Devon K.',
+            role: 'Corporate Event Planner',
+            date: 'October 9, 2026',
+            text: 'We used the parabolic Glam lighting setup last month and our executives still use those 4×6 portraits as their LinkedIn headshots!'
+          }
+        ];
+      }
+
+      function loadComments(blogId) {
+        try {
+          const all = JSON.parse(localStorage.getItem(COMMENTS_KEY) || '{}');
+          if (!all[blogId]) {
+            all[blogId] = getDefaultComments(blogId);
+            localStorage.setItem(COMMENTS_KEY, JSON.stringify(all));
+          }
+          return all[blogId];
+        } catch (e) {
+          return getDefaultComments(blogId);
+        }
+      }
+
+      function saveComment(blogId, commentObj) {
+        const all = JSON.parse(localStorage.getItem(COMMENTS_KEY) || '{}');
+        if (!all[blogId]) all[blogId] = getDefaultComments(blogId);
+        all[blogId].unshift(commentObj);
+        localStorage.setItem(COMMENTS_KEY, JSON.stringify(all));
+        return all[blogId];
+      }
+
+      function renderComments(blogId) {
+        const list = loadComments(blogId);
+        const countEl = document.getElementById('commentCountBadge');
+        const container = document.getElementById('commentsListContainer');
+        if (countEl) countEl.textContent = list.length;
+        if (!container) return;
+
+        container.innerHTML = list.map(c => `
+          <div class="p-4 rounded-2xl bg-[#FAF3E8] border border-[#E6D8C7]">
+            <div class="flex items-center justify-between mb-1.5">
+              <div>
+                <span class="font-bold text-xs text-[#1F1A1C]">${c.author}</span>
+                ${c.role ? `<span class="ms-2 px-2 py-0.5 rounded-full bg-white text-[10px] font-bold text-[#D9383A] border border-[#E6D8C7]">${c.role}</span>` : ''}
+              </div>
+              <span class="text-[11px] text-[#84727B]">${c.date}</span>
+            </div>
+            <p class="text-xs sm:text-sm text-[#5A4B53] leading-relaxed">${c.text}</p>
+          </div>
+        `).join('');
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        if (!window.PBStore) return;
+        const params = new URLSearchParams(window.location.search);
+        const blogId = params.get('id') || 'blog-1';
+        const blog = window.PBStore.getBlogById(blogId);
+        const allBlogs = window.PBStore.getBlogs();
+
+        document.title = `${blog.title} | Snapora Blog`;
+        document.getElementById('crumbCategory').textContent = blog.category;
+        document.getElementById('articleCategoryBadge').textContent = blog.category;
+        document.getElementById('articleReadTime').innerHTML = `<i class="bi bi-clock me-1"></i>${blog.readTime}`;
+        document.getElementById('articleDate').innerHTML = `<i class="bi bi-calendar3 me-1"></i>${blog.date}`;
+        document.getElementById('articleTitle').textContent = blog.title;
+        document.getElementById('articleAuthorAvatar').src = blog.authorAvatar;
+        document.getElementById('articleAuthorName').textContent = blog.author;
+        document.getElementById('articleFeaturedImg').src = blog.image;
+        document.getElementById('articleFeaturedImg').alt = blog.title;
+        document.getElementById('articlePolaroidCaption').textContent = `${blog.category} • ${blog.date}`;
+
+        // Render paragraphs with anchor headings
+        const bodyEl = document.getElementById('articleBodyContent');
+        const paragraphs = blog.content || [];
+        bodyEl.innerHTML = `
+          <p class="text-base sm:text-lg font-semibold text-[#2B192E] leading-relaxed">${blog.excerpt}</p>
+          <h2 id="sec-overview" class="font-serif-editorial text-2xl font-bold text-[#1F1A1C] pt-4">1. Setting the Atmosphere for Your Celebration</h2>
+          <p>${paragraphs[0] || ''}</p>
+          ${paragraphs[1] ? `<p>${paragraphs[1]}</p>` : ''}
+          <h2 id="sec-lighting" class="font-serif-editorial text-2xl font-bold text-[#1F1A1C] pt-4">2. Optical Lighting, Backdrop Pairing & Print Formats</h2>
+          <p>${paragraphs[2] || 'Pairing studio-grade optical lenses with our 8×8 ft velvet, floral, or champagne shimmer backdrops ensures every frame looks like an editorial portrait. Guests receive thick 2×6 archival strips or 4×6 postcards within 8 seconds, plus instant QR and AirDrop transfers.'}</p>
+          <h2 id="sec-placement" class="font-serif-editorial text-2xl font-bold text-[#1F1A1C] pt-4">3. Venue Placement & Timeline Best Practices</h2>
+          <p>${paragraphs[3] || 'Position your booth within sightline of the cocktail bar or dance floor so energy flows naturally into every session. Our white-glove booth attendant coordinates load-in 60 minutes prior to start time and curates your keepsake linen guestbook throughout the night.'}</p>
+        `;
+
+        // Tags
+        const tagsHtml = (blog.tags || []).map(t =>
+          `<a href="blog.html?tag=${encodeURIComponent(t)}" class="px-3 py-1 rounded-lg bg-[#FAF3E8] hover:bg-[#D9383A] hover:text-white border border-[#E6D8C7] text-xs font-bold text-[#5A4B53] transition">#${t}</a>`
+        ).join('');
+        document.getElementById('articleTagsList').innerHTML = tagsHtml;
+        document.getElementById('sidebarTagsCloud').innerHTML = tagsHtml;
+
+        // Categories Sidebar
+        const categories = [
+          'Wedding Planning', 'Birthday Party Ideas', 'Corporate Events',
+          'Photo Booth Tips', 'Backdrop Inspiration', 'Party Themes',
+          'Event Entertainment', 'Photography Trends'
+        ];
+        document.getElementById('sidebarCategoryList').innerHTML = categories.map(cat => {
+          const count = allBlogs.filter(b => b.category === cat).length;
+          return `
+            <li>
+              <a href="blog.html?category=${encodeURIComponent(cat)}" class="flex items-center justify-between px-3 py-2 rounded-xl hover:bg-[#FAF3E8] transition ${cat === blog.category ? 'bg-[#FAF3E8] text-[#D9383A]' : ''}">
+                <span>${cat}</span>
+                <span class="px-2 py-0.5 rounded-full bg-[#F5ECE0] text-[10px]">${count}</span>
+              </a>
+            </li>
+          `;
+        }).join('');
+
+        // Related Posts
+        const related = allBlogs.filter(b => b.id !== blog.id).slice(0, 3);
+        document.getElementById('relatedPostsList').innerHTML = related.map(r => `
+          <a href="blog-details.html?id=${r.id}" class="flex items-start gap-3 group">
+            <img src="${r.image}" alt="${r.title}" class="w-20 h-16 rounded-xl object-cover shrink-0 border border-[#E6D8C7]">
+            <div>
+              <span class="text-[10px] font-extrabold uppercase text-[#D9383A]">${r.category}</span>
+              <h4 class="font-serif-editorial text-xs font-bold text-[#1F1A1C] group-hover:text-[#D9383A] transition line-clamp-2">${r.title}</h4>
+              <span class="text-[10px] text-[#84727B]">${r.readTime}</span>
+            </div>
+          </a>
+        `).join('');
+
+        // Copy Article Link button
+        const copyBtn = document.getElementById('copyArticleLinkBtn');
+        if (copyBtn) {
+          copyBtn.addEventListener('click', () => {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(window.location.href).catch(() => {});
+            }
+            window.PBUI.toast('Article link copied to clipboard!');
+          });
+        }
+
+        // Comments
+        renderComments(blog.id);
+        const commentForm = document.getElementById('blogCommentForm');
+        if (commentForm) {
+          commentForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const author = document.getElementById('commentAuthor').value.trim();
+            const role = document.getElementById('commentRole').value.trim();
+            const text = document.getElementById('commentText').value.trim();
+            if (!author || !text) {
+              window.PBUI.toast('Please enter your name and comment.', 'error');
+              return;
+            }
+            saveComment(blog.id, {
+              id: 'c-' + Date.now(),
+              blogId: blog.id,
+              author,
+              role: role || 'Blog Reader',
+              date: 'Just now',
+              text
+            });
+            commentForm.reset();
+            renderComments(blog.id);
+            window.PBUI.toast('Your comment has been posted to this article!', 'success');
+          });
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

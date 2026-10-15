@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Booking Hub — Snapora</title>
+  <meta name="description" content="Explore our product-oriented event rental booking platform with real-time booth availability, interactive package estimator, and live reservation status tracking.">
+  <meta property="og:title" content="Snapora — Interactive Booking Hub">
+  <meta property="og:description" content="Instant booth availability, live reservation tracker, and multi-location event rental portal.">
+  <meta property="og:type" content="website">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#FDF8F2] text-[#1F1A1C] antialiased">
+
+  <!-- Shared Responsive Navbar -->
+  <div id="navbar"></div>
+
+  <main class="pt-20">
+    <!-- 1. INTRODUCTORY HERO SECTION -->
+    <section id="home2HeroSection" class="py-14 lg:py-20 bg-gradient-to-br from-[#FAF3E8] via-[#FDF8F2] to-[#F5ECE0] text-[#1F1A1C] border-b-4 border-[#D9383A] relative overflow-hidden">
+      <!-- Ambient Glows -->
+      <div class="absolute -top-24 -start-24 w-96 h-96 rounded-full bg-[#D9383A]/10 blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 -end-24 w-96 h-96 rounded-full bg-[#F4C95D]/15 blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <!-- Top SaaS Status Pill -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#E6D8C7] text-[#D9383A] text-xs font-extrabold uppercase tracking-widest mb-6 shadow-xs">
+          <i class="bi bi-stars"></i> Experience-First Event Rental Dashboard
+        </div>
+
+        <h1 class="font-serif-editorial text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] max-w-4xl mx-auto text-[#1F1A1C]">
+          Reserve, Customize &amp; Track Your Event Photo Booth in <span class="text-[#D9383A] italic font-normal">Real Time</span>.
+        </h1>
+
+        <p class="text-sm sm:text-base lg:text-lg text-[#5A4B53] mt-5 max-w-2xl mx-auto leading-relaxed">
+          Built for modern wedding planners, corporate experiential teams, and private hosts. Check live hardware availability, pre-select artisan backdrops, and manage every milestone seamlessly.
+        </p>
+
+        <!-- Only 2 CTAs as required -->
+        <div class="flex flex-wrap items-center justify-center gap-4 mt-8">
+          <a href="#availableBoothsSection" class="btn-cherry text-sm !py-4 !px-8 shadow-xl">
+            <i class="bi bi-grid-fill"></i>
+            <span>Explore 12 Booth Styles</span>
+          </a>
+          <a href="#home2BookingEngineSection" class="btn-outline-vintage text-sm !py-4 !px-8">
+            <i class="bi bi-lightning-charge-fill text-[#D9383A]"></i>
+            <span>Quick Booking Engine</span>
+          </a>
+        </div>
+
+        <!-- Metric Badges Strip -->
+        <div class="mt-12 pt-8 border-t border-[#E6D8C7] grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto text-center">
+          <div>
+            <p class="font-serif-editorial text-2xl sm:text-3xl font-extrabold text-[#D9383A]">12 Styles</p>
+            <p class="text-xs text-[#5A4B53] font-semibold mt-0.5">Analog, Glam &amp; 360°</p>
+          </div>
+          <div>
+            <p class="font-serif-editorial text-2xl sm:text-3xl font-extrabold text-[#1F1A1C]">Instant Sync</p>
+            <p class="text-xs text-[#5A4B53] font-semibold mt-0.5">Live Hardware Availability</p>
+          </div>
+          <div>
+            <p class="font-serif-editorial text-2xl sm:text-3xl font-extrabold text-[#2A7B76]">No Travel Fee</p>
+            <p class="text-xs text-[#5A4B53] font-semibold mt-0.5">Within 45 Metro Miles</p>
+          </div>
+          <div>
+            <p class="font-serif-editorial text-2xl sm:text-3xl font-extrabold text-[#E86A58]">White-Glove</p>
+            <p class="text-xs text-[#5A4B53] font-semibold mt-0.5">Dedicated Concierge &amp; COI</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. OUR STORY & BRAND HERITAGE SECTION -->
+    <section class="py-16 bg-[#FAF3E8] border-b border-[#E6D8C7]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <!-- Story Text (7 cols) -->
+          <div class="lg:col-span-7 space-y-5">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#D9383A]/10 text-[#D9383A] text-xs font-extrabold uppercase tracking-widest">
+              <i class="bi bi-clock-history"></i>
+              <span>Our Story • Authentic Craftsmanship</span>
+            </div>
+            <h2 class="font-serif-editorial text-3xl sm:text-4xl font-bold text-[#1F1A1C] leading-tight">
+              From One Restored 1968 Boardwalk Booth to a 12-Style Fleet
+            </h2>
+            <p class="text-sm sm:text-base text-[#5A4B53] leading-relaxed">
+              In 2018, our founder Eleanor Vance rescued a decommissioned 1968 analog cabinet from a Santa Monica arcade. Rather than gutting its soul, she paired its solid walnut cabinetry and crimson velvet curtain with a calibrated full-frame DSLR, studio strobes, and an 8-second dye-sublimation archival printer.
+            </p>
+            <p class="text-sm sm:text-base text-[#5A4B53] leading-relaxed">
+              Today, Snapora operates across 12 metro areas with a full collection ranging from our flagship Vintage Enclosed Booth and 1972 Retro Caravan to 120fps 360° Cinema Platforms—combining tactile mid-century nostalgia with a frictionless real-time booking engine.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+              <div class="p-4 rounded-2xl bg-white surface-card border border-[#E6D8C7] shadow-xs">
+                <i class="bi bi-camera text-xl text-[#D9383A] block mb-1"></i>
+                <h4 class="font-bold text-xs text-[#1F1A1C]">Handcrafted Optics</h4>
+                <p class="text-[11px] text-[#5A4B53] mt-0.5">DSLR glass &amp; lab-grade 8s prints.</p>
+              </div>
+              <div class="p-4 rounded-2xl bg-white surface-card border border-[#E6D8C7] shadow-xs">
+                <i class="bi bi-cloud-arrow-down text-xl text-[#2A7B76] block mb-1"></i>
+                <h4 class="font-bold text-xs text-[#1F1A1C]">Analog + Cloud</h4>
+                <p class="text-[11px] text-[#5A4B53] mt-0.5">Instant AirDrop &amp; live web gallery.</p>
+              </div>
+              <div class="p-4 rounded-2xl bg-white surface-card border border-[#E6D8C7] shadow-xs">
+                <i class="bi bi-stars text-xl text-[#F4C95D] block mb-1"></i>
+                <h4 class="font-bold text-xs text-[#1F1A1C]">White-Glove VIP</h4>
+                <p class="text-[11px] text-[#5A4B53] mt-0.5">Dedicated concierge on site.</p>
+              </div>
+            </div>
+
+            <div class="pt-2 flex flex-wrap items-center gap-4">
+              <a href="about.html" class="btn-outline-vintage text-xs !py-3 !px-6">
+                <span>Read Full Studio Story</span>
+                <i class="bi bi-arrow-right rtl-flip"></i>
+              </a>
+              <span class="text-xs text-[#84727B] font-semibold"><i class="bi bi-geo-alt-fill text-[#D9383A] me-1"></i>Flagship Studio: Arts District, LA</span>
+            </div>
+          </div>
+
+          <!-- Story Visual Card (5 cols) -->
+          <div class="lg:col-span-5 relative">
+            <div class="polaroid-frame shadow-polaroid max-w-md mx-auto">
+              <div class="overflow-hidden rounded-lg aspect-[4/3] bg-[#2B192E]">
+                <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80" alt="Snapora vintage booth restoration" class="w-full h-full object-cover">
+              </div>
+              <span class="polaroid-caption">Handcrafted In Our Los Angeles Woodshop ✨</span>
+            </div>
+            <!-- Quote badge cleanly spaced below polaroid with mt-5 so caption is 100% visible -->
+            <div class="surface-card bg-white rounded-2xl p-4 shadow-lg border border-[#E6D8C7] mt-5 mx-auto max-w-md relative">
+              <div class="flex items-start gap-3">
+                <i class="bi bi-quote text-2xl text-[#D9383A] shrink-0"></i>
+                <div>
+                  <p class="font-serif-editorial italic text-xs text-[#1F1A1C]">"Technology should never feel cold at a celebration. Our job is to make every guest feel iconic."</p>
+                  <p class="text-[10px] font-bold text-[#84727B] mt-1">— Eleanor Vance, Founder</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. AVAILABLE BOOTH PREVIEWS (INTERACTIVE FILTERABLE GRID) -->
+    <section id="availableBoothsSection" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-widest text-[#D9383A]" id="h2FilterStatusLabel">Showing All 12 Booth Styles</span>
+          <h2 class="font-serif-editorial text-2xl sm:text-3xl font-bold text-[#1F1A1C] mt-1">Available Booth Previews</h2>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <button type="button" onclick="window.filterH2Booths('All')" class="px-3.5 py-1.5 rounded-xl bg-[#2B192E] text-white text-xs font-bold">Show All (12)</button>
+          <button type="button" onclick="window.filterH2Booths('Weddings')" class="px-3.5 py-1.5 rounded-xl bg-[#FAF3E8] border border-[#E6D8C7] text-xs font-bold hover:border-[#D9383A]">Weddings</button>
+          <button type="button" onclick="window.filterH2Booths('Corporate Events')" class="px-3.5 py-1.5 rounded-xl bg-[#FAF3E8] border border-[#E6D8C7] text-xs font-bold hover:border-[#D9383A]">Corporate</button>
+          <button type="button" onclick="window.filterH2Booths('Birthday Parties')" class="px-3.5 py-1.5 rounded-xl bg-[#FAF3E8] border border-[#E6D8C7] text-xs font-bold hover:border-[#D9383A]">Birthdays</button>
+        </div>
+      </div>
+
+      <div id="h2AvailableBoothsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+    </section>
+
+    <!-- 3. POPULAR PACKAGES & RECOMMENDED ADD-ONS (ALIGNED EVENLY) + TRENDING BACKDROPS BELOW -->
+    <section class="py-16 bg-[#F5ECE0] border-y border-[#E6D8C7]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <!-- Evenly Aligned 2-Column Grid: Popular Packages & Recommended Add-Ons -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+          <!-- Popular Packages (Left Column) -->
+          <div class="space-y-6">
+            <div class="flex items-center justify-between">
+              <div>
+                <span class="text-xs font-extrabold uppercase tracking-widest text-[#D9383A]">Ready-to-Book Bundles</span>
+                <h2 class="font-serif-editorial text-2xl sm:text-3xl font-bold text-[#1F1A1C] mt-1">Popular Event Packages</h2>
+              </div>
+              <a href="packages.html" class="text-xs font-extrabold text-[#D9383A] hover:underline">All 12 Packages →</a>
+            </div>
+            <div id="h2PackagesList" class="space-y-4"></div>
+          </div>
+
+          <!-- Recommended Add-Ons (Right Column) -->
+          <div class="space-y-6">
+            <div class="flex items-center justify-between">
+              <div>
+                <span class="text-xs font-extrabold uppercase tracking-widest text-[#2A7B76]">Customize Your Experience</span>
+                <h2 class="font-serif-editorial text-2xl sm:text-3xl font-bold text-[#1F1A1C] mt-1">Recommended Add-Ons</h2>
+              </div>
+              <a href="backdrops.html#addonsSection" class="text-xs font-extrabold text-[#2A7B76] hover:underline">All 12 Add-Ons →</a>
+            </div>
+            <div id="h2AddonsList" class="space-y-4"></div>
+          </div>
+        </div>
+
+        <!-- Trending Backdrops Placed Below (4 Medium Size Containers) -->
+        <div class="pt-8 border-t border-[#E6D8C7]">
+          <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
+            <div>
+              <span class="text-xs font-extrabold uppercase tracking-widest text-[#D9383A]">Artisan Photo Settings</span>
+              <h3 class="font-serif-editorial text-2xl sm:text-3xl font-bold text-[#1F1A1C] mt-1">Trending Backdrops</h3>
+            </div>
+            <a href="backdrops.html" class="text-xs font-extrabold text-[#D9383A] hover:underline">View All 10 Backdrops →</a>
+          </div>
+          <div id="h2BackdropsMiniGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. RECENT CUSTOMER REVIEWS & BOOKING PROCESS (EVENLY ALIGNED) -->
+    <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- Left Column: 4-Step SaaS Booking Workflow (5 cols) -->
+        <div class="lg:col-span-5 flex flex-col justify-between">
+          <div class="mb-6">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-[#D9383A] block">Streamlined SaaS Workflow</span>
+            <h2 class="font-serif-editorial text-2xl sm:text-3xl font-bold text-[#1F1A1C] mt-1 leading-tight">From Quote to Event in 4 Steps</h2>
+          </div>
+          <div class="space-y-3.5 text-xs">
+            <div class="p-4 rounded-2xl surface-card bg-white border border-[#E6D8C7] flex items-center gap-3.5 hover:border-[#D9383A] transition shadow-xs">
+              <span class="w-8 h-8 rounded-xl bg-[#D9383A] text-white font-bold flex items-center justify-center shrink-0">1</span>
+              <div>
+                <strong class="text-[#1F1A1C] font-bold">Check Date &amp; Select Booth:</strong>
+                <span class="text-[#5A4B53]"> Instant date validation for all 12 hardware units.</span>
+              </div>
+            </div>
+            <div class="p-4 rounded-2xl surface-card bg-white border border-[#E6D8C7] flex items-center gap-3.5 hover:border-[#D9383A] transition shadow-xs">
+              <span class="w-8 h-8 rounded-xl bg-[#E86A58] text-white font-bold flex items-center justify-center shrink-0">2</span>
+              <div>
+                <strong class="text-[#1F1A1C] font-bold">Pick Package &amp; Add-Ons:</strong>
+                <span class="text-[#5A4B53]"> Real-time pricing calculator with zero hidden fees.</span>
+              </div>
+            </div>
+            <div class="p-4 rounded-2xl surface-card bg-white border border-[#E6D8C7] flex items-center gap-3.5 hover:border-[#D9383A] transition shadow-xs">
+              <span class="w-8 h-8 rounded-xl bg-[#2A7B76] text-white font-bold flex items-center justify-center shrink-0">3</span>
+              <div>
+                <strong class="text-[#1F1A1C] font-bold">Coordinator Review &amp; Prep:</strong>
+                <span class="text-[#5A4B53]"> Track status updates in your client portal.</span>
+              </div>
+            </div>
+            <div class="p-4 rounded-2xl surface-card bg-white border border-[#E6D8C7] flex items-center gap-3.5 hover:border-[#D9383A] transition shadow-xs">
+              <span class="w-8 h-8 rounded-xl bg-[#F4C95D] text-[#1F1A1C] font-bold flex items-center justify-center shrink-0 shadow-xs">4</span>
+              <div>
+                <strong class="text-[#1F1A1C] font-bold">White-Glove Event Execution:</strong>
+                <span class="text-[#5A4B53]"> Instant prints + full online ZIP archive.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Recent Client Feedback (7 cols) -->
+        <div class="lg:col-span-7 flex flex-col justify-between">
+          <div class="flex items-end justify-between mb-6">
+            <div>
+              <span class="text-xs font-extrabold uppercase tracking-widest text-[#D9383A] block">Verified Experiences</span>
+              <h2 class="font-serif-editorial text-2xl sm:text-3xl font-bold text-[#1F1A1C] mt-1 leading-tight">Recent Client Feedback</h2>
+            </div>
+            <a href="reviews.html" class="text-xs font-extrabold text-[#D9383A] hover:underline mb-1 whitespace-nowrap">All Verified Reviews →</a>
+          </div>
+          <div id="h2ReviewsGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-3.5"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. APPOINTMENT & CONSULTATION CTA -->
+    <section class="py-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="surface-card bg-white rounded-3xl border-2 border-[#D9383A] p-8 sm:p-12 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-xl">
+        <div class="max-w-2xl">
+          <span class="px-3 py-1 rounded-full bg-[#D9383A]/10 text-[#D9383A] text-xs font-extrabold uppercase tracking-wider">Showroom & Virtual Demo Appointments</span>
+          <h2 class="font-serif-editorial text-2xl sm:text-4xl font-bold text-[#1F1A1C] mt-3">Planning a Multi-Booth Corporate Activation or Luxury Wedding?</h2>
+          <p class="text-sm text-[#5A4B53] mt-2">
+            Schedule a 15-minute showroom appointment or request a tailored multi-day quote from our experiential production team.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 shrink-0 w-full lg:w-auto">
+          <a href="contact.html" class="btn-plum text-xs !py-4 !px-7">
+            <i class="bi bi-headset"></i>
+            <span>Schedule Consultation</span>
+          </a>
+          <a href="booking.html" class="btn-cherry text-xs !py-4 !px-7">
+            <i class="bi bi-calendar2-check-fill"></i>
+            <span>Book Online Now</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. LIVE BOOKING ENGINE & EVENT TRACKER (MOVED ABOVE FOOTER) -->
+    <section id="home2BookingEngineSection" class="py-16 bg-[#F5ECE0] text-[#1F1A1C] border-t-4 border-[#D9383A] relative overflow-hidden">
+      <!-- Ambient Glows -->
+      <div class="absolute -top-24 -start-24 w-96 h-96 rounded-full bg-[#D9383A]/10 blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 -end-24 w-96 h-96 rounded-full bg-[#F4C95D]/15 blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <!-- Top SaaS Status Bar -->
+        <div class="flex flex-wrap items-center justify-between gap-4 pb-6 mb-8 border-b border-[#E6D8C7]">
+          <div class="flex items-center gap-3">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#2A7B76]/15 border border-[#2A7B76]/30 text-[#2A7B76] text-xs font-extrabold">
+              <span class="w-2 h-2 rounded-full bg-[#2A7B76] animate-ping"></span> Live Booking Engine v2.6
+            </span>
+            <span class="text-xs text-[#5A4B53] hidden sm:inline">Multi-Location Dispatch • Instant Quote Calculator • LocalStorage Sync</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <a href="customer/dashboard.html" class="px-3.5 py-1.5 rounded-xl bg-white hover:bg-[#FAF3E8] border border-[#E6D8C7] text-xs font-bold text-[#1F1A1C] transition">
+              <i class="bi bi-person-badge me-1 text-[#D9383A]"></i> Open Client Portal
+            </a>
+            <a href="booking.html" class="px-3.5 py-1.5 rounded-xl bg-[#D9383A] text-white hover:bg-[#b52d2f] text-xs font-bold transition">
+              <i class="bi bi-calendar2-heart-fill me-1"></i> Book Now
+            </a>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <!-- Left Column: Headline + Interactive Quick Booking Widget (7 cols) -->
+          <div class="lg:col-span-7 space-y-6">
+            <div>
+              <span class="text-xs font-extrabold uppercase tracking-widest text-[#D9383A]">Instant Date &amp; Hardware Validation</span>
+              <h2 class="font-serif-editorial text-3xl sm:text-4xl font-extrabold leading-tight mt-1 text-[#1F1A1C]">
+                Ready to Reserve? Launch the Live Booking Engine.
+              </h2>
+              <p class="text-sm text-[#5A4B53] mt-2 max-w-2xl">
+                Select your celebration date and guest count below to instantly filter hardware availability, calculate package rates, or launch our complete 7-step studio wizard.
+              </p>
+            </div>
+
+            <!-- Interactive Quick Booking Widget -->
+            <div class="bg-white surface-card text-[#1F1A1C] rounded-3xl p-6 sm:p-7 shadow-xl border-2 border-[#E6D8C7]">
+              <div class="flex items-center justify-between mb-4">
+                <h3 class="font-serif-editorial text-lg font-bold text-[#1F1A1C]"><i class="bi bi-lightning-charge-fill text-[#D9383A] me-1"></i>Quick Availability &amp; Quote Finder</h3>
+                <span class="text-[11px] font-bold text-[#2A7B76]">Instant Filtering</span>
+              </div>
+
+              <form id="home2QuickBookForm" class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div>
+                  <label for="qbEventDate" class="block text-[11px] font-extrabold uppercase tracking-wider text-[#5A4B53] mb-1">1. Event Date *</label>
+                  <input id="qbEventDate" type="date" required class="w-full px-3.5 py-3 rounded-xl border border-[#E6D8C7] bg-[#FAF3E8] text-[#1F1A1C] text-xs font-bold">
+                </div>
+                <div>
+                  <label for="qbEventType" class="block text-[11px] font-extrabold uppercase tracking-wider text-[#5A4B53] mb-1">2. Event Type *</label>
+                  <select id="qbEventType" required class="w-full px-3.5 py-3 rounded-xl border border-[#E6D8C7] bg-[#FAF3E8] text-[#1F1A1C] text-xs font-bold"></select>
+                </div>
+                <div>
+                  <label for="qbGuestCount" class="block text-[11px] font-extrabold uppercase tracking-wider text-[#5A4B53] mb-1">3. Guest Count *</label>
+                  <select id="qbGuestCount" class="w-full px-3.5 py-3 rounded-xl border border-[#E6D8C7] bg-[#FAF3E8] text-[#1F1A1C] text-xs font-bold">
+                    <option value="60">Up to 75 Guests (Intimate)</option>
+                    <option value="150" selected>75 – 175 Guests (Standard Reception)</option>
+                    <option value="300">175 – 350 Guests (Large Gala)</option>
+                    <option value="600">350+ Guests (Corporate / Festival)</option>
+                  </select>
+                </div>
+                <div class="sm:col-span-3 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-2">
+                  <button type="button" id="qbFilterPreviewBtn" class="btn-outline-vintage !py-3 text-xs flex-1">
+                    <i class="bi bi-funnel-fill text-[#D9383A]"></i>
+                    <span>Filter Available Booths Above</span>
+                  </button>
+                  <button type="submit" class="btn-cherry !py-3 text-xs flex-1">
+                    <i class="bi bi-rocket-takeoff-fill"></i>
+                    <span>Launch Full 7-Step Booking</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Right Column: Live Upcoming Event Summary & Reservation Status Preview (5 cols) -->
+          <div class="lg:col-span-5 space-y-5">
+            <!-- Upcoming Event Summary Widget -->
+            <div class="bg-white surface-card rounded-3xl p-6 border border-[#E6D8C7] shadow-md">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-[11px] font-extrabold uppercase tracking-wider text-[#D9383A]"><i class="bi bi-calendar2-event me-1"></i>Upcoming Event Summary</span>
+                <span id="h2HeroStatusBadge"></span>
+              </div>
+              <div id="h2UpcomingEventCard" class="space-y-3 text-xs text-[#1F1A1C]"></div>
+            </div>
+
+            <!-- Live Reservation Status Tracker Preview -->
+            <div class="bg-white surface-card rounded-3xl p-6 border border-[#E6D8C7] shadow-md">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-[11px] font-extrabold uppercase tracking-wider text-[#2A7B76]"><i class="bi bi-broadcast-pin me-1"></i>Reservation Status Preview</span>
+                <a href="customer/booking-details.html" class="text-xs font-bold text-[#D9383A] hover:underline">Full Tracker →</a>
+              </div>
+              <div class="grid grid-cols-5 gap-1.5 text-center pt-2">
+                <div class="p-2 rounded-xl bg-[#2A7B76]/15 border border-[#2A7B76]/30 text-[#2A7B76]">
+                  <i class="bi bi-check2-circle text-sm"></i>
+                  <p class="text-[9px] font-bold mt-1">Requested</p>
+                </div>
+                <div class="p-2 rounded-xl bg-[#2A7B76]/15 border border-[#2A7B76]/30 text-[#2A7B76]">
+                  <i class="bi bi-check2-circle text-sm"></i>
+                  <p class="text-[9px] font-bold mt-1">Reviewed</p>
+                </div>
+                <div class="p-2 rounded-xl bg-[#D9383A] text-white border border-[#D9383A] shadow-md">
+                  <i class="bi bi-stars text-white text-sm"></i>
+                  <p class="text-[9px] font-extrabold mt-1">Confirmed</p>
+                </div>
+                <div class="p-2 rounded-xl bg-[#FAF3E8] border border-[#E6D8C7] text-[#84727B]">
+                  <i class="bi bi-tools text-sm"></i>
+                  <p class="text-[9px] font-semibold mt-1">Prep</p>
+                </div>
+                <div class="p-2 rounded-xl bg-[#FAF3E8] border border-[#E6D8C7] text-[#84727B]">
+                  <i class="bi bi-heart-fill text-sm"></i>
+                  <p class="text-[9px] font-semibold mt-1">Completed</p>
+                </div>
+              </div>
+              <div class="mt-4 pt-3 border-t border-[#E6D8C7] flex items-center justify-between text-xs">
+                <span class="text-[#5A4B53]">Look up any reference ID:</span>
+                <div class="flex gap-1.5">
+                  <input id="h2RefLookupInput" type="text" value="FB-2026-8491" aria-label="Booking Reference ID" class="px-2.5 py-1 rounded-lg bg-[#FAF3E8] border border-[#E6D8C7] text-[#1F1A1C] text-xs w-32">
+                  <button type="button" onclick="window.lookupBookingRef()" class="px-3 py-1 rounded-lg bg-[#D9383A] text-white font-extrabold text-xs">Track</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared Footer -->
+  <div id="footer"></div>
+
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tomorrow = new Date(Date.now() + 86400000 * 7).toISOString().split('T')[0];
+      const dateInput = document.getElementById('qbEventDate');
+      if (dateInput) {
+        dateInput.min = new Date().toISOString().split('T')[0];
+        dateInput.value = tomorrow;
+      }
+
+      const evSelect = document.getElementById('qbEventType');
+      if (evSelect && window.PBStore) {
+        evSelect.innerHTML = window.PBStore.getEvents().map(e => `<option value="${e.name}">${e.name}</option>`).join('');
+      }
+
+      // Upcoming Event Summary Card
+      const bookings = window.PBStore.getBookings();
+      const nextBk = bookings.find(b => b.status === 'Confirmed') || bookings[0];
+      if (nextBk) {
+        document.getElementById('h2HeroStatusBadge').innerHTML = window.PBUI.getStatusBadgeHtml(nextBk.status);
+        document.getElementById('h2UpcomingEventCard').innerHTML = `
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="font-serif-editorial text-lg font-bold text-white">${nextBk.boothName}</p>
+              <p class="text-[#F4C95D] font-semibold">${nextBk.reference} • ${nextBk.eventType} (${nextBk.guestCount} Guests)</p>
+            </div>
+            <span class="font-serif-editorial text-xl font-extrabold text-white">$${Number(nextBk.totalPrice).toLocaleString()}</span>
+          </div>
+          <div class="grid grid-cols-2 gap-2 pt-2 text-[11px] text-[#D7C8D2]">
+            <div><i class="bi bi-calendar3 text-[#F4C95D] me-1"></i> ${nextBk.eventDate} at ${nextBk.startTime}</div>
+            <div><i class="bi bi-geo-alt text-[#E86A58] me-1"></i> ${nextBk.venueName}</div>
+            <div><i class="bi bi-easel2 text-[#5CD6CE] me-1"></i> Backdrop: ${nextBk.backdropName}</div>
+            <div><i class="bi bi-person-check text-[#F4C95D] me-1"></i> Host: ${nextBk.coordinator}</div>
+          </div>
+        `;
+      }
+
+      // Render Booths Grid
+      window.filterH2Booths = function(eventType) {
+        const grid = document.getElementById('h2AvailableBoothsGrid');
+        const label = document.getElementById('h2FilterStatusLabel');
+        let list = window.PBStore.getBooths();
+        if (eventType && eventType !== 'All') {
+          list = list.filter(b => b.suitableEvents.some(ev => ev.toLowerCase().includes(eventType.toLowerCase().slice(0, 6))));
+          if (label) label.textContent = `Filtered for ${eventType} (${list.length} Booths Available)`;
+        } else {
+          list = list.slice(0, 8);
+          if (label) label.textContent = `Showing Top 8 of 12 Available Booths`;
+        }
+
+        grid.innerHTML = list.map(b => `
+          <div class="surface-card bg-white rounded-3xl border border-[#E6D8C7] overflow-hidden flex flex-col justify-between shadow-xs hover:shadow-lg transition">
+            <div>
+              <div class="relative h-44">
+                <img src="${b.image}" alt="${b.name}" class="w-full h-full object-cover">
+                <span class="absolute top-3 start-3 px-2.5 py-0.5 rounded-full bg-[#2B192E]/90 text-[#F4C95D] text-xs font-extrabold">$${b.price}</span>
+                <span class="absolute top-3 end-3 px-2 py-0.5 rounded-full bg-[#2A7B76] text-white text-[10px] font-bold">${b.availability}</span>
+              </div>
+              <div class="p-4">
+                <h3 class="font-serif-editorial text-base font-bold text-[#1F1A1C]">${b.name}</h3>
+                <p class="text-xs text-[#5A4B53] mt-1 line-clamp-2">${b.shortDesc}</p>
+              </div>
+            </div>
+            <div class="p-4 pt-0 flex gap-2">
+              <a href="booth-details.html?id=${b.id}" class="btn-outline-vintage flex-1 !py-2 text-xs">Specs</a>
+              <a href="booking.html?booth=${b.id}" class="btn-cherry flex-1 !py-2 text-xs">Reserve</a>
+            </div>
+          </div>
+        `).join('');
+      };
+      window.filterH2Booths('All');
+
+      // Render Popular Packages List
+      const pkgList = document.getElementById('h2PackagesList');
+      if (pkgList && window.PBStore) {
+        const pkgs = window.PBStore.getPackages().filter(p => p.recommended);
+        pkgList.innerHTML = pkgs.map(p => `
+          <div class="surface-card bg-white rounded-2xl border border-[#E6D8C7] p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 hover:border-[#D9383A] transition">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-0.5 rounded-full bg-[#D9383A]/10 text-[#D9383A] text-[10px] font-extrabold uppercase">${p.category}</span>
+                <span class="text-xs font-bold text-[#84727B]">${p.duration}</span>
+              </div>
+              <h3 class="font-serif-editorial text-lg font-bold text-[#1F1A1C] mt-1 truncate">${p.name}</h3>
+              <p class="text-xs text-[#5A4B53] mt-0.5 line-clamp-1">${p.printsDesc} • ${p.backdropChoices}</p>
+            </div>
+            <div class="flex items-center gap-4 w-full sm:w-auto justify-between sm:justify-end shrink-0">
+              <div class="text-end">
+                <span class="font-serif-editorial text-2xl font-extrabold text-[#1F1A1C]">$${p.price}</span>
+                <span class="block text-[10px] text-[#84727B]">Demo Rate</span>
+              </div>
+              <a href="booking.html?package=${p.id}&event=${encodeURIComponent(p.category)}" class="btn-cherry !py-2.5 !px-4 text-xs">Select</a>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // Render Recommended Add-ons (Evenly aligned with Packages)
+      const addonsList = document.getElementById('h2AddonsList');
+      if (addonsList && window.PBStore) {
+        const addons = window.PBStore.getAddons().slice(0, 4);
+        addonsList.innerHTML = addons.map(a => `
+          <div class="surface-card bg-white rounded-2xl border border-[#E6D8C7] p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 hover:border-[#D9383A] transition">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-0.5 rounded-full bg-[#2A7B76]/10 text-[#2A7B76] text-[10px] font-extrabold uppercase">${a.category || 'Add-On'}</span>
+                <span class="text-xs font-bold text-[#84727B]"><i class="bi ${a.icon || 'bi-stars'} me-1 text-[#2A7B76]"></i>Optional Upgrade</span>
+              </div>
+              <h3 class="font-serif-editorial text-lg font-bold text-[#1F1A1C] mt-1 truncate">${a.name}</h3>
+              <p class="text-xs text-[#5A4B53] mt-0.5 line-clamp-1">${a.description}</p>
+            </div>
+            <div class="flex items-center gap-4 w-full sm:w-auto justify-between sm:justify-end shrink-0">
+              <div class="text-end">
+                <span class="font-serif-editorial text-2xl font-extrabold text-[#1F1A1C]">+$${a.price}</span>
+                <span class="block text-[10px] text-[#84727B]">Add-On Rate</span>
+              </div>
+              <a href="booking.html" class="btn-cherry !py-2.5 !px-4 text-xs">Select</a>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // Render Backdrops Mini Grid (4 Medium Sized Containers)
+      const bdMini = document.getElementById('h2BackdropsMiniGrid');
+      if (bdMini && window.PBStore) {
+        bdMini.innerHTML = window.PBStore.getBackdrops().slice(1, 5).map(b => `
+          <div class="surface-card bg-white rounded-2xl border border-[#E6D8C7] overflow-hidden flex flex-col justify-between hover:border-[#D9383A] hover:shadow-lg transition duration-300 group">
+            <div>
+              <div class="relative h-44 overflow-hidden bg-[#2B192E]">
+                <img src="${b.image}" alt="${b.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <span class="absolute top-3 end-3 px-2.5 py-1 rounded-full bg-[#D9383A] text-white text-[11px] font-extrabold shadow-md">+$${b.price}</span>
+                <span class="absolute bottom-2.5 start-3 text-[11px] font-semibold text-white drop-shadow">${b.dimensions || '8 ft × 8 ft'}</span>
+              </div>
+              <div class="p-4">
+                <span class="inline-block px-2 py-0.5 rounded-full bg-[#D9383A]/10 text-[#D9383A] text-[10px] font-extrabold uppercase mb-1.5">${b.category}</span>
+                <h4 class="font-serif-editorial text-base font-bold text-[#1F1A1C] group-hover:text-[#D9383A] transition">${b.name}</h4>
+                <p class="text-xs text-[#5A4B53] line-clamp-2 mt-1 leading-relaxed">${b.description}</p>
+              </div>
+            </div>
+            <div class="p-4 pt-0">
+              <a href="backdrops.html" class="w-full py-2.5 px-3 rounded-xl bg-[#FAF3E8] border border-[#E6D8C7] text-xs font-bold text-[#1F1A1C] group-hover:bg-[#D9383A] group-hover:text-white group-hover:border-[#D9383A] transition flex items-center justify-center gap-1.5">
+                <span>Explore Style</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // Render Recent Reviews
+      const revGrid = document.getElementById('h2ReviewsGrid');
+      if (revGrid && window.PBStore) {
+        revGrid.innerHTML = window.PBStore.getReviews().slice(0, 4).map(r => `
+          <div class="surface-card bg-white rounded-2xl border border-[#E6D8C7] p-4 flex flex-col justify-between hover:border-[#D9383A] transition shadow-xs">
+            <div>
+              <div class="flex items-center justify-between text-amber-400 text-xs mb-1.5">
+                <span class="tracking-widest">★★★★★</span>
+                <span class="px-2 py-0.5 rounded-full bg-[#2A7B76]/10 text-[#2A7B76] text-[10px] font-extrabold uppercase">${r.eventType}</span>
+              </div>
+              <p class="text-xs text-[#5A4B53] italic line-clamp-2 leading-relaxed">"${r.comment}"</p>
+            </div>
+            <div class="flex items-center gap-2.5 mt-3 pt-2.5 border-t border-[#E6D8C7]">
+              <img src="${r.avatar}" alt="${r.name}" class="w-8 h-8 rounded-full object-cover shrink-0">
+              <div class="min-w-0">
+                <p class="font-bold text-xs text-[#1F1A1C] truncate">${r.name}</p>
+                <p class="text-[10px] text-[#84727B] truncate">${r.boothUsed}</p>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // Quick Booking Form Handlers
+      document.getElementById('qbFilterPreviewBtn')?.addEventListener('click', () => {
+        const ev = document.getElementById('qbEventType').value;
+        window.filterH2Booths(ev);
+        document.getElementById('availableBoothsSection').scrollIntoView({ behavior: 'smooth' });
+        window.PBUI.toast(`Showing available booths recommended for ${ev}`, 'info');
+      });
+
+      document.getElementById('home2QuickBookForm')?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const eventDate = document.getElementById('qbEventDate').value;
+        const eventType = document.getElementById('qbEventType').value;
+        const guestCount = Number(document.getElementById('qbGuestCount').value);
+        window.PBStore.saveDraftBooking({ eventDate, eventType, guestCount, step: 1 });
+        window.location.href = `booking.html?date=${encodeURIComponent(eventDate)}&event=${encodeURIComponent(eventType)}&guests=${guestCount}`;
+      });
+    });
+
+    window.lookupBookingRef = function() {
+      const ref = document.getElementById('h2RefLookupInput').value.trim();
+      if (!ref) return;
+      window.location.href = `customer/booking-details.html?ref=${encodeURIComponent(ref)}`;
+    };
+  </script>
+</body>
+</html>

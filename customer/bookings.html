@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Bookings | Snapora Client Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="bg-[#FDF8F2] text-[#1F1A1C] antialiased">
+  <div class="flex h-screen overflow-hidden">
+    <div id="customerSidebarMount"></div>
+    <div class="flex-1 flex flex-col overflow-hidden w-full">
+      <div id="customerHeaderMount"></div>
+      <main class="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8">
+        <div class="max-w-7xl mx-auto space-y-6">
+          <!-- Filter & Search Bar -->
+          <div class="surface-card bg-white rounded-3xl border border-[#E6D8C7] p-5 shadow-xs">
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+              <div class="relative flex-1">
+                <i class="bi bi-search absolute start-4 top-1/2 -translate-y-1/2 text-[#84727B] text-xs"></i>
+                <input
+                  type="text"
+                  id="custBookingSearch"
+                  placeholder="Search reference, booth, event, or venue..."
+                  class="w-full ps-10 pe-4 py-2.5 rounded-xl border border-[#E6D8C7] bg-[#FAF3E8] text-xs font-semibold focus:outline-none focus:border-[#D9383A]"
+                >
+              </div>
+              <div class="flex flex-wrap items-center gap-3">
+                <select id="custBookingDateFilter" aria-label="Filter by event timeframe" class="px-3.5 py-2.5 rounded-xl border border-[#E6D8C7] bg-[#FAF3E8] text-xs font-bold">
+                  <option value="All">All Event Dates</option>
+                  <option value="upcoming">Upcoming Events</option>
+                  <option value="past">Past Events</option>
+                </select>
+                <select id="custBookingStatusFilter" aria-label="Filter by booking status" class="px-3.5 py-2.5 rounded-xl border border-[#E6D8C7] bg-[#FAF3E8] text-xs font-bold">
+                  <option value="All">All Statuses</option>
+                  <option value="Pending">Pending</option>
+                  <option value="Under Review">Under Review</option>
+                  <option value="Confirmed">Confirmed</option>
+                  <option value="Event Preparation">Event Preparation</option>
+                  <option value="Event Completed">Event Completed</option>
+                  <option value="Cancelled">Cancelled</option>
+                </select>
+                <select id="custBookingSort" aria-label="Sort reservations" class="px-3.5 py-2.5 rounded-xl border border-[#E6D8C7] bg-[#FAF3E8] text-xs font-bold">
+                  <option value="newest">Sort: Newest Event Date</option>
+                  <option value="date-asc">Sort: Earliest Event Date</option>
+                  <option value="price-desc">Sort: Highest Est. Total</option>
+                  <option value="price-asc">Sort: Lowest Est. Total</option>
+                </select>
+                <a href="../booking.html" class="btn-cherry !py-2.5 !px-4 text-xs">
+                  <i class="bi bi-plus-lg"></i>
+                  <span>+ New Booking</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bookings Table Card -->
+          <div class="surface-card bg-white rounded-3xl border border-[#E6D8C7] p-6 shadow-xs">
+            <div class="table-responsive">
+              <table class="w-full text-start text-xs">
+                <thead>
+                  <tr class="border-b border-[#E6D8C7] text-[10px] font-extrabold uppercase tracking-wider text-[#84727B]">
+                    <th class="py-3.5 px-3 text-start">Reference</th>
+                    <th class="py-3.5 px-3 text-start">Event &amp; Venue</th>
+                    <th class="py-3.5 px-3 text-start">Date &amp; Time</th>
+                    <th class="py-3.5 px-3 text-start">Booth &amp; Package</th>
+                    <th class="py-3.5 px-3 text-start">Est. Total</th>
+                    <th class="py-3.5 px-3 text-start">Status</th>
+                    <th class="py-3.5 px-3 text-end">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="custBookingsTableBody" class="divide-y divide-[#E6D8C7]"></tbody>
+              </table>
+            </div>
+
+            <!-- Pagination Footer -->
+            <div id="custBookingsPagination" class="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-[#E6D8C7]"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="../assets/js/storage.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/customer-dashboard.js"></script>
+</body>
+</html>

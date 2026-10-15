@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Memory Not Found | Snapora</title>
+  <meta name="description" content="Oops! This Memory Couldn't Be Found. Let's get you back to Snapora's photo booths and event packages.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#FDF8F2] text-[#1F1A1C] antialiased selection:bg-[#D9383A] selection:text-white">
+
+  <!-- Shared Navbar -->
+  <div id="navbar"></div>
+
+  <main class="pt-20 min-h-[85vh] flex items-center py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="surface-card bg-white rounded-3xl border-2 border-[#E6D8C7] p-8 sm:p-14 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative overflow-hidden">
+        <!-- Left Nostalgic 404 Typography & CTA -->
+        <div class="lg:col-span-7 space-y-6 relative z-10">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#D9383A]/10 text-[#D9383A] text-xs font-extrabold uppercase tracking-widest">
+            <i class="bi bi-film"></i> Frame #404 • Blank Exposure
+          </div>
+
+          <div class="flex items-baseline gap-4">
+            <span class="font-serif-editorial text-7xl sm:text-8xl lg:text-9xl font-extrabold text-[#D9383A] leading-none tracking-tight">404</span>
+            <span class="font-handwritten text-2xl sm:text-3xl text-[#5A4B53] -rotate-6">Out of frame!</span>
+          </div>
+
+          <h1 class="font-serif-editorial text-3xl sm:text-4xl font-bold text-[#1F1A1C] leading-tight">
+            Oops! This Memory Couldn't Be Found.
+          </h1>
+          <p class="text-base sm:text-lg text-[#5A4B53] leading-relaxed max-w-xl">
+            Looks like this page stepped out of the photo booth. Let's get you back to the fun.
+          </p>
+
+          <!-- 3 Working Navigation Buttons -->
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a href="index.html" class="btn-cherry">
+              <i class="bi bi-house-heart-fill"></i>
+              <span>Back Home</span>
+            </a>
+            <a href="booths.html" class="btn-plum">
+              <i class="bi bi-camera2"></i>
+              <span>Explore Booths</span>
+            </a>
+            <a href="packages.html" class="btn-outline-vintage">
+              <i class="bi bi-box2-heart"></i>
+              <span>View Packages</span>
+            </a>
+          </div>
+
+          <div class="pt-4 border-t border-[#E6D8C7] flex flex-wrap items-center gap-6 text-xs font-bold text-[#84727B]">
+            <a href="booking.html" class="hover:text-[#D9383A] transition"><i class="bi bi-calendar2-check me-1"></i>Online Booking Studio</a>
+            <a href="gallery.html" class="hover:text-[#D9383A] transition"><i class="bi bi-images me-1"></i>Event Lookbook</a>
+            <a href="contact.html" class="hover:text-[#D9383A] transition"><i class="bi bi-headset me-1"></i>Contact Support</a>
+          </div>
+        </div>
+
+        <!-- Right Retro Photo Booth Polaroid Illustration -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative">
+            <div class="polaroid-frame rotate-3 max-w-xs w-full animate-float-slow">
+              <div class="relative overflow-hidden rounded-lg">
+                <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80" alt="Retro Photo Booth Curtain" class="w-full h-72 object-cover">
+                <div class="absolute inset-0 bg-[#1F1A1C]/45 flex flex-col items-center justify-center text-white p-4 text-center">
+                  <i class="bi bi-camera-reels text-4xl text-[#F4C95D] mb-2"></i>
+                  <span class="text-xs font-extrabold uppercase tracking-widest bg-[#D9383A] px-3 py-1 rounded-full">Curtain Closed</span>
+                </div>
+              </div>
+              <p class="polaroid-caption">Where did everybody go?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Shared Footer -->
+  <div id="footer"></div>
+
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

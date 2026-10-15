@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Login | Snapora</title>
+  <meta name="description" content="Sign in to your Snapora Customer Portal to manage photo booth bookings, favorites, and event details.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#FDF8F2] text-[#1F1A1C] antialiased selection:bg-[#D9383A] selection:text-white">
+
+  <!-- Shared Navbar -->
+  <div id="navbar"></div>
+
+  <main class="pt-20 min-h-screen flex items-center py-14">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <!-- Left Nostalgic Brand Showcase -->
+        <div class="lg:col-span-5 space-y-6">
+          <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#D9383A]/10 text-[#D9383A] text-xs font-extrabold uppercase tracking-widest">
+            <i class="bi bi-key-fill"></i> Client Portal
+          </span>
+          <h1 class="font-serif-editorial text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#1F1A1C] leading-tight">
+            Welcome Back to <span class="text-[#D9383A] italic font-normal">Snapora</span>.
+          </h1>
+          <p class="text-sm sm:text-base text-[#5A4B53] leading-relaxed">
+            Log in to track your photo booth reservation status, customize your 2×6 strip monogram, and manage your event bookings.
+          </p>
+
+          <div class="polaroid-frame -rotate-1 max-w-sm">
+            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80" alt="Vintage Photo Booth Curtain" class="w-full h-56 object-cover rounded-lg">
+            <p class="polaroid-caption">Your Event Portal Awaits</p>
+          </div>
+        </div>
+
+        <!-- Right Login Card -->
+        <div class="lg:col-span-7 surface-card bg-white p-7 sm:p-10 rounded-3xl border-2 border-[#E6D8C7] shadow-2xl space-y-6">
+          <!-- Top Auth Mode Toggle (Sign In / Sign Up) -->
+          <div class="flex items-center p-1.5 rounded-2xl bg-[#F5ECE0] dark:bg-[#1D1522] border border-[#E6D8C7] dark:border-[#523A61] shadow-inner">
+            <a href="login.html" id="authToggleSignIn" class="flex-1 py-2.5 px-4 text-center rounded-xl text-xs sm:text-sm font-extrabold bg-[#D9383A] text-white shadow-md transition-all duration-200 flex items-center justify-center gap-2">
+              <i class="bi bi-box-arrow-in-right"></i>
+              <span>Sign In</span>
+            </a>
+            <a href="signup.html" id="authToggleSignUp" class="flex-1 py-2.5 px-4 text-center rounded-xl text-xs sm:text-sm font-bold text-[#5A4B53] dark:text-[#E8DEE7] hover:text-[#D9383A] hover:bg-white/70 dark:hover:bg-[#281D30] transition-all duration-200 flex items-center justify-center gap-2">
+              <i class="bi bi-person-plus"></i>
+              <span>Sign Up</span>
+            </a>
+          </div>
+
+          <!-- Status Banner (Logout / Unauthorized / Redirect Notice) -->
+          <div id="loginUrlBanner" class="hidden p-4 rounded-2xl bg-[#FAF3E8] border border-[#E6D8C7] text-xs font-bold text-[#1F1A1C]"></div>
+
+          <!-- Login Form -->
+          <form id="loginForm" class="space-y-5" novalidate>
+            <div>
+              <label for="loginEmail" class="block text-xs font-bold uppercase tracking-wider text-[#5A4B53] mb-1.5">Email Address *</label>
+              <div class="relative">
+                <i class="bi bi-envelope absolute start-4 top-1/2 -translate-y-1/2 text-[#84727B]"></i>
+                <input id="loginEmail" type="email" required placeholder="name@example.com" class="w-full ps-11 pe-4 py-3.5 rounded-xl border border-[#E6D8C7] bg-[#FDF8F2] text-sm font-medium focus:outline-none focus:border-[#D9383A]">
+              </div>
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between mb-1.5">
+                <label for="loginPassword" class="block text-xs font-bold uppercase tracking-wider text-[#5A4B53]">Password *</label>
+                <button type="button" id="openForgotModalBtn" class="text-xs font-bold text-[#D9383A] hover:underline">Forgot Password?</button>
+              </div>
+              <div class="relative">
+                <i class="bi bi-lock absolute start-4 top-1/2 -translate-y-1/2 text-[#84727B]"></i>
+                <input id="loginPassword" type="password" required placeholder="Enter your password" class="w-full ps-11 pe-12 py-3.5 rounded-xl border border-[#E6D8C7] bg-[#FDF8F2] text-sm font-medium focus:outline-none focus:border-[#D9383A]">
+                <button type="button" id="toggleLoginPassBtn" aria-label="Show or hide password" class="absolute end-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-lg text-[#5A4B53] hover:text-[#D9383A] flex items-center justify-center">
+                  <i class="bi bi-eye text-base" id="toggleLoginPassIcon"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between">
+              <label class="inline-flex items-center gap-2 cursor-pointer text-xs font-semibold text-[#5A4B53]">
+                <input id="loginRemember" type="checkbox" checked class="w-4 h-4 rounded border-[#E6D8C7] text-[#D9383A] focus:ring-[#D9383A]">
+                <span>Remember me on this browser</span>
+              </label>
+              <a href="signup.html" class="text-xs font-extrabold text-[#2A7B76] hover:underline">Create Customer Account →</a>
+            </div>
+
+            <div id="loginErrorBox" class="hidden p-3.5 rounded-xl bg-red-500/10 border border-red-500/30 text-xs font-bold text-[#D9383A]"></div>
+
+            <button type="submit" class="btn-cherry w-full !py-3.5 text-sm">
+              <i class="bi bi-box-arrow-in-right"></i>
+              <span>Sign In to Portal</span>
+            </button>
+          </form>
+
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Forgot Password Demo Modal -->
+  <div id="forgotPasswordModal" role="dialog" aria-modal="true" aria-labelledby="forgotModalTitle" class="fixed inset-0 z-50 bg-black/65 backdrop-blur-xs hidden flex items-center justify-center p-4">
+    <div class="surface-card bg-[#FDF8F2] border-2 border-[#E6D8C7] rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative">
+      <button type="button" id="closeForgotModalBtn" aria-label="Close modal" class="absolute top-4 end-4 w-9 h-9 rounded-full border border-[#E6D8C7] flex items-center justify-center hover:text-[#D9383A]">
+        <i class="bi bi-x-lg"></i>
+      </button>
+      <span class="inline-block px-3 py-1 rounded-full bg-[#D9383A]/10 text-[#D9383A] text-xs font-extrabold uppercase tracking-wider mb-2">Password Recovery</span>
+      <h2 id="forgotModalTitle" class="font-serif-editorial text-2xl font-bold text-[#1F1A1C]">Reset Password</h2>
+      <p class="text-xs text-[#5A4B53] mt-1 leading-relaxed">
+        Enter your account email below. We will send password reset instructions to your registered email address.
+      </p>
+      <form id="forgotPasswordForm" class="space-y-4 mt-5">
+        <div>
+          <label for="forgotEmailInput" class="block text-xs font-bold uppercase tracking-wider text-[#5A4B53] mb-1">Registered Email *</label>
+          <input id="forgotEmailInput" type="email" required placeholder="name@example.com" class="w-full px-4 py-3 rounded-xl border border-[#E6D8C7] bg-white text-sm">
+        </div>
+        <div id="forgotResetResult" class="hidden p-3.5 rounded-xl bg-[#2A7B76]/15 border border-[#2A7B76]/30 text-xs font-semibold text-[#1F1A1C]"></div>
+        <button type="submit" class="btn-cherry w-full text-xs !py-3">
+          <i class="bi bi-envelope-check-fill"></i>
+          <span>Send Password Reset Link</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const emailInput = document.getElementById('loginEmail');
+      const passInput = document.getElementById('loginPassword');
+      const rememberInput = document.getElementById('loginRemember');
+      const errorBox = document.getElementById('loginErrorBox');
+      const banner = document.getElementById('loginUrlBanner');
+      const params = new URLSearchParams(window.location.search);
+
+      if (params.get('logged_out') === '1') {
+        banner.textContent = 'You have been signed out of your session.';
+        banner.classList.remove('hidden');
+      } else if (params.get('unauthorized') === '1') {
+        banner.textContent = 'Please sign in to access your Customer Portal.';
+        banner.classList.remove('hidden');
+      }
+
+      // Top Auth Mode Toggle - Redirect to Sign Up Page
+      document.getElementById('authToggleSignUp')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.location.href = 'signup.html';
+      });
+
+      // Show / Hide Password Toggle
+      const toggleBtn = document.getElementById('toggleLoginPassBtn');
+      const toggleIcon = document.getElementById('toggleLoginPassIcon');
+      toggleBtn?.addEventListener('click', () => {
+        const isPass = passInput.type === 'password';
+        passInput.type = isPass ? 'text' : 'password';
+        toggleIcon.className = isPass ? 'bi bi-eye-slash text-base' : 'bi bi-eye text-base';
+      });
+
+      // Login Submit - Redirects strictly to home page
+      document.getElementById('loginForm')?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        errorBox.classList.add('hidden');
+
+        const res = window.PBAuth.login(emailInput.value, passInput.value, rememberInput.checked);
+        if (!res.ok) {
+          errorBox.textContent = res.message;
+          errorBox.classList.remove('hidden');
+          window.PBUI.toast(res.message, 'error');
+          return;
+        }
+
+        window.PBUI.toast(res.message, 'success');
+        setTimeout(() => {
+          window.location.href = 'index.html';
+        }, 450);
+      });
+
+      // Forgot Password Modal
+      const forgotModal = document.getElementById('forgotPasswordModal');
+      const forgotResult = document.getElementById('forgotResetResult');
+      document.getElementById('openForgotModalBtn')?.addEventListener('click', () => {
+        forgotModal.classList.remove('hidden');
+        forgotResult.classList.add('hidden');
+      });
+      document.getElementById('closeForgotModalBtn')?.addEventListener('click', () => {
+        forgotModal.classList.add('hidden');
+      });
+      document.getElementById('forgotPasswordForm')?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const em = document.getElementById('forgotEmailInput').value.trim();
+        if (!em) return;
+        forgotResult.classList.remove('hidden');
+        forgotResult.innerHTML = `Password reset instructions have been sent to <strong>${em}</strong>. Please check your inbox.`;
+        window.PBUI.toast('Password reset instructions sent!', 'info');
+      });
+    });
+  </script>
+</body>
+</html>

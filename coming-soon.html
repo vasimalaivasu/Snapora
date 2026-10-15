@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coming Soon — New Booth Experience | Snapora</title>
+  <meta name="description" content="Something nostalgic and extraordinary is developing in the darkroom. Join the VIP waitlist for Snapora's upcoming Holographic & Analog Cinema Booth launch.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#FDF8F2] text-[#1F1A1C] antialiased selection:bg-[#D9383A] selection:text-white">
+
+  <!-- Shared Navbar -->
+  <div id="navbar"></div>
+
+  <main class="pt-20">
+    <section id="comingSoonHeroSection" class="relative min-h-[88vh] flex items-center py-16 lg:py-24 text-[#1F1A1C] overflow-hidden bg-cover bg-center sm:bg-[position:85%_center] bg-no-repeat" style="background-image: url('assets/images/vintage-booth-strips-hero.jpg');">
+      <!-- Atmospheric Warm Scrim to ensure complete legibility in light & dark modes -->
+      <div class="absolute inset-0 bg-gradient-to-r from-[#FDF8F2] via-[#FDF8F2]/95 md:via-[#FAF3E8]/90 to-[#FAF3E8]/60 dark:from-[#1A121D] dark:via-[#211324]/95 dark:to-[#2B192E]/70"></div>
+      <!-- Ambient Background Glow -->
+      <div class="absolute -top-24 -start-24 w-96 h-96 rounded-full bg-[#D9383A]/10 blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 -end-24 w-96 h-96 rounded-full bg-[#F4C95D]/20 blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <!-- Left Launch Headline, Countdown & Waitlist Form -->
+          <div class="lg:col-span-7 space-y-6">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#E6D8C7] text-[#D9383A] text-xs font-extrabold uppercase tracking-widest shadow-xs">
+              <i class="bi bi-stars"></i> Developing in the Darkroom • 2026 Season Launch
+            </span>
+
+            <h1 class="font-serif-editorial text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.08] text-[#1F1A1C]">
+              Something <span class="text-[#D9383A] italic font-normal">Iconic</span> Is Stepping Behind the Curtain.
+            </h1>
+
+            <p class="text-base sm:text-lg text-[#5A4B53] leading-relaxed max-w-2xl">
+              We are putting the final brass touches on our newest flagship experience: <strong class="text-[#1F1A1C]">The 1965 Velvet Cinema &amp; Instant Audio-Gram Booth</strong>. Meanwhile, all 12 of our current photo booths are ready to reserve for your upcoming celebration!
+            </p>
+
+            <!-- Live 30-Day JavaScript Countdown Timer -->
+            <div class="grid grid-cols-4 gap-3 sm:gap-5 max-w-lg pt-2" aria-label="Launch Countdown Timer">
+              <div class="bg-white border border-[#E6D8C7] rounded-2xl p-4 text-center shadow-xs">
+                <span id="cdDays" class="font-serif-editorial text-3xl sm:text-4xl font-extrabold text-[#D9383A] block">30</span>
+                <span class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#5A4B53] mt-1 block">Days</span>
+              </div>
+              <div class="bg-white border border-[#E6D8C7] rounded-2xl p-4 text-center shadow-xs">
+                <span id="cdHours" class="font-serif-editorial text-3xl sm:text-4xl font-extrabold text-[#1F1A1C] block">00</span>
+                <span class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#5A4B53] mt-1 block">Hours</span>
+              </div>
+              <div class="bg-white border border-[#E6D8C7] rounded-2xl p-4 text-center shadow-xs">
+                <span id="cdMinutes" class="font-serif-editorial text-3xl sm:text-4xl font-extrabold text-[#1F1A1C] block">00</span>
+                <span class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#5A4B53] mt-1 block">Minutes</span>
+              </div>
+              <div class="bg-white border border-[#E6D8C7] rounded-2xl p-4 text-center shadow-xs">
+                <span id="cdSeconds" class="font-serif-editorial text-3xl sm:text-4xl font-extrabold text-[#E86A58] block">00</span>
+                <span class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#5A4B53] mt-1 block">Seconds</span>
+              </div>
+            </div>
+
+            <!-- VIP Early Access Subscription Form -->
+            <div class="bg-white surface-card p-6 sm:p-7 rounded-3xl border-2 border-[#E6D8C7] shadow-lg max-w-xl space-y-4">
+              <h2 class="font-serif-editorial text-xl font-bold text-[#1F1A1C]">Join the VIP Launch Waitlist (+ Get $100 Launch Credit)</h2>
+              <form id="comingSoonWaitlistForm" class="flex flex-col sm:flex-row gap-3" novalidate>
+                <label for="csEmailInput" class="sr-only">Email address</label>
+                <input id="csEmailInput" type="email" required placeholder="Enter your email for early access..." class="flex-1 px-4 py-3.5 rounded-xl bg-[#FAF3E8] border border-[#E6D8C7] text-[#1F1A1C] placeholder-[#84727B] text-sm focus:outline-none focus:border-[#D9383A]">
+                <button type="submit" class="btn-cherry whitespace-nowrap !py-3.5">
+                  <i class="bi bi-bell-fill"></i>
+                  <span>Notify Me</span>
+                </button>
+              </form>
+              <div id="csConfirmationBox" class="hidden p-3.5 rounded-xl bg-[#2A7B76]/15 border border-[#2A7B76]/40 text-xs text-[#2A7B76] font-semibold"></div>
+              <p class="text-[11px] text-[#5A4B53]">
+                Need a booth right away? <a href="booking.html" class="text-[#D9383A] font-bold underline">Our Online Booking Studio is 100% live →</a>
+              </p>
+            </div>
+
+            <!-- Social Links & Direct Contact -->
+            <div class="flex flex-wrap items-center justify-between gap-4 pt-2 text-xs text-[#5A4B53] max-w-xl">
+              <div class="flex items-center gap-4">
+                <span><i class="bi bi-telephone-fill text-[#D9383A] me-1.5"></i>(800) 555-SNAP</span>
+                <span><i class="bi bi-envelope-fill text-[#D9383A] me-1.5"></i>hello@snapora.demo</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <a href="https://www.facebook.com/login" target="_blank" rel="noopener noreferrer" aria-label="Facebook Login" class="w-9 h-9 rounded-xl bg-white border border-[#E6D8C7] hover:bg-[#D9383A] hover:text-white flex items-center justify-center text-[#1F1A1C] transition"><i class="bi bi-facebook"></i></a>
+                <a href="https://x.com/i/flow/login" target="_blank" rel="noopener noreferrer" aria-label="X Login" class="w-9 h-9 rounded-xl bg-white border border-[#E6D8C7] hover:bg-[#D9383A] hover:text-white flex items-center justify-center text-[#1F1A1C] transition"><i class="bi bi-twitter-x"></i></a>
+                <a href="https://www.instagram.com/accounts/login/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Login" class="w-9 h-9 rounded-xl bg-white border border-[#E6D8C7] hover:bg-[#D9383A] hover:text-white flex items-center justify-center text-[#1F1A1C] transition"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.tiktok.com/login" target="_blank" rel="noopener noreferrer" aria-label="TikTok Login" class="w-9 h-9 rounded-xl bg-white border border-[#E6D8C7] hover:bg-[#D9383A] hover:text-white flex items-center justify-center text-[#1F1A1C] transition"><i class="bi bi-tiktok"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Retro Photo Strip Artwork -->
+          <div class="lg:col-span-5 flex justify-center">
+            <div class="flex items-center gap-5">
+              <!-- Strip 1 -->
+              <div class="photo-strip-vertical w-44 sm:w-52 -rotate-3 animate-float-slow">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=500&q=80" alt="Photo strip frame 1" class="w-full h-28 object-cover rounded">
+                <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=500&q=80" alt="Photo strip frame 2" class="w-full h-28 object-cover rounded">
+                <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=500&q=80" alt="Photo strip frame 3" class="w-full h-28 object-cover rounded">
+              </div>
+
+              <!-- Strip 2 -->
+              <div class="photo-strip-vertical w-44 sm:w-52 rotate-3 mt-10 animate-float-delayed hidden sm:flex">
+                <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=500&q=80" alt="Photo strip frame 4" class="w-full h-28 object-cover rounded">
+                <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=500&q=80" alt="Photo strip frame 5" class="w-full h-28 object-cover rounded">
+                <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=500&q=80" alt="Photo strip frame 6" class="w-full h-28 object-cover rounded">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared Footer -->
+  <div id="footer"></div>
+
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 30-day future countdown timer
+      const targetTime = Date.now() + 30 * 24 * 60 * 60 * 1000;
+      const dEl = document.getElementById('cdDays');
+      const hEl = document.getElementById('cdHours');
+      const mEl = document.getElementById('cdMinutes');
+      const sEl = document.getElementById('cdSeconds');
+
+      function updateCountdown() {
+        const diff = Math.max(0, targetTime - Date.now());
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const mins = Math.floor((diff / (1000 * 60)) % 60);
+        const secs = Math.floor((diff / 1000) % 60);
+
+        if (dEl) dEl.textContent = String(days).padStart(2, '0');
+        if (hEl) hEl.textContent = String(hours).padStart(2, '0');
+        if (mEl) mEl.textContent = String(mins).padStart(2, '0');
+        if (sEl) sEl.textContent = String(secs).padStart(2, '0');
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+
+      // Waitlist Subscription Form
+      const form = document.getElementById('comingSoonWaitlistForm');
+      const emailInput = document.getElementById('csEmailInput');
+      const confirmBox = document.getElementById('csConfirmationBox');
+
+      form?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = emailInput.value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          window.PBUI.toast('Please enter a valid email address to join the VIP waitlist.', 'error');
+          return;
+        }
+
+        const list = JSON.parse(localStorage.getItem('fb_studio_newsletter') || '[]');
+        if (!list.includes(email)) list.push(email);
+        localStorage.setItem('fb_studio_newsletter', JSON.stringify(list));
+
+        emailInput.value = '';
+        confirmBox.classList.remove('hidden');
+        confirmBox.innerHTML = `<i class="bi bi-check-circle-fill text-[#5CD6CE] me-1.5"></i><strong>${email}</strong> is on the VIP list! (Saved to LocalStorage demo mode).`;
+        window.PBUI.toast('You are on the VIP Launch Waitlist!', 'success');
+      });
+    });
+  </script>
+</body>
+</html>

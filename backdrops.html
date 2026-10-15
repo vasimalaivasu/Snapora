@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Backdrops &amp; Custom Add-Ons | Snapora Photo Booth Rentals</title>
+  <meta name="description" content="Browse 10 artisan photo booth backdrops and 12 custom event add-ons—from kinetic champagne sequins and 3D floral walls to linen guestbooks and red carpet setups.">
+  <meta property="og:title" content="Backdrops &amp; Custom Add-Ons | Snapora Photo Booth Rentals">
+  <meta property="og:description" content="Interactive customization studio: mix and match 10 backdrop styles and 12 upgrades with live pricing calculation.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#FDF8F2] text-[#1F1A1C] min-h-screen flex flex-col pt-20">
+  <!-- Shared Public Navbar -->
+  <div id="navbar"></div>
+
+  <main class="flex-1">
+    <!-- Hero Header -->
+    <section id="backdropsHeroSection" class="relative bg-gradient-to-br from-[#FAF3E8] via-[#FDF8F2] to-[#F5ECE0] text-[#1F1A1C] py-16 lg:py-22 overflow-hidden border-b-4 border-[#D9383A]">
+      <div class="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(#D9383A_1px,transparent_1px)] [background-size:24px_24px]"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div class="lg:col-span-7 space-y-4">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#E6D8C7] text-[#D9383A] text-xs font-extrabold uppercase tracking-widest shadow-xs">
+              <i class="bi bi-palette2"></i>
+              <span>Section 9 • Interactive Set Styling &amp; Upgrades</span>
+            </div>
+            <h1 class="font-serif-editorial text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#1F1A1C] leading-[1.08]">
+              Artisan <span class="text-[#D9383A] italic font-normal">Backdrops</span> &amp; Custom Add-Ons
+            </h1>
+            <p class="text-[#5A4B53] text-base sm:text-lg leading-relaxed max-w-2xl">
+              Click any of our <strong>10 statement backdrops</strong> and <strong>12 custom add-ons</strong> below to build your dream set. Watch the Live Customization Calculator at the bottom of your screen tally your selections and carry them straight into your booking!
+            </p>
+            <div class="flex flex-wrap items-center gap-3 pt-2 text-xs font-bold">
+              <span class="px-3.5 py-2 rounded-xl bg-[#2A7B76]/15 border border-[#2A7B76]/30 text-[#2A7B76] inline-flex items-center gap-1.5 shadow-xs">
+                <i class="bi bi-check-circle-fill"></i> Included Standard ($0) Options Clearly Marked
+              </span>
+              <span class="px-3.5 py-2 rounded-xl bg-white border border-[#E6D8C7] text-[#1F1A1C] inline-flex items-center gap-1.5 shadow-xs">
+                <i class="bi bi-sparkles text-[#D9383A]"></i> Paid Upgrades Sync to Booking Step 4
+              </span>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 flex justify-center lg:justify-end">
+            <div class="polaroid-frame max-w-sm w-full rotate-[2deg]">
+              <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=800&q=80" alt="Floral Garden Backdrop" class="w-full h-52 object-cover rounded-lg">
+              <span class="polaroid-caption">8×8 ft 3D Botanical &amp; Kinetic Sequin Walls</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Part 1: 10 Statement Backdrops Section -->
+    <section class="py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="backdropsSection">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-widest text-[#D9383A]">Step A • Choose Your Set Background</span>
+          <h2 class="font-serif-editorial text-3xl sm:text-4xl font-bold text-[#1F1A1C] mt-1">10 Artisan Photo Booth Backdrops</h2>
+          <p class="text-xs sm:text-sm text-[#5A4B53] mt-1">Click any backdrop card below to select it for your event quote. Classic White is included standard ($0) with every booth!</p>
+        </div>
+
+        <!-- Backdrop Filter Pills -->
+        <div class="flex flex-wrap items-center gap-2" id="backdropFilterPills">
+          <button type="button" data-bd-filter="all" class="px-3.5 py-1.5 rounded-full text-xs font-extrabold bg-[#D9383A] text-white">All Backdrops (10)</button>
+          <button type="button" data-bd-filter="included" class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#FAF3E8] border border-[#E6D8C7] text-[#5A4B53] hover:border-[#D9383A]">Included Standard ($0)</button>
+          <button type="button" data-bd-filter="upgrade" class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#FAF3E8] border border-[#E6D8C7] text-[#5A4B53] hover:border-[#D9383A]">Paid Upgrades (+$85–$250)</button>
+        </div>
+      </div>
+
+      <div id="backdropsCatalogGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        <!-- Populated dynamically from window.PBStore.getBackdrops() -->
+      </div>
+    </section>
+
+    <!-- Part 2: 12 Custom Add-On Options Section -->
+    <section class="py-14 bg-[#F5ECE0] border-t border-[#E6D8C7]" id="addonsSection">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-widest text-[#2A7B76]">Step B • Select Optional Enhancements</span>
+            <h2 class="font-serif-editorial text-3xl sm:text-4xl font-bold text-[#1F1A1C] mt-1">12 Custom Event Add-Ons &amp; Upgrades</h2>
+            <p class="text-xs sm:text-sm text-[#5A4B53] mt-1">Toggle as many add-ons as you like. Digital Cloud Gallery is included standard ($0) with every reservation.</p>
+          </div>
+
+          <!-- Add-On Filter Pills -->
+          <div class="flex flex-wrap items-center gap-2" id="addonFilterPills">
+            <button type="button" data-ao-filter="all" class="px-3.5 py-1.5 rounded-full text-xs font-extrabold bg-[#D9383A] text-white shadow-xs">All Add-Ons (12)</button>
+            <button type="button" data-ao-filter="included" class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-white border border-[#E6D8C7] text-[#5A4B53] hover:border-[#D9383A]">Included Standard ($0)</button>
+            <button type="button" data-ao-filter="upgrade" class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-white border border-[#E6D8C7] text-[#5A4B53] hover:border-[#D9383A]">Paid Upgrades</button>
+          </div>
+        </div>
+
+        <div id="addonsCatalogGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Populated dynamically from window.PBStore.getAddons() -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Custom Print & Strip Design Showcase -->
+    <section class="py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="surface-card bg-white rounded-3xl border-2 border-[#E6D8C7] p-8 lg:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-7 space-y-4">
+          <span class="px-3 py-1 rounded-full bg-[#D9383A]/10 text-[#D9383A] text-xs font-extrabold uppercase tracking-widest">Bespoke Stationery Matching</span>
+          <h2 class="font-serif-editorial text-2xl sm:text-4xl font-bold text-[#1F1A1C]">Custom Photo Strip &amp; 4×6 Print Artwork</h2>
+          <p class="text-sm text-[#5A4B53] leading-relaxed">
+            Whether you want a minimalist Vogue-inspired monochrome border, a 1970s retro disco foil stamp, or an exact match to your wedding invitation calligraphy, our in-house graphic artists design custom overlays for every event.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs">
+            <div class="p-3.5 rounded-2xl bg-[#FAF3E8] border border-[#E6D8C7]">
+              <strong class="text-[#1F1A1C] block"><i class="bi bi-aspect-ratio text-[#D9383A] me-1"></i>2×6 Classic Strips</strong>
+              <span class="text-[#5A4B53]">3 or 4 poses vertical with bottom monogram crest.</span>
+            </div>
+            <div class="p-3.5 rounded-2xl bg-[#FAF3E8] border border-[#E6D8C7]">
+              <strong class="text-[#1F1A1C] block"><i class="bi bi-card-image text-[#2A7B76] me-1"></i>4×6 Editorial Prints</strong>
+              <span class="text-[#5A4B53]">Single full-frame portrait or 4-grid postcard layout.</span>
+            </div>
+            <div class="p-3.5 rounded-2xl bg-[#FAF3E8] border border-[#E6D8C7]">
+              <strong class="text-[#1F1A1C] block"><i class="bi bi-film text-[#E86A58] me-1"></i>Animated Overlays</strong>
+              <span class="text-[#5A4B53]">Motion borders applied to GIFs, Boomerangs &amp; 360° reels.</span>
+            </div>
+          </div>
+        </div>
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="photo-strip-vertical w-52 rotate-[-2deg]">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=400&q=80" alt="Sample strip frame 1" class="w-full h-24 object-cover rounded">
+            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=400&q=80" alt="Sample strip frame 2" class="w-full h-24 object-cover rounded">
+            <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=400&q=80" alt="Sample strip frame 3" class="w-full h-24 object-cover rounded">
+          </div>
+        </div>
+      </div>
+      <!-- Booking CTA Banner (Inline, No Sticky Bar) -->
+      <div class="mt-16 surface-card bg-white rounded-3xl border-2 border-[#E6D8C7] p-8 sm:p-10 shadow-lg text-center max-w-3xl mx-auto space-y-4">
+        <span class="inline-block px-3.5 py-1 rounded-full bg-[#D9383A]/10 text-[#D9383A] text-xs font-extrabold uppercase tracking-wider">Custom Lookbook</span>
+        <h3 class="font-serif-editorial text-2xl sm:text-3xl font-bold text-[#1F1A1C]">Ready to Customize Your Celebration?</h3>
+        <p class="text-sm text-[#5A4B53] max-w-xl mx-auto">
+          Every photo booth package includes your choice of standard artisan backdrop, studio lighting, and digital sharing. Choose your favorite style in our 7-step online booking studio.
+        </p>
+        <div class="pt-2 flex flex-wrap items-center justify-center gap-3">
+          <a href="booking.html" class="btn-cherry !py-3 !px-6 text-xs">
+            <i class="bi bi-calendar2-heart-fill"></i>
+            <span>Continue to 7-Step Booking</span>
+          </a>
+          <a href="booths.html" class="btn-outline-vintage !py-3 !px-6 text-xs">
+            <i class="bi bi-camera2"></i>
+            <span>Explore 12 Photo Booth Styles</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared Public Footer -->
+  <div id="footer"></div>
+
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    (function () {
+      'use strict';
+
+      let selectedBackdropId = 'classic-white';
+      let selectedAddonIds = [];
+      let bdFilter = 'all';
+      let aoFilter = 'all';
+
+      function loadInitialDraftSelections() {
+        if (!window.PBStore) return;
+        const draft = window.PBStore.getDraftBooking();
+        if (draft.backdropId) selectedBackdropId = draft.backdropId;
+        if (Array.isArray(draft.addonIds)) {
+          selectedAddonIds = [...draft.addonIds];
+        }
+      }
+
+      function renderBackdrops() {
+        const grid = document.getElementById('backdropsCatalogGrid');
+        if (!grid || !window.PBStore) return;
+        const allBackdrops = window.PBStore.getBackdrops();
+
+        const filtered = allBackdrops.filter(bd => {
+          if (bdFilter === 'included') return bd.price === 0 || bd.included;
+          if (bdFilter === 'upgrade') return bd.price > 0 && !bd.included;
+          return true;
+        });
+
+        grid.innerHTML = filtered.map(bd => {
+          const isSelected = bd.id === selectedBackdropId;
+          const isIncluded = bd.price === 0 || bd.included;
+
+          return `
+            <article onclick="window.selectBackdropCard('${bd.id}')" class="cursor-pointer surface-card bg-white rounded-3xl border-2 ${isSelected ? 'border-[#D9383A] ring-4 ring-[#D9383A]/15' : 'border-[#E6D8C7] hover:border-[#D9383A]'} overflow-hidden flex flex-col justify-between transition-all duration-200 group">
+              <div>
+                <div class="relative h-48 overflow-hidden bg-[#2B192E]">
+                  <img src="${bd.image}" alt="${bd.name}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent"></div>
+
+                  <!-- Included Standard vs Paid Upgrade Badge -->
+                  <span class="absolute top-3 start-3 px-2.5 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider shadow-md ${isIncluded ? 'bg-[#2A7B76] text-white' : 'bg-[#D9383A] text-white'}">
+                    ${isIncluded ? 'Included Standard ($0)' : 'Paid Upgrade (+$' + bd.price + ')'}
+                  </span>
+
+                  ${isSelected ? `
+                    <span class="absolute top-3 end-3 w-8 h-8 rounded-full bg-[#D9383A] text-white flex items-center justify-center shadow-md">
+                      <i class="bi bi-check-lg text-sm"></i>
+                    </span>
+                  ` : ''}
+
+                  <div class="absolute bottom-3 inset-x-3 text-white">
+                    <span class="text-[10px] font-bold text-[#F4C95D] block">${bd.dimensions}</span>
+                    <h3 class="font-serif-editorial text-lg font-bold leading-tight">${bd.name}</h3>
+                  </div>
+                </div>
+
+                <div class="p-4 space-y-3">
+                  <p class="text-xs text-[#5A4B53] leading-relaxed">${bd.description}</p>
+                  <div>
+                    <span class="text-[10px] font-extrabold uppercase tracking-wider text-[#84727B] block mb-1">Ideal For</span>
+                    <div class="flex flex-wrap gap-1">
+                      ${(bd.suitableFor || []).map(tag => `
+                        <span class="px-2 py-0.5 rounded-md bg-[#FAF3E8] border border-[#E6D8C7] text-[10px] font-semibold text-[#5A4B53]">${tag}</span>
+                      `).join('')}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-4 pt-0">
+                <button type="button" class="w-full py-2 rounded-xl text-xs font-bold transition ${isSelected ? 'bg-[#D9383A] text-white' : 'bg-[#FAF3E8] text-[#1F1A1C] group-hover:bg-[#D9383A] group-hover:text-white'}">
+                  ${isSelected ? '<i class="bi bi-check2-circle me-1"></i>Selected Backdrop' : 'Select ' + bd.name}
+                </button>
+              </div>
+            </article>
+          `;
+        }).join('');
+      }
+
+      function renderAddons() {
+        const grid = document.getElementById('addonsCatalogGrid');
+        if (!grid || !window.PBStore) return;
+        const allAddons = window.PBStore.getAddons();
+
+        const filtered = allAddons.filter(a => {
+          if (aoFilter === 'included') return a.includedInStandard || a.price === 0;
+          if (aoFilter === 'upgrade') return !a.includedInStandard && a.price > 0;
+          return true;
+        });
+
+        grid.innerHTML = filtered.map(a => {
+          const isIncluded = a.includedInStandard || a.price === 0;
+          const isSelected = isIncluded || selectedAddonIds.includes(a.id);
+
+          return `
+            <article onclick="window.toggleAddonCard('${a.id}')" class="cursor-pointer surface-card bg-white rounded-3xl border-2 ${isSelected ? 'border-[#2A7B76] ring-4 ring-[#2A7B76]/15' : 'border-[#E6D8C7] hover:border-[#D9383A]'} p-6 flex flex-col justify-between transition-all duration-200">
+              <div>
+                <div class="flex items-start justify-between gap-3">
+                  <div class="w-12 h-12 rounded-2xl ${isSelected ? 'bg-[#2A7B76] text-white' : 'bg-[#FAF3E8] text-[#D9383A]'} flex items-center justify-center text-2xl shrink-0 transition">
+                    <i class="bi ${a.icon || 'bi-stars'}"></i>
+                  </div>
+                  <div class="text-end">
+                    <span class="inline-block px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider ${isIncluded ? 'bg-[#2A7B76]/15 text-[#2A7B76] border border-[#2A7B76]/30' : 'bg-[#FAF3E8] text-[#D9383A] border border-[#E6D8C7]'}">
+                      ${isIncluded ? 'Included Standard ($0)' : 'Paid Upgrade (+$' + a.price + ')'}
+                    </span>
+                    <span class="block text-[10px] font-bold text-[#84727B] mt-1">${a.category}</span>
+                  </div>
+                </div>
+
+                <h3 class="font-serif-editorial text-xl font-bold text-[#1F1A1C] mt-4">${a.name}</h3>
+                <p class="text-xs text-[#5A4B53] mt-1.5 leading-relaxed">${a.description}</p>
+              </div>
+
+              <div class="mt-5 pt-3 border-t border-[#E6D8C7] flex items-center justify-between">
+                <span class="text-xs font-extrabold ${isSelected ? 'text-[#2A7B76]' : 'text-[#84727B]'}">
+                  ${isIncluded ? '<i class="bi bi-shield-check me-1"></i>Always Included Free' : isSelected ? '<i class="bi bi-check2-circle me-1"></i>Added to Your Quote' : 'Click to Add Upgrade'}
+                </span>
+                <div class="w-6 h-6 rounded-lg border-2 ${isSelected ? 'bg-[#2A7B76] border-[#2A7B76] text-white' : 'border-[#D2BFA8]'} flex items-center justify-center">
+                  ${isSelected ? '<i class="bi bi-check text-sm"></i>' : ''}
+                </div>
+              </div>
+            </article>
+          `;
+        }).join('');
+      }
+
+      function syncDraftSelections() {
+        if (!window.PBStore) return;
+        window.PBStore.saveDraftBooking({
+          backdropId: selectedBackdropId,
+          addonIds: selectedAddonIds
+        });
+      }
+
+      window.selectBackdropCard = function (bdId) {
+        selectedBackdropId = bdId;
+        const bd = window.PBStore.getBackdropById(bdId);
+        renderBackdrops();
+        syncDraftSelections();
+        if (window.PBUI && bd) {
+          window.PBUI.toast(`${bd.name} backdrop selected (${bd.price === 0 ? 'Included $0' : '+$' + bd.price}).`, 'info');
+        }
+      };
+
+      window.toggleAddonCard = function (addonId) {
+        const addon = window.PBStore.getAddonById(addonId);
+        if (!addon) return;
+        if (addon.includedInStandard || addon.price === 0) {
+          if (window.PBUI) {
+            window.PBUI.toast(`${addon.name} is already included free with every booking!`, 'info');
+          }
+          return;
+        }
+
+        const idx = selectedAddonIds.indexOf(addonId);
+        if (idx > -1) {
+          selectedAddonIds.splice(idx, 1);
+          if (window.PBUI) window.PBUI.toast(`Removed ${addon.name} from selections.`, 'info');
+        } else {
+          selectedAddonIds.push(addonId);
+          if (window.PBUI) window.PBUI.toast(`Added ${addon.name} (+$${addon.price}) to your quote!`, 'success');
+        }
+        renderAddons();
+        syncDraftSelections();
+      };
+
+      document.addEventListener('DOMContentLoaded', () => {
+        loadInitialDraftSelections();
+        renderBackdrops();
+        renderAddons();
+        syncDraftSelections();
+
+        // Backdrop Filter Pills
+        document.querySelectorAll('[data-bd-filter]').forEach(btn => {
+          btn.addEventListener('click', () => {
+            bdFilter = btn.getAttribute('data-bd-filter');
+            document.querySelectorAll('[data-bd-filter]').forEach(b => {
+              b.className = b.getAttribute('data-bd-filter') === bdFilter
+                ? 'px-3.5 py-1.5 rounded-full text-xs font-extrabold bg-[#D9383A] text-white'
+                : 'px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#FAF3E8] border border-[#E6D8C7] text-[#5A4B53] hover:border-[#D9383A]';
+            });
+            renderBackdrops();
+          });
+        });
+
+        // Addon Filter Pills
+        document.querySelectorAll('[data-ao-filter]').forEach(btn => {
+          btn.addEventListener('click', () => {
+            aoFilter = btn.getAttribute('data-ao-filter');
+            document.querySelectorAll('[data-ao-filter]').forEach(b => {
+              b.className = b.getAttribute('data-ao-filter') === aoFilter
+                ? 'px-3.5 py-1.5 rounded-full text-xs font-extrabold bg-[#D9383A] text-white shadow-xs'
+                : 'px-3.5 py-1.5 rounded-full text-xs font-bold bg-white border border-[#E6D8C7] text-[#5A4B53] hover:border-[#D9383A]';
+            });
+            renderAddons();
+          });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

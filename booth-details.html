@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Booth Specifications &amp; Details | Snapora</title>
+  <meta name="description" content="Explore technical specifications, footprint requirements, print formats, backdrop options, and live pricing for Snapora photo booths.">
+  <meta property="og:title" content="Photo Booth Specifications &amp; Details | Snapora">
+  <meta property="og:description" content="View interactive gallery, print formats, space requirements, and instant booking options for our photo booth fleet.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get('id') || 'vintage-enclosed';
+      window.location.replace('booths.html?id=' + encodeURIComponent(id) + '#masterShowcaseSection');
+    })();
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#FDF8F2] text-[#1F1A1C] min-h-screen flex flex-col pt-20">
+  <!-- Shared Public Navbar -->
+  <div id="navbar"></div>
+
+  <main class="flex-1">
+    <!-- Top 12-Booth Quick Switcher Bar -->
+    <section id="boothDetailSwitcherSection" class="bg-[#FAF3E8] text-[#1F1A1C] border-b-2 border-[#E6D8C7] py-3.5 sticky top-20 z-30 shadow-xs">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between gap-4 mb-2">
+          <div class="flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-[#D9383A]">
+            <i class="bi bi-sliders2"></i>
+            <span>Switch Photo Booth Style (12 Models):</span>
+          </div>
+          <a href="booths.html" class="text-xs font-bold text-[#5A4B53] hover:text-[#D9383A] transition inline-flex items-center gap-1">
+            <i class="bi bi-grid-3x3-gap"></i>
+            <span>Back to Full Catalog</span>
+          </a>
+        </div>
+        <div id="boothQuickSwitcher" class="flex items-center gap-2 overflow-x-auto pb-1.5 no-scrollbar" role="navigation" aria-label="Switch between 12 photo booth styles">
+          <!-- Populated dynamically by script -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Primary Booth Hero & Interactive Gallery -->
+    <section class="py-10 lg:py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Breadcrumb -->
+      <nav aria-label="Breadcrumb" class="mb-6 flex items-center gap-2 text-xs font-semibold text-[#84727B]">
+        <a href="index.html" class="hover:text-[#D9383A]">Home</a>
+        <i class="bi bi-chevron-right text-[10px] rtl-flip"></i>
+        <a href="booths.html" class="hover:text-[#D9383A]">Photo Booth Styles</a>
+        <i class="bi bi-chevron-right text-[10px] rtl-flip"></i>
+        <span id="detailBreadcrumbName" class="text-[#1F1A1C] font-bold">Vintage Enclosed Photo Booth</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <!-- Left Column: Interactive Hero Image + Clickable Thumbnails -->
+        <div class="lg:col-span-7 space-y-4 lg:sticky lg:top-40">
+          <div class="polaroid-frame !pb-12 relative overflow-hidden">
+            <div class="relative h-[340px] sm:h-[440px] rounded-xl overflow-hidden bg-[#2B192E]">
+              <img id="detailMainHeroImg" src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=900&q=80" alt="Vintage Enclosed Photo Booth" class="w-full h-full object-cover transition-all duration-300">
+              <span id="detailAvailBadge" class="absolute top-4 start-4 px-3.5 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider bg-[#2A7B76] text-white shadow-lg">
+                <i class="bi bi-check-circle-fill me-1"></i>Available
+              </span>
+              <button type="button" id="detailFavBtn" aria-label="Save booth to favorites" class="absolute top-4 end-4 w-11 h-11 rounded-full bg-white/95 text-[#1F1A1C] hover:scale-110 flex items-center justify-center shadow-lg transition">
+                <i class="bi bi-heart text-lg"></i>
+              </button>
+            </div>
+            <span id="detailPolaroidCaption" class="polaroid-caption">Authentic 1960s Velvet Curtain &amp; Warm Analog-Style Flash</span>
+          </div>
+
+          <!-- Clickable Thumbnail Strip -->
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-extrabold uppercase tracking-wider text-[#5A4B53]">
+                <i class="bi bi-images text-[#D9383A] me-1"></i>Interactive Gallery — Click Any Thumbnail to Preview
+              </span>
+              <span id="detailGalleryCounter" class="text-xs text-[#84727B] font-semibold">4 Photos</span>
+            </div>
+            <div id="detailThumbnailsRow" class="grid grid-cols-4 gap-3">
+              <!-- Populated dynamically -->
+            </div>
+          </div>
+
+          <!-- Print, Digital & Attendant Highlights -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+            <div class="surface-card bg-white p-4 rounded-2xl border border-[#E6D8C7]">
+              <div class="flex items-center gap-2 text-[#D9383A] font-bold text-xs uppercase tracking-wider mb-1.5">
+                <i class="bi bi-printer-fill text-base"></i>
+                <span>Photo Print Options</span>
+              </div>
+              <p id="detailPrintOptions" class="text-xs text-[#5A4B53] leading-relaxed"></p>
+            </div>
+
+            <div class="surface-card bg-white p-4 rounded-2xl border border-[#E6D8C7]">
+              <div class="flex items-center gap-2 text-[#2A7B76] font-bold text-xs uppercase tracking-wider mb-1.5">
+                <i class="bi bi-phone-vibrate-fill text-base"></i>
+                <span>Digital Sharing</span>
+              </div>
+              <p id="detailDigitalSharing" class="text-xs text-[#5A4B53] leading-relaxed"></p>
+            </div>
+
+            <div class="surface-card bg-white p-4 rounded-2xl border border-[#E6D8C7]">
+              <div class="flex items-center gap-2 text-[#E86A58] font-bold text-xs uppercase tracking-wider mb-1.5">
+                <i class="bi bi-person-check-fill text-base"></i>
+                <span>Attendant Service</span>
+              </div>
+              <p id="detailAttendantService" class="text-xs text-[#5A4B53] leading-relaxed"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Booth Info, Specs, Features & Booking CTAs -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="surface-card bg-white p-6 sm:p-8 rounded-3xl border-2 border-[#E6D8C7] shadow-sm space-y-6">
+            <div>
+              <div class="flex flex-wrap items-center gap-2 mb-2">
+                <span id="detailCategoryTag" class="px-3 py-1 rounded-full bg-[#D9383A]/10 text-[#D9383A] text-xs font-extrabold uppercase tracking-wider">Vintage Collection</span>
+                <span class="px-3 py-1 rounded-full bg-[#FAF3E8] border border-[#E6D8C7] text-[#5A4B53] text-xs font-bold">Demo Catalog Spec</span>
+              </div>
+              <h1 id="detailBoothTitle" class="font-serif-editorial text-3xl sm:text-4xl font-extrabold text-[#1F1A1C] leading-tight">
+                Vintage Enclosed Photo Booth
+              </h1>
+              <p id="detailTagline" class="text-sm font-bold text-[#D9383A] mt-1.5"></p>
+            </div>
+
+            <!-- Pricing Banner -->
+            <div class="p-5 rounded-2xl bg-[#FAF3E8] text-[#1F1A1C] flex items-center justify-between gap-4 border border-[#E6D8C7] shadow-xs">
+              <div>
+                <span class="text-[10px] font-extrabold uppercase tracking-widest text-[#D9383A] block">Starting Rental Rate (Demo Pricing)</span>
+                <div class="flex items-baseline gap-2 mt-0.5">
+                  <span id="detailPriceValue" class="font-serif-editorial text-3xl sm:text-4xl font-extrabold text-[#D9383A]">$750</span>
+                  <span id="detailDurationValue" class="text-xs text-[#5A4B53]">/ 3 Hours Base Rental</span>
+                </div>
+              </div>
+              <div class="text-end text-xs text-[#5A4B53]">
+                <span class="inline-block px-2.5 py-1 rounded-lg bg-white border border-[#E6D8C7] text-[#2A7B76] font-bold">All-Inclusive Setup</span>
+              </div>
+            </div>
+
+            <!-- Full Description -->
+            <div>
+              <h2 class="text-xs font-extrabold uppercase tracking-widest text-[#84727B] mb-2">About This Photo Booth</h2>
+              <p id="detailDescription" class="text-sm text-[#5A4B53] leading-relaxed"></p>
+            </div>
+
+            <!-- Primary CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-3 pt-1">
+              <a id="detailBookNowBtn" href="booking.html?booth=vintage-enclosed" class="btn-cherry flex-1 !py-3.5 text-sm">
+                <i class="bi bi-calendar2-heart-fill"></i>
+                <span>Book This Booth</span>
+              </a>
+              <button type="button" id="detailCheckAvailBtn" class="btn-outline-vintage flex-1 !py-3.5 text-sm">
+                <i class="bi bi-calendar2-check"></i>
+                <span>Check Availability</span>
+              </button>
+            </div>
+
+            <!-- Technical & Setup Requirements Grid -->
+            <div class="border-t border-[#E6D8C7] pt-5">
+              <h2 class="text-xs font-extrabold uppercase tracking-widest text-[#84727B] mb-3">Capacity, Footprint &amp; Power Requirements</h2>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                <div class="p-3.5 rounded-2xl bg-[#FAF3E8] border border-[#E6D8C7]">
+                  <span class="text-[#84727B] font-bold block mb-1"><i class="bi bi-people-fill text-[#D9383A] me-1.5"></i>Guest Capacity</span>
+                  <strong id="detailCapacity" class="text-[#1F1A1C] leading-snug block"></strong>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-[#FAF3E8] border border-[#E6D8C7]">
+                  <span class="text-[#84727B] font-bold block mb-1"><i class="bi bi-arrows-fullscreen text-[#2A7B76] me-1.5"></i>Space &amp; Footprint</span>
+                  <strong id="detailFootprint" class="text-[#1F1A1C] leading-snug block"></strong>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-[#FAF3E8] border border-[#E6D8C7]">
+                  <span class="text-[#84727B] font-bold block mb-1"><i class="bi bi-plug-fill text-[#E86A58] me-1.5"></i>Power Setup</span>
+                  <strong id="detailPowerReq" class="text-[#1F1A1C] leading-snug block"></strong>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-[#FAF3E8] border border-[#E6D8C7]">
+                  <span class="text-[#84727B] font-bold block mb-1"><i class="bi bi-clock-history text-[#D9383A] me-1.5"></i>Rental Duration</span>
+                  <strong id="detailDurationSpec" class="text-[#1F1A1C] leading-snug block"></strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Key Features Checklist -->
+            <div class="border-t border-[#E6D8C7] pt-5">
+              <h2 class="text-xs font-extrabold uppercase tracking-widest text-[#84727B] mb-3">Included Hardware &amp; Experience Features</h2>
+              <ul id="detailFeaturesList" class="space-y-2.5 text-xs sm:text-sm text-[#1F1A1C] font-medium">
+                <!-- Populated dynamically -->
+              </ul>
+            </div>
+
+            <!-- Suitable Event Types -->
+            <div class="border-t border-[#E6D8C7] pt-5">
+              <h2 class="text-xs font-extrabold uppercase tracking-widest text-[#84727B] mb-2.5">Recommended For These Celebrations</h2>
+              <div id="detailSuitableEvents" class="flex flex-wrap gap-2">
+                <!-- Populated dynamically -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Available Backdrop Options Preview -->
+    <section class="py-14 bg-[#F5ECE0] border-y border-[#E6D8C7]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-widest text-[#D9383A]">Artisan Set Styling</span>
+            <h2 class="font-serif-editorial text-2xl sm:text-3xl font-bold text-[#1F1A1C] mt-1">Available Backdrop Options for This Booth</h2>
+            <p class="text-xs sm:text-sm text-[#5A4B53] mt-1">Pair your booth with our complimentary Classic White tension backdrop or upgrade to 3D silk florals, kinetic sequins, or pleated velvet.</p>
+          </div>
+          <a href="backdrops.html" class="btn-outline-vintage text-xs shrink-0">
+            <i class="bi bi-palette2"></i>
+            <span>Explore All 10 Backdrops &amp; 12 Add-Ons</span>
+          </a>
+        </div>
+
+        <div id="detailBackdropsPreview" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+          <!-- Populated from window.PBStore.getBackdrops() -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Setup & Technical FAQ Accordion -->
+    <section class="py-14 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#2A7B76]">Setup &amp; Logistics</span>
+        <h2 class="font-serif-editorial text-2xl sm:text-3xl font-bold text-[#1F1A1C] mt-1">Frequently Asked Questions About Booth Setup</h2>
+      </div>
+
+      <div class="space-y-3.5" id="boothFaqAccordion">
+        <div class="surface-card bg-white rounded-2xl border border-[#E6D8C7] overflow-hidden">
+          <button type="button" data-faq-btn class="w-full px-6 py-4 text-start flex items-center justify-between gap-4 font-bold text-sm text-[#1F1A1C] hover:text-[#D9383A] transition">
+            <span>Does the rental duration include setup and breakdown time?</span>
+            <i class="bi bi-chevron-down text-xs transition-transform"></i>
+          </button>
+          <div data-faq-panel class="px-6 pb-5 text-xs sm:text-sm text-[#5A4B53] leading-relaxed">
+            Setup and breakdown are always 100% complimentary and never eat into your active photo booth hours! Our concierge arrives 60 to 90 minutes before your scheduled start time to calibrate studio strobes, load thermal media, and style your prop table.
+          </div>
+        </div>
+
+        <div class="surface-card bg-white rounded-2xl border border-[#E6D8C7] overflow-hidden">
+          <button type="button" data-faq-btn class="w-full px-6 py-4 text-start flex items-center justify-between gap-4 font-bold text-sm text-[#1F1A1C] hover:text-[#D9383A] transition">
+            <span>Can this photo booth be placed outdoors on grass or a terrace?</span>
+            <i class="bi bi-chevron-down text-xs transition-transform"></i>
+          </button>
+          <div data-faq-panel class="hidden px-6 pb-5 text-xs sm:text-sm text-[#5A4B53] leading-relaxed">
+            Yes! Most of our booths—especially the 1972 Retro Caravan, Open-Air Booth, and Roaming Booth—love outdoor receptions. We simply require a level surface (pavers, deck, or firm turf) and overhead shade/tenting to protect the camera optics from direct midday sun or rain. Whisper-quiet battery inverters are available when no 110V outlet is nearby.
+          </div>
+        </div>
+
+        <div class="surface-card bg-white rounded-2xl border border-[#E6D8C7] overflow-hidden">
+          <button type="button" data-faq-btn class="w-full px-6 py-4 text-start flex items-center justify-between gap-4 font-bold text-sm text-[#1F1A1C] hover:text-[#D9383A] transition">
+            <span>How does custom photo strip artwork and monogram design work?</span>
+            <i class="bi bi-chevron-down text-xs transition-transform"></i>
+          </button>
+          <div data-faq-panel class="hidden px-6 pb-5 text-xs sm:text-sm text-[#5A4B53] leading-relaxed">
+            Every booking includes custom typography, event dates, and color matching. Upload your wedding invitation, party flyer, or corporate vector logo in your Customer Dashboard, and our design studio sends digital proofs for approval prior to event day.
+          </div>
+        </div>
+
+        <div class="surface-card bg-white rounded-2xl border border-[#E6D8C7] overflow-hidden">
+          <button type="button" data-faq-btn class="w-full px-6 py-4 text-start flex items-center justify-between gap-4 font-bold text-sm text-[#1F1A1C] hover:text-[#D9383A] transition">
+            <span>Do every single one of my guests in a group photo get a printed copy?</span>
+            <i class="bi bi-chevron-down text-xs transition-transform"></i>
+          </button>
+          <div data-faq-panel class="hidden px-6 pb-5 text-xs sm:text-sm text-[#5A4B53] leading-relaxed">
+            Yes! With our unlimited print packages, if 6 friends jump into the frame, our attendant prints 6 copies on the spot—plus an extra copy for your linen keepsake guestbook if selected.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Photo Booths Grid -->
+    <section class="py-14 bg-[#FAF3E8] border-t border-[#E6D8C7]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between gap-4 mb-8">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-widest text-[#D9383A]">Compare Alternatives</span>
+            <h2 class="font-serif-editorial text-2xl sm:text-3xl font-bold text-[#1F1A1C] mt-1">Other Photo Booth Styles You Might Love</h2>
+          </div>
+          <a href="booths.html" class="text-xs font-extrabold text-[#D9383A] hover:underline">View All 12 Booths →</a>
+        </div>
+
+        <div id="relatedBoothsGrid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared Public Footer -->
+  <div id="footer"></div>
+
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    (function () {
+      'use strict';
+
+      let currentBoothId = 'vintage-enclosed';
+
+      function getRequestedBoothId() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get('id') || 'vintage-enclosed';
+      }
+
+      function renderQuickSwitcher(allBooths, activeId) {
+        const bar = document.getElementById('boothQuickSwitcher');
+        if (!bar) return;
+
+        bar.innerHTML = allBooths.map(b => {
+          const isCurrent = b.id === activeId;
+          return `
+            <button type="button" onclick="window.switchBoothDetail('${b.id}')" class="px-3.5 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition flex items-center gap-1.5 ${isCurrent ? 'bg-[#D9383A] text-white shadow-sm' : 'bg-white/10 text-[#D7C8D2] hover:bg-white/20 hover:text-white'}">
+              <span>${b.name}</span>
+              <span class="text-[10px] opacity-80">($${b.price})</span>
+            </button>
+          `;
+        }).join('');
+      }
+
+      function renderBoothDetails(boothId) {
+        if (!window.PBStore) return;
+        const allBooths = window.PBStore.getBooths();
+        const booth = window.PBStore.getBoothById(boothId);
+        if (!booth) return;
+
+        currentBoothId = booth.id;
+        document.title = `${booth.name} — Specs & Rental Details | Snapora`;
+
+        renderQuickSwitcher(allBooths, booth.id);
+
+        const setElText = (id, txt) => {
+          const el = document.getElementById(id);
+          if (el) el.textContent = txt;
+        };
+
+        setElText('detailBreadcrumbName', booth.name);
+        setElText('detailCategoryTag', booth.category);
+        setElText('detailBoothTitle', booth.name);
+        setElText('detailTagline', booth.tagline || '');
+        setElText('detailPolaroidCaption', booth.tagline || booth.name);
+        setElText('detailPriceValue', `$${booth.price}`);
+        setElText('detailDurationValue', `/ ${booth.duration || '3 Hours Base Rental'}`);
+        setElText('detailDescription', booth.description);
+        setElText('detailCapacity', booth.capacity);
+        setElText('detailFootprint', booth.footprint);
+        setElText('detailPowerReq', booth.powerReq);
+        setElText('detailDurationSpec', booth.duration);
+        setElText('detailPrintOptions', booth.printOptions);
+        setElText('detailDigitalSharing', booth.digitalSharing);
+        setElText('detailAttendantService', booth.attendantService);
+
+        // Availability Badge
+        const availBadge = document.getElementById('detailAvailBadge');
+        if (availBadge) {
+          const isLim = booth.availability === 'Limited';
+          availBadge.className = `absolute top-4 start-4 px-3.5 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider shadow-lg ${isLim ? 'bg-amber-500 text-[#1F1A1C]' : 'bg-[#2A7B76] text-white'}`;
+          availBadge.innerHTML = `<i class="bi ${isLim ? 'bi-lightning-charge-fill' : 'bi-check-circle-fill'} me-1"></i>${booth.availability || 'Available'}`;
+        }
+
+        // Favorite Button
+        const favBtn = document.getElementById('detailFavBtn');
+        if (favBtn) {
+          const isFav = (window.PBStore.getFavorites().booths || []).includes(booth.id);
+          favBtn.innerHTML = `<i class="bi ${isFav ? 'bi-heart-fill text-[#D9383A]' : 'bi-heart text-[#5A4B53]'} text-lg"></i>`;
+          favBtn.onclick = () => {
+            const res = window.PBStore.toggleFavorite('booths', booth.id);
+            if (window.PBUI) {
+              window.PBUI.toast(
+                res.added ? `${booth.name} added to your Saved Favorites!` : `${booth.name} removed from favorites.`,
+                res.added ? 'success' : 'info'
+              );
+            }
+            renderBoothDetails(booth.id);
+          };
+        }
+
+        // Main Hero Image + Interactive Clickable Thumbnails
+        const gallery = Array.isArray(booth.gallery) && booth.gallery.length ? booth.gallery : [booth.image];
+        const heroImg = document.getElementById('detailMainHeroImg');
+        if (heroImg) {
+          heroImg.src = gallery[0];
+          heroImg.alt = booth.name;
+        }
+        setElText('detailGalleryCounter', `${gallery.length} High-Res Views`);
+
+        const thumbsRow = document.getElementById('detailThumbnailsRow');
+        if (thumbsRow) {
+          thumbsRow.innerHTML = gallery.map((imgUrl, idx) => `
+            <button type="button" data-thumb-url="${imgUrl}" class="group relative h-20 sm:h-24 rounded-2xl overflow-hidden border-2 ${idx === 0 ? 'border-[#D9383A] ring-2 ring-[#D9383A]/30' : 'border-[#E6D8C7] opacity-80 hover:opacity-100'} transition focus:outline-none">
+              <img src="${imgUrl}" alt="${booth.name} view ${idx + 1}" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+            </button>
+          `).join('');
+
+          thumbsRow.querySelectorAll('[data-thumb-url]').forEach(btn => {
+            btn.addEventListener('click', () => {
+              const url = btn.getAttribute('data-thumb-url');
+              if (heroImg) heroImg.src = url;
+              thumbsRow.querySelectorAll('[data-thumb-url]').forEach(b => {
+                b.className = 'group relative h-20 sm:h-24 rounded-2xl overflow-hidden border-2 border-[#E6D8C7] opacity-80 hover:opacity-100 transition focus:outline-none';
+              });
+              btn.className = 'group relative h-20 sm:h-24 rounded-2xl overflow-hidden border-2 border-[#D9383A] ring-2 ring-[#D9383A]/30 transition focus:outline-none';
+            });
+          });
+        }
+
+        // Features List
+        const featList = document.getElementById('detailFeaturesList');
+        if (featList) {
+          featList.innerHTML = (booth.features || []).map(f => `
+            <li class="flex items-start gap-2.5">
+              <i class="bi bi-check-circle-fill text-[#2A7B76] mt-0.5 shrink-0"></i>
+              <span>${f}</span>
+            </li>
+          `).join('');
+        }
+
+        // Suitable Events
+        const suitEvents = document.getElementById('detailSuitableEvents');
+        if (suitEvents) {
+          suitEvents.innerHTML = (booth.suitableEvents || []).map(ev => `
+            <a href="booking.html?booth=${encodeURIComponent(booth.id)}&event=${encodeURIComponent(ev)}" class="px-3.5 py-1.5 rounded-xl bg-[#FAF3E8] border border-[#E6D8C7] hover:border-[#D9383A] hover:text-[#D9383A] text-xs font-bold text-[#1F1A1C] transition inline-flex items-center gap-1.5">
+              <i class="bi bi-stars text-[#D9383A]"></i>
+              <span>${ev}</span>
+            </a>
+          `).join('');
+        }
+
+        // Book Now & Check Availability CTAs
+        const bookBtn = document.getElementById('detailBookNowBtn');
+        if (bookBtn) {
+          bookBtn.href = `booking.html?booth=${encodeURIComponent(booth.id)}`;
+        }
+        const availBtn = document.getElementById('detailCheckAvailBtn');
+        if (availBtn) {
+          availBtn.onclick = () => window.PBUI.openAvailabilityModal(booth.id);
+        }
+
+        // Related Booths (pick 3 other booths)
+        const relatedGrid = document.getElementById('relatedBoothsGrid');
+        if (relatedGrid) {
+          const others = allBooths.filter(b => b.id !== booth.id).slice(0, 3);
+          relatedGrid.innerHTML = others.map(b => `
+            <article class="surface-card bg-white rounded-3xl border border-[#E6D8C7] overflow-hidden flex flex-col justify-between hover:border-[#D9383A] transition shadow-xs">
+              <div>
+                <div class="relative h-48 overflow-hidden">
+                  <img src="${b.image}" alt="${b.name}" loading="lazy" class="w-full h-full object-cover">
+                  <span class="absolute top-3 start-3 px-3 py-1 rounded-full bg-[#2B192E]/90 text-[#F4C95D] text-xs font-extrabold">From $${b.price}</span>
+                </div>
+                <div class="p-5">
+                  <h3 class="font-serif-editorial text-lg font-bold text-[#1F1A1C]">${b.name}</h3>
+                  <p class="text-xs text-[#5A4B53] mt-1 line-clamp-2">${b.shortDesc}</p>
+                </div>
+              </div>
+              <div class="p-5 pt-0 flex items-center gap-2">
+                <button type="button" onclick="window.switchBoothDetail('${b.id}')" class="btn-outline-vintage flex-1 !py-2 text-xs">
+                  <span>Inspect Specs</span>
+                </button>
+                <a href="booking.html?booth=${encodeURIComponent(b.id)}" class="btn-cherry flex-1 !py-2 text-xs">
+                  <span>Book</span>
+                </a>
+              </div>
+            </article>
+          `).join('');
+        }
+      }
+
+      function renderBackdropsPreview() {
+        const grid = document.getElementById('detailBackdropsPreview');
+        if (!grid || !window.PBStore) return;
+        const backdrops = window.PBStore.getBackdrops().slice(0, 5);
+        grid.innerHTML = backdrops.map(bd => `
+          <div class="surface-card bg-white rounded-2xl border border-[#E6D8C7] overflow-hidden flex flex-col justify-between">
+            <div>
+              <div class="relative h-36 overflow-hidden">
+                <img src="${bd.image}" alt="${bd.name}" loading="lazy" class="w-full h-full object-cover">
+                <span class="absolute top-2.5 end-2.5 px-2.5 py-0.5 rounded-full text-[10px] font-extrabold ${bd.price === 0 ? 'bg-[#2A7B76] text-white' : 'bg-[#2B192E]/90 text-[#F4C95D]'}">
+                  ${bd.price === 0 ? 'Included ($0)' : '+$' + bd.price}
+                </span>
+              </div>
+              <div class="p-3.5">
+                <h3 class="font-bold text-xs text-[#1F1A1C]">${bd.name}</h3>
+                <p class="text-[11px] text-[#84727B] mt-0.5">${bd.dimensions}</p>
+              </div>
+            </div>
+            <div class="px-3.5 pb-3.5">
+              <a href="booking.html?booth=${encodeURIComponent(currentBoothId)}&backdrop=${encodeURIComponent(bd.id)}" class="block text-center py-1.5 rounded-lg bg-[#FAF3E8] hover:bg-[#D9383A] hover:text-white text-[11px] font-bold text-[#1F1A1C] transition">
+                Pair with This Backdrop
+              </a>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      window.switchBoothDetail = function (newId) {
+        const url = new URL(window.location.href);
+        url.searchParams.set('id', newId);
+        window.history.pushState({}, '', url);
+        renderBoothDetails(newId);
+        renderBackdropsPreview();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      };
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const initialId = getRequestedBoothId();
+        renderBoothDetails(initialId);
+        renderBackdropsPreview();
+
+        // FAQ Accordion
+        document.querySelectorAll('[data-faq-btn]').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const panel = btn.parentElement.querySelector('[data-faq-panel]');
+            const icon = btn.querySelector('i');
+            if (!panel) return;
+            const isHidden = panel.classList.contains('hidden');
+            panel.classList.toggle('hidden', !isHidden);
+            if (icon) icon.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
+          });
+        });
+
+        window.addEventListener('popstate', () => {
+          renderBoothDetails(getRequestedBoothId());
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
