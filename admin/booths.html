@@ -18,27 +18,31 @@
       <main class="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8">
         <div class="max-w-7xl mx-auto">
           <!-- Top Bar -->
-          <div class="surface-card bg-white rounded-3xl border border-[#E6D8C7] p-5 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <div class="relative flex-1">
-              <i class="bi bi-search absolute start-4 top-1/2 -translate-y-1/2 text-[#84727B] text-xs"></i>
-              <input
-                type="text"
-                id="admBoothSearch"
-                placeholder="Search booth name, category, or description..."
-                class="w-full ps-10 pe-4 py-2.5 rounded-xl border border-[#E6D8C7] bg-[#FAF3E8] text-xs font-semibold focus:outline-none focus:border-[#D9383A]"
-              >
-            </div>
-            <div class="flex flex-wrap items-center gap-3">
-              <select id="admBoothAvailFilter" aria-label="Filter by availability" class="px-3.5 py-2.5 rounded-xl border border-[#E6D8C7] bg-[#FAF3E8] text-xs font-bold">
-                <option value="All">All Availability</option>
-                <option value="Available">Available</option>
-                <option value="Limited">Limited</option>
-                <option value="Maintenance">Maintenance</option>
-              </select>
-              <button type="button" onclick="window.PBAdmin.openBoothModal()" class="btn-cherry !py-2.5 !px-4 text-xs">
-                <i class="bi bi-plus-circle-fill"></i>
-                <span>Add New Booth</span>
-              </button>
+          <div class="surface-card bg-white rounded-3xl border border-[#E6D8C7] p-4 sm:p-5 shadow-xs">
+            <div class="grid grid-cols-1 sm:grid-cols-12 gap-3 items-center">
+              <div class="relative sm:col-span-6 lg:col-span-7">
+                <i class="bi bi-search absolute start-3.5 top-1/2 -translate-y-1/2 text-[#84727B] text-xs"></i>
+                <input
+                  type="text"
+                  id="admBoothSearch"
+                  placeholder="Search booth name, category, or description..."
+                  class="w-full ps-9 pe-4 py-2.5 rounded-xl border border-[#E6D8C7] bg-[#FAF3E8] text-xs font-semibold focus:outline-none focus:border-[#D9383A]"
+                >
+              </div>
+              <div class="sm:col-span-3 lg:col-span-3">
+                <select id="admBoothAvailFilter" aria-label="Filter by availability" class="w-full px-3.5 py-2.5 rounded-xl border border-[#E6D8C7] bg-[#FAF3E8] text-xs font-bold focus:outline-none focus:border-[#D9383A]">
+                  <option value="All">All Availability</option>
+                  <option value="Available">Available</option>
+                  <option value="Limited">Limited</option>
+                  <option value="Maintenance">Maintenance</option>
+                </select>
+              </div>
+              <div class="sm:col-span-3 lg:col-span-2">
+                <button type="button" onclick="window.PBAdmin.openBoothModal()" class="btn-cherry w-full !py-2.5 !px-4 text-xs flex items-center justify-center gap-1.5 shadow-sm">
+                  <i class="bi bi-plus-circle-fill"></i>
+                  <span>Add New Booth</span>
+                </button>
+              </div>
             </div>
           </div>
 

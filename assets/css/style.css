@@ -1515,3 +1515,101 @@ html.dark #bookingSummaryCardHeader h3 {
   white-space: nowrap;
   flex-shrink: 0;
 }
+
+/* Custom Select Styling for consistent alignment and elegant arrow */
+.surface-card select,
+select.form-select-vintage {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235A4B53' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.85rem center;
+  background-size: 1rem;
+  padding-right: 2.5rem !important;
+  cursor: pointer;
+}
+
+[dir="rtl"] .surface-card select,
+[dir="rtl"] select.form-select-vintage {
+  background-position: left 0.85rem center;
+  padding-right: 1rem !important;
+  padding-left: 2.5rem !important;
+}
+
+[data-theme="dark"] .surface-card select,
+html.dark .surface-card select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23FAF3E8' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-color: #211324 !important;
+  border-color: #4A3554 !important;
+  color: #FAF3E8 !important;
+}
+
+/* High-Visibility Mobile Hamburger Buttons */
+#mobileMenuOpenBtn,
+#openCustSidebarBtn,
+#openAdminSidebarBtn {
+  flex-shrink: 0 !important;
+}
+
+#mobileMenuOpenBtn i.bi-list,
+#openCustSidebarBtn i.bi-list,
+#openAdminSidebarBtn i.bi-list {
+  font-size: 1.5rem !important;
+  line-height: 1;
+  stroke-width: 1px;
+}
+
+[data-theme="dark"] #mobileMenuOpenBtn,
+html.dark #mobileMenuOpenBtn,
+[data-theme="dark"] #openCustSidebarBtn,
+html.dark #openCustSidebarBtn,
+[data-theme="dark"] #openAdminSidebarBtn,
+html.dark #openAdminSidebarBtn {
+  background-color: #281D30 !important;
+  color: #FFFDFB !important;
+  border-color: #523A61 !important;
+}
+
+/* Ensure button text never breaks into two lines awkwardly on mobile cards */
+.surface-card .btn-cherry,
+.surface-card .btn-outline-vintage,
+.surface-card .btn-plum {
+  white-space: nowrap !important;
+  text-align: center;
+  justify-content: center;
+}
+
+@media (max-width: 639px) {
+  /* On mobile, cards with twin action buttons use compact horizontal padding to prevent wrapping */
+  .surface-card .btn-cherry,
+  .surface-card .btn-outline-vintage,
+  .surface-card .btn-plum {
+    padding-left: 0.625rem !important;
+    padding-right: 0.625rem !important;
+  }
+
+  /* Prevent text and badges from overflowing promo/CTA cards on narrow screens */
+  .surface-card,
+  [id$="BottomCta"],
+  #reviewsSpotlightCard {
+    max-width: 100% !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .surface-card h2,
+  .surface-card h3,
+  [id$="BottomCta"] h2,
+  [id$="BottomCta"] h3,
+  #reviewsSpotlightCard h2,
+  #reviewsSpotlightCard h3 {
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto;
+  }
+
+  .surface-card span,
+  [id$="BottomCta"] span {
+    max-width: 100% !important;
+  }
+}

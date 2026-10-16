@@ -185,15 +185,15 @@
 
     navMount.innerHTML = `
       <header id="mainNavbar" class="fixed top-0 inset-x-0 z-50 bg-[#FDF8F2]/95 backdrop-blur-md border-b border-[#E6D8C7] transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+        <div class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-2.5 sm:gap-4">
           <!-- Brand Logo -->
-          <a href="${base}index.html" class="flex items-center gap-2.5 group shrink-0" aria-label="Snapora Home">
-            <div class="w-10 h-10 rounded-xl bg-[#D9383A] text-white flex items-center justify-center shadow-md group-hover:rotate-6 transition-transform">
-              <i class="bi bi-camera-reels-fill text-xl"></i>
+          <a href="${base}index.html" class="flex items-center gap-2 sm:gap-2.5 group shrink min-w-0" aria-label="Snapora Home">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#D9383A] text-white flex items-center justify-center shadow-md group-hover:rotate-6 transition-transform shrink-0">
+              <i class="bi bi-camera-reels-fill text-lg sm:text-xl"></i>
             </div>
-            <div>
-              <span class="font-serif-editorial text-xl font-extrabold tracking-tight text-[#1F1A1C] block leading-none">SNAPORA</span>
-              <span class="text-[10px] font-bold uppercase tracking-[0.22em] text-[#D9383A] block mt-0.5">Photo Booth & Rentals</span>
+            <div class="min-w-0">
+              <span class="font-serif-editorial text-lg sm:text-xl font-extrabold tracking-tight text-[#1F1A1C] block leading-none truncate">SNAPORA</span>
+              <span class="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider sm:tracking-[0.22em] text-[#D9383A] block mt-0.5 truncate">Photo Booth & Rentals</span>
             </div>
           </a>
 
@@ -261,12 +261,12 @@
             </a>
           </div>
 
-          <!-- Mobile Hamburger -->
-          <div class="flex items-center gap-2 xl:hidden">
-            <button type="button" onclick="window.PBUI.toggleTheme()" aria-label="Toggle Theme" class="w-9 h-9 rounded-xl border border-[#E6D8C7] bg-white flex items-center justify-center lg:hidden">
+          <!-- Mobile Controls & Hamburger -->
+          <div class="flex items-center gap-1.5 sm:gap-2 xl:hidden shrink-0 ms-auto">
+            <button type="button" onclick="window.PBUI.toggleTheme()" aria-label="Toggle Theme" class="w-9 h-9 rounded-xl border border-[#E6D8C7] bg-white text-[#1F1A1C] flex items-center justify-center lg:hidden shadow-xs hover:border-[#D9383A] transition shrink-0">
               <i data-theme-toggle-icon class="bi bi-moon-stars-fill text-base"></i>
             </button>
-            <button type="button" id="mobileMenuOpenBtn" aria-label="Open Navigation Menu" aria-expanded="false" class="w-10 h-10 rounded-xl bg-[#FAF3E8] border border-[#E6D8C7] hover:border-[#D9383A] text-[#1F1A1C] flex items-center justify-center text-xl shadow-xs">
+            <button type="button" id="mobileMenuOpenBtn" aria-label="Open Navigation Menu" aria-expanded="false" class="w-10 h-10 rounded-xl bg-white border-2 border-[#1F1A1C]/25 hover:border-[#D9383A] text-[#1F1A1C] hover:text-[#D9383A] flex items-center justify-center text-2xl font-extrabold shadow-sm hover:shadow-md transition active:scale-95 shrink-0">
               <i class="bi bi-list"></i>
             </button>
           </div>

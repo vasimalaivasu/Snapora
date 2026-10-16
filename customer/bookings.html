@@ -18,24 +18,26 @@
       <main class="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8">
         <div class="max-w-7xl mx-auto space-y-6">
           <!-- Filter & Search Bar -->
-          <div class="surface-card bg-white rounded-3xl border border-[#E6D8C7] p-5 shadow-xs">
-            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-              <div class="relative flex-1">
-                <i class="bi bi-search absolute start-4 top-1/2 -translate-y-1/2 text-[#84727B] text-xs"></i>
+          <div class="surface-card bg-white rounded-3xl border border-[#E6D8C7] p-4 sm:p-5 shadow-xs">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3 items-center">
+              <div class="relative sm:col-span-2 lg:col-span-4">
+                <i class="bi bi-search absolute start-3.5 top-1/2 -translate-y-1/2 text-[#84727B] text-xs"></i>
                 <input
                   type="text"
                   id="custBookingSearch"
                   placeholder="Search reference, booth, event, or venue..."
-                  class="w-full ps-10 pe-4 py-2.5 rounded-xl border border-[#E6D8C7] bg-[#FAF3E8] text-xs font-semibold focus:outline-none focus:border-[#D9383A]"
+                  class="w-full ps-9 pe-4 py-2.5 rounded-xl border border-[#E6D8C7] bg-[#FAF3E8] text-xs font-semibold focus:outline-none focus:border-[#D9383A]"
                 >
               </div>
-              <div class="flex flex-wrap items-center gap-3">
-                <select id="custBookingDateFilter" aria-label="Filter by event timeframe" class="px-3.5 py-2.5 rounded-xl border border-[#E6D8C7] bg-[#FAF3E8] text-xs font-bold">
+              <div class="lg:col-span-2">
+                <select id="custBookingDateFilter" aria-label="Filter by event timeframe" class="w-full px-3.5 py-2.5 rounded-xl border border-[#E6D8C7] bg-[#FAF3E8] text-xs font-bold focus:outline-none focus:border-[#D9383A]">
                   <option value="All">All Event Dates</option>
                   <option value="upcoming">Upcoming Events</option>
                   <option value="past">Past Events</option>
                 </select>
-                <select id="custBookingStatusFilter" aria-label="Filter by booking status" class="px-3.5 py-2.5 rounded-xl border border-[#E6D8C7] bg-[#FAF3E8] text-xs font-bold">
+              </div>
+              <div class="lg:col-span-2">
+                <select id="custBookingStatusFilter" aria-label="Filter by booking status" class="w-full px-3.5 py-2.5 rounded-xl border border-[#E6D8C7] bg-[#FAF3E8] text-xs font-bold focus:outline-none focus:border-[#D9383A]">
                   <option value="All">All Statuses</option>
                   <option value="Pending">Pending</option>
                   <option value="Under Review">Under Review</option>
@@ -44,13 +46,17 @@
                   <option value="Event Completed">Event Completed</option>
                   <option value="Cancelled">Cancelled</option>
                 </select>
-                <select id="custBookingSort" aria-label="Sort reservations" class="px-3.5 py-2.5 rounded-xl border border-[#E6D8C7] bg-[#FAF3E8] text-xs font-bold">
+              </div>
+              <div class="lg:col-span-2">
+                <select id="custBookingSort" aria-label="Sort reservations" class="w-full px-3.5 py-2.5 rounded-xl border border-[#E6D8C7] bg-[#FAF3E8] text-xs font-bold focus:outline-none focus:border-[#D9383A]">
                   <option value="newest">Sort: Newest Event Date</option>
                   <option value="date-asc">Sort: Earliest Event Date</option>
                   <option value="price-desc">Sort: Highest Est. Total</option>
                   <option value="price-asc">Sort: Lowest Est. Total</option>
                 </select>
-                <a href="../booking.html" class="btn-cherry !py-2.5 !px-4 text-xs">
+              </div>
+              <div class="sm:col-span-2 lg:col-span-2">
+                <a href="../booking.html" class="btn-cherry w-full !py-2.5 !px-4 text-xs flex items-center justify-center gap-1.5 shadow-sm text-center">
                   <i class="bi bi-plus-lg"></i>
                   <span>New Booking</span>
                 </a>

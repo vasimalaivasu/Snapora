@@ -430,18 +430,18 @@
                   <i class="bi ${availIcon} text-[9px]"></i><span>${b.availability || 'Available'}</span>
                 </span>
               </div>
-              <div class="p-6">
-                <span class="text-[10px] font-extrabold uppercase tracking-widest text-[#D9383A]">${b.duration}</span>
+              <div class="p-5 sm:p-6">
+                <span class="text-[10px] font-extrabold uppercase tracking-widest text-[#D9383A] whitespace-nowrap">${b.duration}</span>
                 <h3 class="font-serif-editorial text-xl font-bold text-[#1F1A1C] mt-1">${b.name}</h3>
                 <p class="text-xs text-[#5A4B53] mt-2 leading-relaxed">${b.shortDesc}</p>
                 <div class="mt-4 pt-3 border-t border-[#E6D8C7] flex flex-wrap gap-1.5">
-                  ${b.suitableEvents.slice(0, 3).map(ev => `<span class="px-2 py-0.5 rounded-md bg-[#FAF3E8] text-[10px] font-bold text-[#5A4B53]">${ev}</span>`).join('')}
+                  ${b.suitableEvents.slice(0, 3).map(ev => `<span class="px-2 py-0.5 rounded-md bg-[#FAF3E8] text-[10px] font-bold text-[#5A4B53] whitespace-nowrap">${ev}</span>`).join('')}
                 </div>
               </div>
             </div>
-            <div class="p-6 pt-0 flex items-center gap-2.5">
-              <a href="booth-details.html?id=${b.id}" class="btn-outline-vintage flex-1 !py-2.5 text-xs">View Details</a>
-              <button type="button" onclick="window.PBUI.openAvailabilityModal('${b.id}')" class="btn-cherry flex-1 !py-2.5 text-xs">Check Date</button>
+            <div class="p-5 sm:p-6 pt-0 flex items-center gap-2">
+              <a href="booth-details.html?id=${b.id}" class="btn-outline-vintage flex-1 !py-2.5 !px-2.5 text-xs whitespace-nowrap text-center justify-center">View Details</a>
+              <button type="button" onclick="window.PBUI.openAvailabilityModal('${b.id}')" class="btn-cherry flex-1 !py-2.5 !px-2.5 text-xs whitespace-nowrap text-center justify-center shadow-xs">Check Date</button>
             </div>
           </article>
         `;

@@ -108,7 +108,7 @@
       headerMount.innerHTML = `
         <header class="bg-white surface-card border-b border-[#E6D8C7] px-4 sm:px-6 py-3.5 flex items-center justify-between gap-4 sticky top-0 z-30">
           <div class="flex items-center gap-3">
-            <button type="button" id="openAdminSidebarBtn" aria-label="Open Sidebar" class="lg:hidden w-10 h-10 rounded-xl border border-[#E6D8C7] flex items-center justify-center text-lg">
+            <button type="button" id="openAdminSidebarBtn" aria-label="Open Sidebar" class="lg:hidden w-10 h-10 rounded-xl bg-white border-2 border-[#1F1A1C]/25 text-[#1F1A1C] hover:border-[#D9383A] hover:text-[#D9383A] flex items-center justify-center text-2xl font-extrabold shadow-sm transition active:scale-95 shrink-0">
               <i class="bi bi-list"></i>
             </button>
             <div>
