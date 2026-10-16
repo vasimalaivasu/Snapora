@@ -209,8 +209,8 @@
           <div>
             <div class="relative h-44 overflow-hidden">
               <img src="${b.image}" alt="${b.name}" class="w-full h-full object-cover">
-              <span class="absolute top-3 start-3 px-2.5 py-1 rounded-full text-[11px] font-extrabold bg-[#2B192E]/90 text-[#F4C95D]">From $${b.price}</span>
-              ${isSelected ? '<span class="absolute top-3 end-3 px-2.5 py-1 rounded-full text-[11px] font-extrabold bg-[#D9383A] text-white"><i class="bi bi-check2-circle me-1"></i>Selected</span>' : ''}
+              <span class="absolute top-3 start-3 px-2.5 py-1 rounded-full text-[11px] font-extrabold bg-[#2B192E]/90 text-[#F4C95D] whitespace-nowrap">From $${b.price}</span>
+              ${isSelected ? '<span class="absolute top-3 end-3 px-2.5 py-1 rounded-full text-[11px] font-extrabold bg-[#D9383A] text-white whitespace-nowrap"><i class="bi bi-check2-circle me-1"></i>Selected</span>' : ''}
             </div>
             <div class="p-4">
               <h4 class="font-serif-editorial font-bold text-base text-[#1F1A1C]">${b.name}</h4>
@@ -251,12 +251,12 @@
     container.innerHTML = filtered.map(p => {
       const isSelected = p.id === draft.packageId;
       return `
-        <div class="surface-card bg-white rounded-3xl border-2 ${isSelected ? 'border-[#D9383A] ring-4 ring-[#D9383A]/15' : p.recommended ? 'border-[#E86A58]' : 'border-[#E6D8C7]'} p-6 flex flex-col justify-between relative">
-          ${p.recommended ? '<span class="absolute -top-3 start-6 px-3 py-0.5 rounded-full bg-[#F4C95D] text-[#1F1A1C] text-[10px] font-extrabold uppercase tracking-wider shadow-xs">Recommended for ' + p.category + '</span>' : ''}
+        <div class="surface-card bg-white rounded-3xl border-2 ${isSelected ? 'border-[#D9383A] ring-4 ring-[#D9383A]/15' : p.recommended ? 'border-[#E86A58]' : 'border-[#E6D8C7]'} p-4 sm:p-6 flex flex-col justify-between relative">
+          ${p.recommended ? '<span class="absolute -top-3 start-4 sm:start-6 px-3 py-0.5 rounded-full bg-[#F4C95D] text-[#1F1A1C] text-[10px] font-extrabold uppercase tracking-wider shadow-xs whitespace-nowrap">Recommended for ' + p.category + '</span>' : ''}
           <div>
             <div class="flex items-center justify-between gap-2">
-              <span class="text-xs font-extrabold uppercase tracking-wider text-[#D9383A]">${p.category} Package</span>
-              <span class="px-2.5 py-0.5 rounded-full bg-[#FAF3E8] text-[#5A4B53] text-xs font-bold">${p.duration}</span>
+              <span class="text-xs font-extrabold uppercase tracking-wider text-[#D9383A] truncate min-w-0">${p.category} Package</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-[#FAF3E8] text-[#5A4B53] text-xs font-bold shrink-0 whitespace-nowrap">${p.duration}</span>
             </div>
             <h4 class="font-serif-editorial text-xl font-bold text-[#1F1A1C] mt-2">${p.name}</h4>
             <div class="mt-3 flex items-baseline gap-1">

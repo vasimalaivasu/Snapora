@@ -1490,5 +1490,28 @@ html.dark #bookingSummaryCardHeader h3 {
   color: #FFFDFB !important;
 }
 
+/* Responsive Booking Wizard Step Navigation */
+.booking-step-pane {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
 
+@media (max-width: 639px) {
+  .booking-step-pane .btn-cherry,
+  .booking-step-pane .btn-outline-vintage {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+}
 
+/* Duration pills, category badges and status tags should never break onto two lines */
+.surface-card span.rounded-full,
+.surface-card span.rounded-lg,
+.booking-step-pane span.rounded-full {
+  white-space: nowrap;
+  flex-shrink: 0;
+}

@@ -94,7 +94,7 @@
         <div class="lg:col-span-8">
 
           <!-- STEP 1: Event Information -->
-          <div class="booking-step-pane surface-card bg-white rounded-3xl border-2 border-[#E6D8C7] p-6 sm:p-8 shadow-sm space-y-6" data-step-pane="1">
+          <div class="booking-step-pane surface-card bg-white rounded-3xl border-2 border-[#E6D8C7] p-5 sm:p-8 shadow-sm space-y-6" data-step-pane="1">
             <div class="border-b border-[#E6D8C7] pb-4 flex items-center justify-between gap-4">
               <div>
                 <span class="text-xs font-extrabold uppercase tracking-widest text-[#D9383A]">Step 1 of 7</span>
@@ -152,8 +152,8 @@
               </div>
             </div>
 
-            <div class="pt-4 border-t border-[#E6D8C7] flex justify-end">
-              <button type="button" onclick="window.PBBooking.nextStep()" class="btn-cherry !py-3.5 !px-7 text-sm">
+            <div class="pt-4 border-t border-[#E6D8C7] flex flex-col sm:flex-row sm:justify-end gap-3">
+              <button type="button" onclick="window.PBBooking.nextStep()" class="btn-cherry w-full sm:w-auto !py-3.5 !px-7 text-sm text-center justify-center">
                 <span>Next: Select Photo Booth Style</span>
                 <i class="bi bi-arrow-right rtl-flip"></i>
               </button>
@@ -161,7 +161,7 @@
           </div>
 
           <!-- STEP 2: Booth Selection -->
-          <div class="booking-step-pane hidden surface-card bg-white rounded-3xl border-2 border-[#E6D8C7] p-6 sm:p-8 shadow-sm space-y-6" data-step-pane="2">
+          <div class="booking-step-pane hidden surface-card bg-white rounded-3xl border-2 border-[#E6D8C7] p-5 sm:p-8 shadow-sm space-y-6" data-step-pane="2">
             <div class="border-b border-[#E6D8C7] pb-4 flex items-center justify-between gap-4">
               <div>
                 <span class="text-xs font-extrabold uppercase tracking-widest text-[#D9383A]">Step 2 of 7</span>
@@ -183,12 +183,12 @@
               <!-- Populated by booking.js -->
             </div>
 
-            <div class="pt-4 border-t border-[#E6D8C7] flex items-center justify-between gap-4">
-              <button type="button" onclick="window.PBBooking.prevStep()" class="btn-outline-vintage !py-3 text-xs">
+            <div class="pt-4 border-t border-[#E6D8C7] flex flex-col-reverse sm:flex-row sm:items-center justify-between gap-3">
+              <button type="button" onclick="window.PBBooking.prevStep()" class="btn-outline-vintage w-full sm:w-auto !py-3 !px-5 text-xs text-center justify-center">
                 <i class="bi bi-arrow-left rtl-flip"></i>
                 <span>Back to Event Info</span>
               </button>
-              <button type="button" onclick="window.PBBooking.nextStep()" class="btn-cherry !py-3.5 !px-7 text-sm">
+              <button type="button" onclick="window.PBBooking.nextStep()" class="btn-cherry w-full sm:w-auto !py-3.5 !px-7 text-sm text-center justify-center shadow-md">
                 <span>Next: Choose Package Tier</span>
                 <i class="bi bi-arrow-right rtl-flip"></i>
               </button>
@@ -196,7 +196,7 @@
           </div>
 
           <!-- STEP 3: Package Selection -->
-          <div class="booking-step-pane hidden surface-card bg-white rounded-3xl border-2 border-[#E6D8C7] p-6 sm:p-8 shadow-sm space-y-6" data-step-pane="3">
+          <div class="booking-step-pane hidden surface-card bg-white rounded-3xl border-2 border-[#E6D8C7] p-5 sm:p-8 shadow-sm space-y-6" data-step-pane="3">
             <div class="border-b border-[#E6D8C7] pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
                 <span class="text-xs font-extrabold uppercase tracking-widest text-[#D9383A]">Step 3 of 7</span>
@@ -219,12 +219,12 @@
               <!-- Populated by booking.js -->
             </div>
 
-            <div class="pt-4 border-t border-[#E6D8C7] flex items-center justify-between gap-4">
-              <button type="button" onclick="window.PBBooking.prevStep()" class="btn-outline-vintage !py-3 text-xs">
+            <div class="pt-4 border-t border-[#E6D8C7] flex flex-col-reverse sm:flex-row sm:items-center justify-between gap-3">
+              <button type="button" onclick="window.PBBooking.prevStep()" class="btn-outline-vintage w-full sm:w-auto !py-3 !px-5 text-xs text-center justify-center">
                 <i class="bi bi-arrow-left rtl-flip"></i>
                 <span>Back to Booth Style</span>
               </button>
-              <button type="button" onclick="window.PBBooking.nextStep()" class="btn-cherry !py-3.5 !px-7 text-sm">
+              <button type="button" onclick="window.PBBooking.nextStep()" class="btn-cherry w-full sm:w-auto !py-3.5 !px-7 text-sm text-center justify-center shadow-md">
                 <span>Next: Backdrops &amp; Add-Ons</span>
                 <i class="bi bi-arrow-right rtl-flip"></i>
               </button>
@@ -232,7 +232,7 @@
           </div>
 
           <!-- STEP 4: Customization Options (Backdrop, Strip Design, Extra Hours, Add-Ons) -->
-          <div class="booking-step-pane hidden surface-card bg-white rounded-3xl border-2 border-[#E6D8C7] p-6 sm:p-8 shadow-sm space-y-8" data-step-pane="4">
+          <div class="booking-step-pane hidden surface-card bg-white rounded-3xl border-2 border-[#E6D8C7] p-5 sm:p-8 shadow-sm space-y-8" data-step-pane="4">
             <div class="border-b border-[#E6D8C7] pb-4 flex items-center justify-between gap-4">
               <div>
                 <span class="text-xs font-extrabold uppercase tracking-widest text-[#D9383A]">Step 4 of 7</span>
@@ -282,12 +282,12 @@
               </div>
             </div>
 
-            <div class="pt-4 border-t border-[#E6D8C7] flex items-center justify-between gap-4">
-              <button type="button" onclick="window.PBBooking.prevStep()" class="btn-outline-vintage !py-3 text-xs">
+            <div class="pt-4 border-t border-[#E6D8C7] flex flex-col-reverse sm:flex-row sm:items-center justify-between gap-3">
+              <button type="button" onclick="window.PBBooking.prevStep()" class="btn-outline-vintage w-full sm:w-auto !py-3 !px-5 text-xs text-center justify-center">
                 <i class="bi bi-arrow-left rtl-flip"></i>
                 <span>Back to Packages</span>
               </button>
-              <button type="button" onclick="window.PBBooking.nextStep()" class="btn-cherry !py-3.5 !px-7 text-sm">
+              <button type="button" onclick="window.PBBooking.nextStep()" class="btn-cherry w-full sm:w-auto !py-3.5 !px-7 text-sm text-center justify-center shadow-md">
                 <span>Next: Customer Details</span>
                 <i class="bi bi-arrow-right rtl-flip"></i>
               </button>
@@ -295,7 +295,7 @@
           </div>
 
           <!-- STEP 5: Customer Details -->
-          <div class="booking-step-pane hidden surface-card bg-white rounded-3xl border-2 border-[#E6D8C7] p-6 sm:p-8 shadow-sm space-y-6" data-step-pane="5">
+          <div class="booking-step-pane hidden surface-card bg-white rounded-3xl border-2 border-[#E6D8C7] p-5 sm:p-8 shadow-sm space-y-6" data-step-pane="5">
             <div class="border-b border-[#E6D8C7] pb-4 flex items-center justify-between gap-4">
               <div>
                 <span class="text-xs font-extrabold uppercase tracking-widest text-[#D9383A]">Step 5 of 7</span>
@@ -334,12 +334,12 @@
               </div>
             </div>
 
-            <div class="pt-4 border-t border-[#E6D8C7] flex items-center justify-between gap-4">
-              <button type="button" onclick="window.PBBooking.prevStep()" class="btn-outline-vintage !py-3 text-xs">
+            <div class="pt-4 border-t border-[#E6D8C7] flex flex-col-reverse sm:flex-row sm:items-center justify-between gap-3">
+              <button type="button" onclick="window.PBBooking.prevStep()" class="btn-outline-vintage w-full sm:w-auto !py-3 !px-5 text-xs text-center justify-center">
                 <i class="bi bi-arrow-left rtl-flip"></i>
                 <span>Back to Customize</span>
               </button>
-              <button type="button" onclick="window.PBBooking.nextStep()" class="btn-cherry !py-3.5 !px-7 text-sm">
+              <button type="button" onclick="window.PBBooking.nextStep()" class="btn-cherry w-full sm:w-auto !py-3.5 !px-7 text-sm text-center justify-center shadow-md">
                 <span>Next: Review Full Quote</span>
                 <i class="bi bi-arrow-right rtl-flip"></i>
               </button>
@@ -347,7 +347,7 @@
           </div>
 
           <!-- STEP 6: Booking Summary & Review -->
-          <div class="booking-step-pane hidden surface-card bg-white rounded-3xl border-2 border-[#E6D8C7] p-6 sm:p-8 shadow-sm space-y-6" data-step-pane="6">
+          <div class="booking-step-pane hidden surface-card bg-white rounded-3xl border-2 border-[#E6D8C7] p-5 sm:p-8 shadow-sm space-y-6" data-step-pane="6">
             <div class="border-b border-[#E6D8C7] pb-4 flex items-center justify-between gap-4">
               <div>
                 <span class="text-xs font-extrabold uppercase tracking-widest text-[#D9383A]">Step 6 of 7</span>
@@ -363,12 +363,12 @@
               <!-- Populated by booking.js -->
             </div>
 
-            <div class="pt-4 border-t border-[#E6D8C7] flex flex-col sm:flex-row items-center justify-between gap-4">
-              <button type="button" onclick="window.PBBooking.prevStep()" class="btn-outline-vintage w-full sm:w-auto !py-3 text-xs">
+            <div class="pt-4 border-t border-[#E6D8C7] flex flex-col-reverse sm:flex-row sm:items-center justify-between gap-3">
+              <button type="button" onclick="window.PBBooking.prevStep()" class="btn-outline-vintage w-full sm:w-auto !py-3 !px-5 text-xs text-center justify-center">
                 <i class="bi bi-arrow-left rtl-flip"></i>
                 <span>Back to Edit Details</span>
               </button>
-              <button type="button" onclick="window.PBBooking.confirmBookingSubmission()" class="btn-cherry w-full sm:w-auto !py-4 !px-8 text-sm animate-pulse-glow">
+              <button type="button" onclick="window.PBBooking.confirmBookingSubmission()" class="btn-cherry w-full sm:w-auto !py-4 !px-8 text-sm animate-pulse-glow text-center justify-center shadow-md">
                 <i class="bi bi-check2-circle text-lg"></i>
                 <span>Confirm &amp; Submit Demo Booking</span>
               </button>
@@ -376,7 +376,7 @@
           </div>
 
           <!-- STEP 7: Confirmation -->
-          <div class="booking-step-pane hidden surface-card bg-white rounded-3xl border-2 border-[#2A7B76] p-6 sm:p-10 shadow-xl" data-step-pane="7">
+          <div class="booking-step-pane hidden surface-card bg-white rounded-3xl border-2 border-[#2A7B76] p-5 sm:p-10 shadow-xl" data-step-pane="7">
             <div id="bkConfirmationContent">
               <!-- Populated by booking.js upon submission -->
             </div>
