@@ -106,29 +106,29 @@
 
     if (headerMount) {
       headerMount.innerHTML = `
-        <header class="bg-white surface-card border-b border-[#E6D8C7] px-4 sm:px-6 py-3.5 flex items-center justify-between gap-4 sticky top-0 z-30">
-          <div class="flex items-center gap-3">
-            <button type="button" id="openAdminSidebarBtn" aria-label="Open Sidebar" class="lg:hidden w-10 h-10 rounded-xl bg-white border-2 border-[#1F1A1C]/25 text-[#1F1A1C] hover:border-[#D9383A] hover:text-[#D9383A] flex items-center justify-center text-2xl font-extrabold shadow-sm transition active:scale-95 shrink-0">
+        <header class="bg-white border-b border-[#E6D8C7] px-3 sm:px-6 py-2.5 sm:py-3.5 flex items-center justify-between gap-2 sm:gap-4 sticky top-0 z-30">
+          <div class="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+            <button type="button" id="openAdminSidebarBtn" aria-label="Open Sidebar" class="lg:hidden w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white border-2 border-[#1F1A1C]/25 text-[#1F1A1C] hover:border-[#D9383A] hover:text-[#D9383A] flex items-center justify-center text-xl sm:text-2xl font-extrabold shadow-sm transition active:scale-95 shrink-0">
               <i class="bi bi-list"></i>
             </button>
-            <div>
-              <h1 class="font-serif-editorial text-lg sm:text-xl font-bold text-[#1F1A1C]">${pageTitle}</h1>
-              <p class="text-[11px] text-[#84727B] hidden sm:block">Live LocalStorage synchronization with Customer Portal & Public Website</p>
+            <div class="min-w-0">
+              <h1 class="font-serif-editorial text-base sm:text-xl font-bold text-[#1F1A1C] truncate leading-tight" title="${pageTitle}">${pageTitle}</h1>
+              <p class="text-[11px] text-[#84727B] hidden sm:block truncate">Live LocalStorage synchronization with Customer Portal & Public Website</p>
             </div>
           </div>
 
-          <div class="flex items-center gap-2.5">
-            <button type="button" onclick="window.PBUI.toggleTheme()" aria-label="Toggle Theme" class="w-9 h-9 rounded-xl border border-[#E6D8C7] flex items-center justify-center hover:border-[#D9383A] transition">
-              <i data-theme-toggle-icon class="bi bi-moon-stars-fill"></i>
+          <div class="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
+            <button type="button" onclick="window.PBUI.toggleTheme()" aria-label="Toggle Theme" class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl border border-[#E6D8C7] flex items-center justify-center hover:border-[#D9383A] transition shrink-0">
+              <i data-theme-toggle-icon class="bi bi-moon-stars-fill text-xs sm:text-sm"></i>
             </button>
-            <button type="button" onclick="window.PBUI.toggleRtl()" aria-label="Toggle RTL" class="h-9 px-2.5 rounded-xl border border-[#E6D8C7] text-xs font-extrabold flex items-center gap-1 hover:border-[#D9383A] transition">
-              <i class="bi bi-arrow-left-right text-[#D9383A]"></i>
-              <span data-rtl-toggle-label>RTL</span>
+            <button type="button" onclick="window.PBUI.toggleRtl()" aria-label="Toggle RTL" class="h-8 sm:h-9 px-2 sm:px-2.5 rounded-xl border border-[#E6D8C7] text-xs font-extrabold flex items-center gap-1 hover:border-[#D9383A] transition shrink-0 whitespace-nowrap">
+              <i class="bi bi-arrow-left-right text-[#D9383A] text-xs shrink-0"></i>
+              <span data-rtl-toggle-label class="whitespace-nowrap">RTL</span>
             </button>
-            <a href="../customer/dashboard.html" class="px-3 py-2 rounded-xl bg-[#FAF3E8] border border-[#E6D8C7] text-xs font-bold hover:border-[#D9383A] hidden md:inline-flex items-center gap-1.5">
+            <a href="../customer/dashboard.html" class="px-3 py-2 rounded-xl bg-[#FAF3E8] border border-[#E6D8C7] text-xs font-bold hover:border-[#D9383A] hidden md:inline-flex items-center gap-1.5 shrink-0 whitespace-nowrap">
               <i class="bi bi-person-workspace text-[#2A7B76]"></i> View Customer Portal
             </a>
-            <a href="../index.html" class="btn-cherry !py-2 !px-3.5 text-xs">
+            <a href="../index.html" class="btn-cherry !py-1.5 sm:!py-2 !px-2.5 sm:!px-3.5 text-xs shrink-0 whitespace-nowrap flex items-center gap-1">
               <i class="bi bi-box-arrow-up-right"></i>
               <span class="hidden sm:inline">Live Site</span>
             </a>

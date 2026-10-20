@@ -105,33 +105,33 @@
 
     if (headerMount) {
       headerMount.innerHTML = `
-        <header class="bg-white surface-card border-b border-[#E6D8C7] px-4 sm:px-6 py-3.5 flex items-center justify-between gap-4 sticky top-0 z-30">
-          <div class="flex items-center gap-3">
-            <button type="button" id="openCustSidebarBtn" aria-label="Open Sidebar" class="lg:hidden w-10 h-10 rounded-xl bg-white border-2 border-[#1F1A1C]/25 text-[#1F1A1C] hover:border-[#D9383A] hover:text-[#D9383A] flex items-center justify-center text-2xl font-extrabold shadow-sm transition active:scale-95 shrink-0">
+        <header class="bg-white border-b border-[#E6D8C7] px-3 sm:px-6 py-2.5 sm:py-3.5 flex items-center justify-between gap-2 sm:gap-4 sticky top-0 z-30">
+          <div class="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+            <button type="button" id="openCustSidebarBtn" aria-label="Open Sidebar" class="lg:hidden w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white border-2 border-[#1F1A1C]/25 text-[#1F1A1C] hover:border-[#D9383A] hover:text-[#D9383A] flex items-center justify-center text-xl sm:text-2xl font-extrabold shadow-sm transition active:scale-95 shrink-0">
               <i class="bi bi-list"></i>
             </button>
-            <div>
-              <h1 class="font-serif-editorial text-lg sm:text-xl font-bold text-[#1F1A1C]">${pageTitle}</h1>
-              <p class="text-[11px] text-[#84727B] hidden sm:block">Manage your photo booth reservations, backdrops, and event timeline</p>
+            <div class="min-w-0">
+              <h1 class="font-serif-editorial text-base sm:text-xl font-bold text-[#1F1A1C] truncate leading-tight" title="${pageTitle}">${pageTitle}</h1>
+              <p class="text-[11px] text-[#84727B] hidden sm:block truncate">Manage your photo booth reservations, backdrops, and event timeline</p>
             </div>
           </div>
 
-          <div class="flex items-center gap-2.5">
-            <button type="button" onclick="window.PBUI.toggleTheme()" aria-label="Toggle Theme" class="w-9 h-9 rounded-xl border border-[#E6D8C7] flex items-center justify-center hover:border-[#D9383A] transition">
-              <i data-theme-toggle-icon class="bi bi-moon-stars-fill"></i>
+          <div class="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
+            <button type="button" onclick="window.PBUI.toggleTheme()" aria-label="Toggle Theme" class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl border border-[#E6D8C7] flex items-center justify-center hover:border-[#D9383A] transition shrink-0">
+              <i data-theme-toggle-icon class="bi bi-moon-stars-fill text-xs sm:text-sm"></i>
             </button>
-            <button type="button" onclick="window.PBUI.toggleRtl()" aria-label="Toggle RTL" class="h-9 px-2.5 rounded-xl border border-[#E6D8C7] text-xs font-extrabold flex items-center gap-1 hover:border-[#D9383A] transition">
-              <i class="bi bi-arrow-left-right text-[#D9383A]"></i>
-              <span data-rtl-toggle-label>RTL</span>
+            <button type="button" onclick="window.PBUI.toggleRtl()" aria-label="Toggle RTL" class="h-8 sm:h-9 px-2 sm:px-2.5 rounded-xl border border-[#E6D8C7] text-xs font-extrabold flex items-center gap-1 hover:border-[#D9383A] transition shrink-0 whitespace-nowrap">
+              <i class="bi bi-arrow-left-right text-[#D9383A] text-xs shrink-0"></i>
+              <span data-rtl-toggle-label class="whitespace-nowrap">RTL</span>
             </button>
 
             <!-- Notifications Dropdown -->
-            <div class="relative">
-              <button type="button" id="custNotifBtn" aria-label="Notifications" class="w-9 h-9 rounded-xl border border-[#E6D8C7] flex items-center justify-center relative hover:border-[#D9383A] transition">
-                <i class="bi bi-bell-fill"></i>
-                ${unreadCount > 0 ? `<span class="w-2.5 h-2.5 rounded-full bg-[#D9383A] absolute top-1.5 end-1.5"></span>` : ''}
+            <div class="relative shrink-0">
+              <button type="button" id="custNotifBtn" aria-label="Notifications" class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl border border-[#E6D8C7] flex items-center justify-center relative hover:border-[#D9383A] transition shrink-0">
+                <i class="bi bi-bell-fill text-xs sm:text-sm"></i>
+                ${unreadCount > 0 ? `<span class="w-2.5 h-2.5 rounded-full bg-[#D9383A] absolute top-1 end-1"></span>` : ''}
               </button>
-              <div id="custNotifDropdown" class="hidden absolute end-0 mt-2 w-80 bg-white surface-card rounded-2xl shadow-2xl border border-[#E6D8C7] p-3 z-50">
+              <div id="custNotifDropdown" class="hidden absolute end-0 mt-2 w-72 sm:w-80 bg-white surface-card rounded-2xl shadow-2xl border border-[#E6D8C7] p-3 z-50">
                 <div class="flex items-center justify-between pb-2 mb-2 border-b border-[#E6D8C7]">
                   <span class="font-bold text-xs text-[#1F1A1C]">Booking Notifications</span>
                   <span class="text-[10px] font-bold text-[#D9383A]">${notifs.length} Updates</span>
@@ -148,7 +148,7 @@
               </div>
             </div>
 
-            <a href="../booking.html" class="btn-cherry !py-2 !px-3.5 text-xs hidden sm:inline-flex">
+            <a href="../booking.html" class="btn-cherry !py-1.5 sm:!py-2 !px-2.5 sm:!px-3.5 text-xs hidden sm:inline-flex shrink-0 whitespace-nowrap">
               <i class="bi bi-calendar-plus"></i>
               <span>Book a Booth</span>
             </a>
@@ -233,36 +233,36 @@
       </div>
 
       <!-- 6 Statistics Cards (Section 13) -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 mt-6">
-        <div class="surface-card bg-white p-5 rounded-2xl border border-[#E6D8C7] shadow-xs">
-          <span class="text-[11px] font-extrabold uppercase tracking-wider text-[#84727B]">Total Bookings</span>
-          <p class="font-serif-editorial text-2xl font-extrabold text-[#1F1A1C] mt-1">${totalBookings}</p>
-          <span class="text-[11px] text-[#2A7B76] font-semibold">All-time reservations</span>
+      <div class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-3 sm:gap-4 mt-6">
+        <div class="surface-card bg-white p-3.5 sm:p-5 rounded-2xl border border-[#E6D8C7] shadow-xs">
+          <span class="text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider text-[#84727B] truncate block">Total Bookings</span>
+          <p class="font-serif-editorial text-xl sm:text-2xl font-extrabold text-[#1F1A1C] mt-1">${totalBookings}</p>
+          <span class="text-[10px] sm:text-[11px] text-[#2A7B76] font-semibold truncate block">All-time reservations</span>
         </div>
-        <div class="surface-card bg-white p-5 rounded-2xl border border-[#E6D8C7] shadow-xs">
-          <span class="text-[11px] font-extrabold uppercase tracking-wider text-[#84727B]">Upcoming Events</span>
-          <p class="font-serif-editorial text-2xl font-extrabold text-[#D9383A] mt-1">${upcomingEvents.length}</p>
-          <span class="text-[11px] text-[#5A4B53]">Scheduled ahead</span>
+        <div class="surface-card bg-white p-3.5 sm:p-5 rounded-2xl border border-[#E6D8C7] shadow-xs">
+          <span class="text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider text-[#84727B] truncate block">Upcoming Events</span>
+          <p class="font-serif-editorial text-xl sm:text-2xl font-extrabold text-[#D9383A] mt-1">${upcomingEvents.length}</p>
+          <span class="text-[10px] sm:text-[11px] text-[#5A4B53] truncate block">Scheduled ahead</span>
         </div>
-        <div class="surface-card bg-white p-5 rounded-2xl border border-[#E6D8C7] shadow-xs">
-          <span class="text-[11px] font-extrabold uppercase tracking-wider text-[#84727B]">Pending Review</span>
-          <p class="font-serif-editorial text-2xl font-extrabold text-amber-600 mt-1">${pendingRes.length}</p>
-          <span class="text-[11px] text-[#5A4B53]">Awaiting confirmation</span>
+        <div class="surface-card bg-white p-3.5 sm:p-5 rounded-2xl border border-[#E6D8C7] shadow-xs">
+          <span class="text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider text-[#84727B] truncate block">Pending Review</span>
+          <p class="font-serif-editorial text-xl sm:text-2xl font-extrabold text-amber-600 mt-1">${pendingRes.length}</p>
+          <span class="text-[10px] sm:text-[11px] text-[#5A4B53] truncate block">Awaiting confirmation</span>
         </div>
-        <div class="surface-card bg-white p-5 rounded-2xl border border-[#E6D8C7] shadow-xs">
-          <span class="text-[11px] font-extrabold uppercase tracking-wider text-[#84727B]">Confirmed</span>
-          <p class="font-serif-editorial text-2xl font-extrabold text-[#2A7B76] mt-1">${confirmedRes.length}</p>
-          <span class="text-[11px] text-[#2A7B76]">Locked in calendar</span>
+        <div class="surface-card bg-white p-3.5 sm:p-5 rounded-2xl border border-[#E6D8C7] shadow-xs">
+          <span class="text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider text-[#84727B] truncate block">Confirmed</span>
+          <p class="font-serif-editorial text-xl sm:text-2xl font-extrabold text-[#2A7B76] mt-1">${confirmedRes.length}</p>
+          <span class="text-[10px] sm:text-[11px] text-[#2A7B76] font-semibold truncate block">Locked in calendar</span>
         </div>
-        <div class="surface-card bg-white p-5 rounded-2xl border border-[#E6D8C7] shadow-xs">
-          <span class="text-[11px] font-extrabold uppercase tracking-wider text-[#84727B]">Completed Events</span>
-          <p class="font-serif-editorial text-2xl font-extrabold text-[#1F1A1C] mt-1">${completedRes.length}</p>
-          <span class="text-[11px] text-[#5A4B53]">Galleries delivered</span>
+        <div class="surface-card bg-white p-3.5 sm:p-5 rounded-2xl border border-[#E6D8C7] shadow-xs">
+          <span class="text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider text-[#84727B] truncate block">Completed Events</span>
+          <p class="font-serif-editorial text-xl sm:text-2xl font-extrabold text-[#1F1A1C] mt-1">${completedRes.length}</p>
+          <span class="text-[10px] sm:text-[11px] text-[#5A4B53] truncate block">Galleries delivered</span>
         </div>
-        <div class="surface-card bg-white p-5 rounded-2xl border border-[#E6D8C7] shadow-xs">
-          <span class="text-[11px] font-extrabold uppercase tracking-wider text-[#84727B]">Est. Booking Value</span>
-          <p class="font-serif-editorial text-2xl font-extrabold text-[#1F1A1C] mt-1">$${totalValue.toLocaleString()}</p>
-          <span class="text-[11px] text-[#84727B]">Demo total value</span>
+        <div class="surface-card bg-white p-3.5 sm:p-5 rounded-2xl border border-[#E6D8C7] shadow-xs">
+          <span class="text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider text-[#84727B] truncate block">Est. Booking Value</span>
+          <p class="font-serif-editorial text-xl sm:text-2xl font-extrabold text-[#1F1A1C] mt-1">$${totalValue.toLocaleString()}</p>
+          <span class="text-[10px] sm:text-[11px] text-[#84727B] truncate block">Demo total value</span>
         </div>
       </div>
 

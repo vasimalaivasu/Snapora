@@ -1589,7 +1589,7 @@ html.dark #openAdminSidebarBtn {
   }
 
   /* Prevent text and badges from overflowing promo/CTA cards on narrow screens */
-  .surface-card,
+  .surface-card:not(header),
   [id$="BottomCta"],
   #reviewsSpotlightCard {
     max-width: 100% !important;
@@ -1597,8 +1597,8 @@ html.dark #openAdminSidebarBtn {
     overflow-wrap: break-word !important;
   }
 
-  .surface-card h2,
-  .surface-card h3,
+  .surface-card:not(header) h2,
+  .surface-card:not(header) h3,
   [id$="BottomCta"] h2,
   [id$="BottomCta"] h3,
   #reviewsSpotlightCard h2,
@@ -1608,8 +1608,39 @@ html.dark #openAdminSidebarBtn {
     hyphens: auto;
   }
 
-  .surface-card span,
+  .surface-card:not(header) span:not([data-rtl-toggle-label]),
   [id$="BottomCta"] span {
     max-width: 100% !important;
   }
+}
+
+/* Dashboard & Admin Portal Header Mobile Polish & Anti-Wrapping */
+#customerHeaderMount header,
+#adminHeaderMount header {
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  hyphens: none !important;
+}
+
+#customerHeaderMount header h1,
+#adminHeaderMount header h1 {
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  hyphens: none !important;
+}
+
+#customerHeaderMount header button,
+#adminHeaderMount header button,
+#customerHeaderMount header a,
+#adminHeaderMount header a {
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+}
+
+#customerHeaderMount header button span,
+#adminHeaderMount header button span,
+#customerHeaderMount header [data-rtl-toggle-label],
+#adminHeaderMount header [data-rtl-toggle-label] {
+  white-space: nowrap !important;
+  max-width: none !important;
 }
