@@ -1701,3 +1701,165 @@ html.dark #custNotifDropdown .text-\[\#5A4B53\],
 html.dark #custNotifDropdown .text-\[\#84727B\] {
   color: var(--text-secondary) !important;
 }
+
+/* ==========================================================================
+   Snapora Interactive Studio Map & Pin Marker System
+   ========================================================================== */
+#contactMap {
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 10;
+  outline: none;
+}
+
+/* Custom Pin Marker Wrapper */
+.snapora-map-pin {
+  width: 40px !important;
+  height: 60px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  position: relative !important;
+  cursor: pointer !important;
+}
+
+.snapora-pin-pulse {
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  background-color: rgba(217, 56, 58, 0.4);
+  animation: snaporaPulse 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+  pointer-events: none;
+}
+
+@keyframes snaporaPulse {
+  0% {
+    transform: translateX(-50%) scale(0.6);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) scale(1.8);
+    opacity: 0;
+  }
+}
+
+.snapora-pin-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  background: linear-gradient(135deg, #D9383A 0%, #A82426 100%);
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 4px 14px rgba(217, 56, 58, 0.5), 0 2px 4px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.snapora-pin-badge i {
+  transform: rotate(45deg);
+  font-size: 14px;
+  line-height: 1;
+}
+
+.snapora-pin-badge:hover {
+  transform: rotate(-45deg) scale(1.12);
+  box-shadow: 0 6px 18px rgba(217, 56, 58, 0.65);
+}
+
+.snapora-pin-callout {
+  position: absolute;
+  top: 38px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1F1A1C;
+  color: #FFFDFB;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 2.5px 8px;
+  border-radius: 9999px;
+  white-space: nowrap;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  pointer-events: none;
+  z-index: 3;
+}
+
+[data-theme="dark"] .snapora-pin-callout,
+html.dark .snapora-pin-callout {
+  background-color: #FAF3E8;
+  color: #1F1A1C;
+  border-color: #E6D8C7;
+}
+
+/* Custom Leaflet Popup Styling */
+.snapora-leaflet-popup .leaflet-popup-content-wrapper {
+  background-color: #FFFDFB !important;
+  border: 1.5px solid #E6D8C7 !important;
+  border-radius: 1.25rem !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22) !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+[data-theme="dark"] .snapora-leaflet-popup .leaflet-popup-content-wrapper,
+html.dark .snapora-leaflet-popup .leaflet-popup-content-wrapper {
+  background-color: #281D30 !important;
+  border-color: #523A61 !important;
+  color: #FFFDFB !important;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.75) !important;
+}
+
+.snapora-leaflet-popup .leaflet-popup-tip {
+  background-color: #FFFDFB !important;
+  border: 1px solid #E6D8C7 !important;
+}
+
+[data-theme="dark"] .snapora-leaflet-popup .leaflet-popup-tip,
+html.dark .snapora-leaflet-popup .leaflet-popup-tip {
+  background-color: #281D30 !important;
+  border-color: #523A61 !important;
+}
+
+.snapora-leaflet-popup .leaflet-popup-content {
+  margin: 0 !important;
+  line-height: 1.4 !important;
+}
+
+.snapora-leaflet-popup .leaflet-popup-close-button {
+  padding: 6px 8px !important;
+  color: #84727B !important;
+}
+
+.snapora-leaflet-popup .leaflet-popup-close-button:hover {
+  color: #D9383A !important;
+}
+
+.leaflet-control-attribution {
+  font-size: 9px !important;
+  background: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(4px) !important;
+  border-top-left-radius: 6px !important;
+  padding: 1px 6px !important;
+}
+
+[data-theme="dark"] .leaflet-control-attribution,
+html.dark .leaflet-control-attribution {
+  background: rgba(29, 21, 34, 0.85) !important;
+  color: #B8A8B6 !important;
+}
+
+[data-theme="dark"] .leaflet-control-attribution a,
+html.dark .leaflet-control-attribution a {
+  color: #F4C95D !important;
+}

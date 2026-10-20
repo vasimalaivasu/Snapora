@@ -9,6 +9,7 @@
   <meta name="description" content="Get in touch with Snapora at 742 Analog Way, Arts District, Los Angeles. Request custom photo booth quotes, venue COIs, or multi-day corporate activations.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="bg-[#FDF8F2] text-[#1F1A1C] antialiased selection:bg-[#D9383A] selection:text-white">
@@ -149,22 +150,51 @@
 
         <!-- 2. Interactive Real-Time Map & Showroom Container -->
         <div class="surface-card bg-white rounded-3xl border-2 border-[#E6D8C7] shadow-xl overflow-hidden flex flex-col justify-between h-full">
-          <!-- Real-Time Interactive Map (High-speed, warm tones, live interactive map, zero API key required) -->
-          <div class="relative w-full h-72 sm:h-80 bg-[#FAF3E8] overflow-hidden shrink-0 border-b border-[#E6D8C7]">
-            <iframe 
-              id="contactLiveMap"
-              title="Snapora Flagship Loft - Live Map"
-              src="https://maps.google.com/maps?q=Arts+District,+Los+Angeles,+CA+90013&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
-              class="w-full h-full border-0 relative z-10" 
-              loading="lazy" 
-              allowfullscreen
-              referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+          <!-- Real-Time Interactive Map Container with Persistent Studio Pin & Touch Zoom Controls -->
+          <div class="relative w-full h-80 sm:h-96 bg-[#FAF3E8] overflow-hidden shrink-0 border-b border-[#E6D8C7] select-none">
+            <!-- Map Mount Element -->
+            <div id="contactMap" class="w-full h-full relative z-10">
+              <iframe 
+                id="contactLiveMap"
+                title="Snapora Flagship Loft - Live Map"
+                src="https://maps.google.com/maps?q=34.0407,-118.2353+(Snapora+Flagship+Loft)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                class="w-full h-full border-0 relative z-10" 
+                loading="lazy" 
+                allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
 
-            <!-- Live Status Indicator -->
-            <div class="absolute top-3 end-3 z-20 flex items-center gap-1.5 bg-white/90 dark:bg-[#1D1522]/90 backdrop-blur-md px-2.5 py-1 rounded-lg text-[10px] font-extrabold text-[#2A7B76] border border-[#2A7B76]/30 shadow-md">
-              <span class="w-2 h-2 rounded-full bg-[#2A7B76] animate-pulse"></span>
-              <span>Live Map</span>
+            <!-- Top Overlay Bar: Open in Maps & Live Map Status -->
+            <div class="absolute top-3 inset-x-3 z-20 flex items-center justify-between pointer-events-none">
+              <a href="https://maps.google.com/?q=34.0407,-118.2353+(Snapora+Flagship+Loft)" target="_blank" rel="noopener noreferrer" class="pointer-events-auto px-2.5 py-1.5 rounded-xl bg-white/95 dark:bg-[#1D1522]/95 backdrop-blur-md text-[11px] font-extrabold text-[#1F1A1C] dark:text-[#FFFDFB] border border-[#E6D8C7] dark:border-[#523A61] shadow-md hover:border-[#D9383A] hover:text-[#D9383A] transition flex items-center gap-1.5 active:scale-95">
+                <span>Open in Maps</span>
+                <i class="bi bi-box-arrow-up-right text-[10px] text-[#D9383A]"></i>
+              </a>
+
+              <div class="pointer-events-auto flex items-center gap-1.5 bg-white/95 dark:bg-[#1D1522]/95 backdrop-blur-md px-2.5 py-1.5 rounded-xl text-[10px] font-extrabold text-[#2A7B76] border border-[#2A7B76]/30 shadow-md">
+                <span class="w-2 h-2 rounded-full bg-[#2A7B76] animate-pulse"></span>
+                <span>Live Map</span>
+              </div>
+            </div>
+
+            <!-- Bottom Overlay Bar: Recenter Pin Button & Zoom Controls -->
+            <div class="absolute bottom-3 inset-x-3 z-20 flex items-end justify-between pointer-events-none">
+              <!-- Center on Pin Button -->
+              <button type="button" id="recenterMapPinBtn" aria-label="Center on Studio Pin" title="Center map on studio location" class="pointer-events-auto px-3.5 py-2 rounded-xl bg-white/95 dark:bg-[#1D1522]/95 backdrop-blur-md border border-[#E6D8C7] dark:border-[#523A61] text-xs font-extrabold text-[#D9383A] hover:bg-[#D9383A] hover:text-white shadow-lg flex items-center gap-2 transition active:scale-95">
+                <i class="bi bi-geo-alt-fill text-sm"></i>
+                <span class="tracking-wide">Center Pin</span>
+              </button>
+
+              <!-- Zoom In / Zoom Out Controls -->
+              <div class="pointer-events-auto flex flex-col shadow-lg rounded-xl overflow-hidden border border-[#E6D8C7] dark:border-[#523A61] bg-white/95 dark:bg-[#1D1522]/95 backdrop-blur-md">
+                <button type="button" id="mapZoomInBtn" aria-label="Zoom in" title="Zoom In" class="w-9 h-9 flex items-center justify-center font-bold text-sm text-[#1F1A1C] dark:text-[#FFFDFB] hover:bg-[#FAF3E8] dark:hover:bg-[#281D30] hover:text-[#D9383A] transition active:scale-95">
+                  <i class="bi bi-plus-lg"></i>
+                </button>
+                <button type="button" id="mapZoomOutBtn" aria-label="Zoom out" title="Zoom Out" class="w-9 h-9 flex items-center justify-center font-bold text-sm text-[#1F1A1C] dark:text-[#FFFDFB] hover:bg-[#FAF3E8] dark:hover:bg-[#281D30] hover:text-[#D9383A] transition border-t border-[#E6D8C7] dark:border-[#523A61] active:scale-95">
+                  <i class="bi bi-dash-lg"></i>
+                </button>
+              </div>
             </div>
           </div>
 
@@ -296,14 +326,183 @@
   <script src="assets/js/storage.js"></script>
   <script src="assets/js/auth.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Ensure map iframe loads smoothly without API key prompts
+      // 1. Initialize Interactive Leaflet Map with persistent pin and controls
+      const studioCoords = [34.0407, -118.2353]; // 742 Analog Way, Arts District, LA 90013
+      const defaultZoom = 15;
+      let currentZoom = defaultZoom;
+      let leafletMapInstance = null;
+      let studioMarkerInstance = null;
+
+      const mapContainer = document.getElementById('contactMap');
+      const recenterBtn = document.getElementById('recenterMapPinBtn');
+      const zoomInBtn = document.getElementById('mapZoomInBtn');
+      const zoomOutBtn = document.getElementById('mapZoomOutBtn');
+
+      function initLeafletMap() {
+        if (typeof L === 'undefined' || !mapContainer) return false;
+        try {
+          const isDark = document.documentElement.getAttribute('data-theme') === 'dark' || document.documentElement.classList.contains('dark');
+
+          mapContainer.innerHTML = ''; // Replace fallback iframe
+
+          const map = L.map('contactMap', {
+            center: studioCoords,
+            zoom: defaultZoom,
+            minZoom: 3,
+            maxZoom: 19,
+            zoomControl: false,
+            scrollWheelZoom: false
+          });
+
+          // Esri Tile Layers: 100% Free, High Resolution, Zero API Key, Zero Watermarks
+          let lightLayer = null;
+          let darkLayerGroup = null;
+
+          function switchTheme(dark) {
+            if (dark) {
+              if (lightLayer && map.hasLayer(lightLayer)) map.removeLayer(lightLayer);
+              if (!darkLayerGroup) {
+                const darkBase = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+                  attribution: '&copy; Esri &copy; OpenStreetMap',
+                  maxNativeZoom: 16,
+                  maxZoom: 19
+                });
+                const darkRef = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {
+                  maxNativeZoom: 16,
+                  maxZoom: 19
+                });
+                darkLayerGroup = L.layerGroup([darkBase, darkRef]);
+              }
+              if (!map.hasLayer(darkLayerGroup)) darkLayerGroup.addTo(map);
+            } else {
+              if (darkLayerGroup && map.hasLayer(darkLayerGroup)) map.removeLayer(darkLayerGroup);
+              if (!lightLayer) {
+                lightLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+                  attribution: '&copy; Esri &copy; OpenStreetMap',
+                  maxNativeZoom: 18,
+                  maxZoom: 19
+                });
+              }
+              if (!map.hasLayer(lightLayer)) lightLayer.addTo(map);
+            }
+            if (marker) marker.setZIndexOffset(1000);
+          }
+
+          // Custom Snapora Pin Icon that remains visible at all zoom levels
+          const pinIcon = L.divIcon({
+            className: 'snapora-map-pin',
+            html: `
+              <div class="snapora-pin-pulse"></div>
+              <div class="snapora-pin-badge">
+                <i class="bi bi-camera-reels-fill"></i>
+              </div>
+              <div class="snapora-pin-callout">Snapora Loft</div>
+            `,
+            iconSize: [40, 60],
+            iconAnchor: [20, 60],
+            popupAnchor: [0, -60]
+          });
+
+          const marker = L.marker(studioCoords, { icon: pinIcon }).addTo(map);
+          studioMarkerInstance = marker;
+          leafletMapInstance = map;
+
+          switchTheme(isDark);
+
+          const popupHtml = `
+            <div class="p-3 text-start max-w-[220px]">
+              <div class="flex items-center gap-1.5 mb-1">
+                <span class="w-2 h-2 rounded-full bg-[#D9383A] shrink-0"></span>
+                <strong class="font-serif-editorial text-sm font-bold text-[#1F1A1C] dark:text-[#FFFDFB] truncate">Snapora Flagship Loft</strong>
+              </div>
+              <p class="text-[11px] text-[#5A4B53] dark:text-[#D7C8D2] mb-2 leading-tight">742 Analog Way, Arts District, LA 90013</p>
+              <div class="flex items-center justify-between gap-2 pt-2 border-t border-[#E6D8C7] dark:border-[#523A61] text-[10px]">
+                <span class="text-[#2A7B76] font-extrabold flex items-center gap-1"><i class="bi bi-clock-fill"></i> 9 AM–7 PM</span>
+                <a href="https://maps.google.com/?q=34.0407,-118.2353+(Snapora+Flagship+Loft)" target="_blank" rel="noopener noreferrer" class="btn-cherry text-[10px] !py-1 !px-2 shadow-xs shrink-0 whitespace-nowrap">
+                  Directions →
+                </a>
+              </div>
+            </div>
+          `;
+
+          marker.bindPopup(popupHtml, {
+            className: 'snapora-leaflet-popup',
+            maxWidth: 240,
+            minWidth: 190,
+            autoPan: true,
+            autoPanPadding: [16, 16],
+            closeButton: true
+          });
+
+          map.on('click', () => map.scrollWheelZoom.enable());
+
+          // Observe theme changes to swap tiles seamlessly
+          const themeObserver = new MutationObserver(() => {
+            const darkNow = document.documentElement.getAttribute('data-theme') === 'dark' || document.documentElement.classList.contains('dark');
+            switchTheme(darkNow);
+          });
+          themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme', 'class'] });
+
+          return true;
+        } catch (err) {
+          console.warn('Leaflet initialization failed:', err);
+          return false;
+        }
+      }
+
+      initLeafletMap();
+
+      // Recenter Pin button handler
+      recenterBtn?.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (leafletMapInstance) {
+          leafletMapInstance.flyTo(studioCoords, 15, { animate: true, duration: 1 });
+          studioMarkerInstance?.openPopup();
+        } else {
+          currentZoom = 15;
+          const iframe = document.getElementById('contactLiveMap');
+          if (iframe) {
+            iframe.src = `https://maps.google.com/maps?q=34.0407,-118.2353+(Snapora+Flagship+Loft)&t=&z=${currentZoom}&ie=UTF8&iwloc=B&output=embed`;
+          }
+        }
+      });
+
+      // Zoom In button handler
+      zoomInBtn?.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (leafletMapInstance) {
+          leafletMapInstance.zoomIn();
+        } else {
+          currentZoom = Math.min(currentZoom + 1, 19);
+          const iframe = document.getElementById('contactLiveMap');
+          if (iframe) {
+            iframe.src = `https://maps.google.com/maps?q=34.0407,-118.2353+(Snapora+Flagship+Loft)&t=&z=${currentZoom}&ie=UTF8&iwloc=B&output=embed`;
+          }
+        }
+      });
+
+      // Zoom Out button handler
+      zoomOutBtn?.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (leafletMapInstance) {
+          leafletMapInstance.zoomOut();
+        } else {
+          currentZoom = Math.max(currentZoom - 1, 10);
+          const iframe = document.getElementById('contactLiveMap');
+          if (iframe) {
+            iframe.src = `https://maps.google.com/maps?q=34.0407,-118.2353+(Snapora+Flagship+Loft)&t=&z=${currentZoom}&ie=UTF8&iwloc=B&output=embed`;
+          }
+        }
+      });
+
+      // Ensure fallback map iframe loads smoothly without API key prompts
       const mapIframe = document.getElementById('contactLiveMap');
       if (mapIframe) {
         mapIframe.addEventListener('error', () => {
-          // Fallback to OpenStreetMap embed if Google Maps embed is restricted
-          mapIframe.src = 'https://www.openstreetmap.org/export/embed.html?bbox=-118.2450%2C34.0320%2C-118.2220%2C34.0494&layer=mapnik&marker=34.0407%2C-118.2335';
+          mapIframe.src = 'https://www.openstreetmap.org/export/embed.html?bbox=-118.2450%2C34.0320%2C-118.2220%2C34.0494&layer=mapnik&marker=34.0407%2C-118.2353';
         });
       }
       const dateInput = document.getElementById('contactEventDate');
