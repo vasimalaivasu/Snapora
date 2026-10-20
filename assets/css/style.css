@@ -1589,7 +1589,7 @@ html.dark #openAdminSidebarBtn {
   }
 
   /* Prevent text and badges from overflowing promo/CTA cards on narrow screens */
-  .surface-card:not(header),
+  .surface-card:not(header):not([id*="Dropdown"]):not([id*="dropdown"]):not([data-dropdown-menu]),
   [id$="BottomCta"],
   #reviewsSpotlightCard {
     max-width: 100% !important;
@@ -1597,8 +1597,8 @@ html.dark #openAdminSidebarBtn {
     overflow-wrap: break-word !important;
   }
 
-  .surface-card:not(header) h2,
-  .surface-card:not(header) h3,
+  .surface-card:not(header):not([id*="Dropdown"]):not([id*="dropdown"]):not([data-dropdown-menu]) h2,
+  .surface-card:not(header):not([id*="Dropdown"]):not([id*="dropdown"]):not([data-dropdown-menu]) h3,
   [id$="BottomCta"] h2,
   [id$="BottomCta"] h3,
   #reviewsSpotlightCard h2,
@@ -1608,7 +1608,7 @@ html.dark #openAdminSidebarBtn {
     hyphens: auto;
   }
 
-  .surface-card:not(header) span:not([data-rtl-toggle-label]),
+  .surface-card:not(header):not([id*="Dropdown"]):not([id*="dropdown"]):not([data-dropdown-menu]) span:not([data-rtl-toggle-label]),
   [id$="BottomCta"] span {
     max-width: 100% !important;
   }
@@ -1643,4 +1643,61 @@ html.dark #openAdminSidebarBtn {
 #adminHeaderMount header [data-rtl-toggle-label] {
   white-space: nowrap !important;
   max-width: none !important;
+}
+
+/* Notifications & Overlay Dropdowns Mobile Geometry */
+#custNotifDropdown,
+[data-dropdown-menu],
+[id*="Dropdown"],
+[id*="dropdown"] {
+  max-width: calc(100vw - 1.5rem) !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+}
+
+#custNotifDropdown *,
+[data-dropdown-menu] * {
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+}
+
+#custNotifDropdown a {
+  max-width: 100% !important;
+}
+
+#custNotifDropdown p {
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+}
+
+#custNotifDropdown span:not([class*="text-[#D9383A]"]),
+html.dark #custNotifDropdown span:not([class*="text-[#D9383A]"]),
+[data-theme="dark"] #custNotifDropdown span:not([class*="text-[#D9383A]"]) {
+  white-space: nowrap !important;
+}
+
+[data-theme="dark"] #custNotifDropdown,
+html.dark #custNotifDropdown {
+  background-color: var(--bg-surface) !important;
+  border-color: var(--border-warm) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7) !important;
+}
+
+[data-theme="dark"] #custNotifDropdown a,
+html.dark #custNotifDropdown a {
+  background-color: var(--bg-ivory) !important;
+  border-color: var(--border-warm) !important;
+}
+
+[data-theme="dark"] #custNotifDropdown p,
+html.dark #custNotifDropdown p {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] #custNotifDropdown .text-\[\#5A4B53\],
+html.dark #custNotifDropdown .text-\[\#5A4B53\],
+[data-theme="dark"] #custNotifDropdown .text-\[\#84727B\],
+html.dark #custNotifDropdown .text-\[\#84727B\] {
+  color: var(--text-secondary) !important;
 }

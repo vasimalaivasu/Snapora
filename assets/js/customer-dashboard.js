@@ -131,19 +131,24 @@
                 <i class="bi bi-bell-fill text-xs sm:text-sm"></i>
                 ${unreadCount > 0 ? `<span class="w-2.5 h-2.5 rounded-full bg-[#D9383A] absolute top-1 end-1"></span>` : ''}
               </button>
-              <div id="custNotifDropdown" class="hidden absolute end-0 mt-2 w-72 sm:w-80 bg-white surface-card rounded-2xl shadow-2xl border border-[#E6D8C7] p-3 z-50">
-                <div class="flex items-center justify-between pb-2 mb-2 border-b border-[#E6D8C7]">
-                  <span class="font-bold text-xs text-[#1F1A1C]">Booking Notifications</span>
-                  <span class="text-[10px] font-bold text-[#D9383A]">${notifs.length} Updates</span>
+              <div id="custNotifDropdown" class="hidden absolute end-0 mt-2 w-72 sm:w-80 max-w-[calc(100vw-1.5rem)] bg-white rounded-2xl shadow-2xl border border-[#E6D8C7] p-3.5 z-50">
+                <div class="flex items-center justify-between pb-2 mb-2 border-b border-[#E6D8C7] gap-2">
+                  <span class="font-bold text-xs text-[#1F1A1C] whitespace-nowrap">Booking Notifications</span>
+                  <span class="text-[10px] font-bold text-[#D9383A] whitespace-nowrap px-2 py-0.5 rounded-full bg-[#D9383A]/10">${notifs.length} Updates</span>
                 </div>
                 <div class="space-y-2 max-h-60 overflow-y-auto">
-                  ${notifs.map(n => `
-                    <a href="${n.link}" class="block p-2.5 rounded-xl bg-[#FAF3E8] hover:border-[#D9383A] border border-transparent transition">
-                      <p class="font-bold text-xs text-[#1F1A1C]">${n.title}</p>
-                      <p class="text-[11px] text-[#5A4B53] mt-0.5">${n.text}</p>
+                  ${notifs.length > 0 ? notifs.map(n => `
+                    <a href="${n.link}" class="block p-2.5 rounded-xl bg-[#FAF3E8] hover:border-[#D9383A] border border-transparent transition text-start">
+                      <p class="font-bold text-xs text-[#1F1A1C] leading-snug">${n.title}</p>
+                      <p class="text-[11px] text-[#5A4B53] mt-0.5 leading-normal line-clamp-2">${n.text}</p>
                       <span class="text-[10px] text-[#84727B] mt-1 block">${n.time}</span>
                     </a>
-                  `).join('')}
+                  `).join('') : `
+                    <div class="py-6 text-center text-xs text-[#84727B]">
+                      <i class="bi bi-bell-slash text-2xl block mb-1 opacity-50"></i>
+                      No notifications right now
+                    </div>
+                  `}
                 </div>
               </div>
             </div>
@@ -185,6 +190,7 @@
       notifDrop.classList.toggle('hidden');
       window.PBStore.markNotificationsRead('customer');
     });
+    notifDrop?.addEventListener('click', (e) => e.stopPropagation());
     document.addEventListener('click', () => notifDrop?.classList.add('hidden'));
 
     window.PBUI.updateThemeAndRtlIcons();
